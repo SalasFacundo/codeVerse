@@ -1,0 +1,12 @@
+.ancho{
+    width: 100%;
+}
+
+.justificar{
+    display: flex;
+    justify-content: end;
+
+    li{
+        margin-right: 15px;
+    }
+}

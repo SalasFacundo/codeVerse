@@ -12,6 +12,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import { GrillaComponent } from './components/grilla/grilla.component';
 import { ModalCrearAlumnoComponent } from './components/modal-crear-alumno/modal-crear-alumno.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { ModalCrearAlumnoComponent } from './components/modal-crear-alumno/modal
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
+    MatDialogModule
 
   ],
   providers: [],

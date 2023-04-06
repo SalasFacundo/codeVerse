@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCrearAlumnoComponent } from '../modal-crear-alumno/modal-crear-alumno.component';
 
 export interface PeriodicElement {
   dni: number;
@@ -30,9 +32,13 @@ export class GrillaComponent implements OnInit {
   displayedColumns: string[] = ['dni', 'name', 'lastName',  'course', "action"];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private matDialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  abrirABMAlumnos(): void{
+    this.matDialog.open(ModalCrearAlumnoComponent);
   }
 
 }

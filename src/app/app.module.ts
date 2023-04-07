@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import { ControlErrorMessagesPipe } from './pipes/control-error-messages.pipe';
 import { DeleteStudentComponent } from './components/modales/delete-student/delete-student.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModifyStudentComponent } from './components/modales/modify-student/modify-student.component';
 
 
 
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     GrillaComponent,
     ModalCrearAlumnoComponent,
     ControlErrorMessagesPipe,
-    DeleteStudentComponent
+    DeleteStudentComponent,
+    ModifyStudentComponent
   ],
   imports: [
     BrowserModule,

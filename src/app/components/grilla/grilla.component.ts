@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteStudentComponent } from '../modales/delete-student/delete-student.component';
 import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-crear-alumno.component';
 import { HttpClient } from '@angular/common/http';
+import { ModifyStudentComponent } from '../modales/modify-student/modify-student.component';
 
 @Component({
   selector: 'app-grilla',
@@ -43,6 +44,27 @@ export class GrillaComponent implements OnInit, OnDestroy {
     dialog.afterClosed().subscribe((valor) => {
       this.dataSource = this.dataSource.filter((item: any) => item.dni !== value)
     })    
+  }
+
+  openModifyStudent(value: any): void{
+    const dialog = this.matDialog.open(ModifyStudentComponent, {data: value});
+    dialog.afterClosed().subscribe((valor) => {
+      console.log(valor)
+      if(valor){
+        this.replaceObjectById(this.dataSource, valor)
+      }
+    })    
+  }
+
+  replaceObjectById(array: any, newObject: any): void {
+    const index = array.findIndex((obj: any) => obj.id === newObject.originalId);
+    if (index !== -1) {
+      array[index] = newObject.formValue;
+    } else {
+      throw new Error(`Object with ID ${newObject.id} not found in array`);
+    }
+    this.dataSource = [...array];
+    console.log( this.dataSource)
   }
 
 }

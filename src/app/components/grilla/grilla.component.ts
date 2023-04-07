@@ -27,7 +27,6 @@ export class GrillaComponent implements OnInit, OnDestroy {
     this.http.get<any[]>(this.studentsUrl).subscribe(data => {
       this.dataSource = data;
     });
-    console.log(JSON.stringify(this.dataSource))
   }
 
   openFormCreateStudent(): void{
@@ -49,7 +48,6 @@ export class GrillaComponent implements OnInit, OnDestroy {
   openModifyStudent(value: any): void{
     const dialog = this.matDialog.open(ModifyStudentComponent, {data: value});
     dialog.afterClosed().subscribe((valor) => {
-      console.log(valor)
       if(valor){
         this.replaceObjectById(this.dataSource, valor)
       }
@@ -64,7 +62,6 @@ export class GrillaComponent implements OnInit, OnDestroy {
       throw new Error(`Object with ID ${newObject.id} not found in array`);
     }
     this.dataSource = [...array];
-    console.log( this.dataSource)
   }
 
 }

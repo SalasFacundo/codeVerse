@@ -31,7 +31,6 @@ export class ModalCrearAlumnoComponent implements OnInit {
   }
 
   guardar(){
-    console.log(this.alumnosForm)
     this.dialogRef.close(this.alumnosForm.value)
   }
 }

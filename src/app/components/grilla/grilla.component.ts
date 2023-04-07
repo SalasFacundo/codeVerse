@@ -33,9 +33,10 @@ export class GrillaComponent implements OnInit, OnDestroy {
     const dialog = this.matDialog.open(ModalCrearAlumnoComponent);
     dialog.afterClosed().subscribe((valor) => {
       if(valor){
+        valor.id = (this.getLastId() + 1)
         this.dataSource = [ ...this.dataSource, valor]
       }      
-    })    
+    })
   }
 
   openDeleteStudent(value: number): void{
@@ -62,6 +63,10 @@ export class GrillaComponent implements OnInit, OnDestroy {
       throw new Error(`Object with ID ${newObject.id} not found in array`);
     }
     this.dataSource = [...array];
+  }
+
+  getLastId(){
+    return this.dataSource[this.dataSource.length - 1].id;
   }
 
 }

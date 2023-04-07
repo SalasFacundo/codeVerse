@@ -1,45 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteStudentComponent } from '../modales/delete-student/delete-student.component';
 import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-crear-alumno.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-grilla',
   templateUrl: './grilla.component.html',
   styleUrls: ['./grilla.component.scss']
 })
-export class GrillaComponent implements OnInit {
+export class GrillaComponent implements OnInit, OnDestroy {
 
+  readonly studentsUrl: string = '/assets/data/json/students.json';
   displayedColumns: string[] = ['dni', 'name', 'lastName',  'course', "action"];
-  dataSource = [
-    {dni: 11111111, name: 'Ana', lastName: 'García', course: 'curso'},
-    {dni: 22222222, name: 'Juan', lastName: 'Rodríguez', course: 'curso'},
-    {dni: 33333333, name: 'María', lastName: 'López', course: 'curso'},
-    {dni: 44444444, name: 'David', lastName: 'Martínez', course: 'curso'},
-    {dni: 55555555, name: 'Laura', lastName: 'Sánchez', course: 'curso'},
-    {dni: 66666666, name: 'Carlos', lastName: 'Gómez', course: 'curso'},
-    {dni: 77777777, name: 'Sofía', lastName: 'Pérez', course: 'curso'},
-    {dni: 88888888, name: 'Pedro', lastName: 'Hernández', course: 'curso'},
-    {dni: 99999999, name: 'Lucía', lastName: 'Flores', course: 'curso'},
-    {dni: 12345678, name: 'Jorge', lastName: 'Díaz', course: 'curso'}
-  ];
+  dataSource: any;
 
-  constructor(private matDialog: MatDialog) { }
+  constructor(private matDialog: MatDialog,
+              private http: HttpClient) { }
+
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
 
   ngOnInit(): void {
+    this.http.get<any[]>(this.studentsUrl).subscribe(data => {
+      this.dataSource = data;
+    });
+    console.log(JSON.stringify(this.dataSource))
   }
 
   openFormCreateStudent(): void{
     const dialog = this.matDialog.open(ModalCrearAlumnoComponent);
     dialog.afterClosed().subscribe((valor) => {
-      this.dataSource = [ ...this.dataSource, valor]
+      if(valor){
+        this.dataSource = [ ...this.dataSource, valor]
+      }      
     })    
   }
 
   openDeleteStudent(value: number): void{
     const dialog = this.matDialog.open(DeleteStudentComponent);
     dialog.afterClosed().subscribe((valor) => {
-      this.dataSource = this.dataSource.filter((item) => item.dni !== value)
+      this.dataSource = this.dataSource.filter((item: any) => item.dni !== value)
     })    
   }
 

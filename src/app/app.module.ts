@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { ControlErrorMessagesPipe } from './pipes/control-error-messages.pipe';
 import { DeleteStudentComponent } from './components/modales/delete-student/delete-student.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -45,7 +46,8 @@ import { DeleteStudentComponent } from './components/modales/delete-student/dele
     MatSelectModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

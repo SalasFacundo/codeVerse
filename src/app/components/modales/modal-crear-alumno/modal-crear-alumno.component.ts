@@ -14,9 +14,9 @@ export class ModalCrearAlumnoComponent implements OnInit {
   @Input()
   modalType: string = "";
 
-  nameControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
+  nameControl = new FormControl('', [Validators.required]);
   lastNameControl = new FormControl('', [Validators.required]);
-  dniControl = new FormControl('', [Validators.required]);
+  dniControl = new FormControl('', [Validators.required, Validators.minLength(8)]);
   courseControl = new FormControl('', [Validators.required]);
 
   alumnosForm = new FormGroup({
@@ -31,6 +31,7 @@ export class ModalCrearAlumnoComponent implements OnInit {
   }
 
   guardar(){
+    console.log(this.alumnosForm)
     this.dialogRef.close(this.alumnosForm.value)
   }
 }

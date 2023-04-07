@@ -1,5 +1,6 @@
 import { OnInit } from '@angular/core';
 import {Component, Inject} from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
@@ -10,13 +11,23 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class ModalCrearAlumnoComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<ModalCrearAlumnoComponent>,
-    @Inject(MAT_DIALOG_DATA) public message: string) { }
+  nameControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
+  lastNameControl = new FormControl('', [Validators.required]);
+  dniControl = new FormControl('', [Validators.required]);
+  courseControl = new FormControl('', [Validators.required]);
+
+  alumnosForm = new FormGroup({
+    name: this.nameControl,
+    lastName: this.lastNameControl,
+    dni: this.dniControl,
+    course: this.courseControl
+  })
+  constructor(private dialogRef: MatDialogRef<ModalCrearAlumnoComponent>) { }
 
   ngOnInit(): void {
   }
 
-  onClickNo(): void { 
-    this.dialogRef.close();   
+  guardar(){
+    this.dialogRef.close(this.alumnosForm.value)
   }
 }

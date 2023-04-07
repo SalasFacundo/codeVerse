@@ -1,7 +1,7 @@
 <div class="container">
     
     <div class="grid-action">
-        <button mat-raised-button color="primary">Agregar alumno</button>
+        <button mat-raised-button color="primary" (click)="openFormCreateStudent()">Agregar alumno</button>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
 
@@ -42,7 +42,4 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-
-    <button (click)="abrirABMAlumnos()">ABRIR MODAL CODER</button>
-
 </div>

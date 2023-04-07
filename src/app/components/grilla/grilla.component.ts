@@ -2,26 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalCrearAlumnoComponent } from '../modal-crear-alumno/modal-crear-alumno.component';
 
-export interface PeriodicElement {
-  dni: number;
-  name: string;
-  lastName: string;
-  course: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {dni: 1, name: 'Hydrogen', lastName:  'Hydrogen', course: 'curso'},
-  {dni: 2, name: 'Helium', lastName:  'Helium', course: 'curso'},
-  {dni: 3, name: 'Lithium', lastName:   'Lithium', course: 'curso'},
-  {dni: 4, name: 'Beryllium', lastName:  'Beryllium', course: 'curso'},
-  {dni: 5, name: 'Boron', lastName:  'Boron', course: 'curso'},
-  {dni: 6, name: 'Carbon', lastName:  'Carbon', course: 'curso'},
-  {dni: 7, name: 'Nitrogen', lastName:  'Nitrogen', course: 'curso'},
-  {dni: 8, name: 'Oxygen', lastName:  'Oxygen', course: 'curso'},
-  {dni: 9, name: 'Fluorine', lastName:  'Fluorine', course: 'curso'},
-  {dni: 10, name: 'Neon', lastName:  'Neon', course: 'curso'},
-];
-
 @Component({
   selector: 'app-grilla',
   templateUrl: './grilla.component.html',
@@ -30,15 +10,32 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class GrillaComponent implements OnInit {
 
   displayedColumns: string[] = ['dni', 'name', 'lastName',  'course', "action"];
-  dataSource = ELEMENT_DATA;
+  dataSource = [
+    {dni: 11111111, name: 'Ana', lastName: 'García', course: 'curso'},
+    {dni: 22222222, name: 'Juan', lastName: 'Rodríguez', course: 'curso'},
+    {dni: 33333333, name: 'María', lastName: 'López', course: 'curso'},
+    {dni: 44444444, name: 'David', lastName: 'Martínez', course: 'curso'},
+    {dni: 55555555, name: 'Laura', lastName: 'Sánchez', course: 'curso'},
+    {dni: 66666666, name: 'Carlos', lastName: 'Gómez', course: 'curso'},
+    {dni: 77777777, name: 'Sofía', lastName: 'Pérez', course: 'curso'},
+    {dni: 88888888, name: 'Pedro', lastName: 'Hernández', course: 'curso'},
+    {dni: 99999999, name: 'Lucía', lastName: 'Flores', course: 'curso'},
+    {dni: 12345678, name: 'Jorge', lastName: 'Díaz', course: 'curso'}
+  ];
 
   constructor(private matDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  abrirABMAlumnos(): void{
-    this.matDialog.open(ModalCrearAlumnoComponent);
+  openFormCreateStudent(): void{
+    console.log("ACAAA")
+    const dialog = this.matDialog.open(ModalCrearAlumnoComponent);
+    dialog.afterClosed().subscribe((valor) => {
+      console.log(valor)
+      this.dataSource = [ ...this.dataSource, valor]
+    })
+    
   }
 
 }

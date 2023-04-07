@@ -29,10 +29,10 @@
             <th class="list-head" mat-header-cell *matHeaderCellDef> Accion </th>
             <td class="list-body" mat-cell *matCellDef="let element">
                     <div class="actions">
-                        <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+                        <button mat-mini-fab color="warn" (click)="openDeleteStudent(element.dni)">
                             <mat-icon class="icon-display" >delete</mat-icon>
                         </button>
-                        <button mat-mini-fab color="accent" aria-label="Example icon button with a delete icon">
+                        <button mat-mini-fab color="accent">
                             <mat-icon class="icon-display" >edit</mat-icon>
                         </button>
                     </div>

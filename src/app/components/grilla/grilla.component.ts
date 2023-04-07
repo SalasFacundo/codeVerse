@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalCrearAlumnoComponent } from '../modal-crear-alumno/modal-crear-alumno.component';
+import { DeleteStudentComponent } from '../modales/delete-student/delete-student.component';
+import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-crear-alumno.component';
 
 @Component({
   selector: 'app-grilla',
@@ -29,13 +30,17 @@ export class GrillaComponent implements OnInit {
   }
 
   openFormCreateStudent(): void{
-    console.log("ACAAA")
     const dialog = this.matDialog.open(ModalCrearAlumnoComponent);
     dialog.afterClosed().subscribe((valor) => {
-      console.log(valor)
       this.dataSource = [ ...this.dataSource, valor]
-    })
-    
+    })    
+  }
+
+  openDeleteStudent(value: number): void{
+    const dialog = this.matDialog.open(DeleteStudentComponent);
+    dialog.afterClosed().subscribe((valor) => {
+      this.dataSource = this.dataSource.filter((item) => item.dni !== value)
+    })    
   }
 
 }

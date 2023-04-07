@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { Input, OnInit } from '@angular/core';
 import {Component, Inject} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -10,6 +10,9 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
   styleUrls: ['./modal-crear-alumno.component.scss']
 })
 export class ModalCrearAlumnoComponent implements OnInit {
+
+  @Input()
+  modalType: string = "";
 
   nameControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
   lastNameControl = new FormControl('', [Validators.required]);

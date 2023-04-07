@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalCrearAlumnoComponent } from './components/modal-crear-alumno/modal-crear-alumno.component'
+import { ModalCrearAlumnoComponent } from './components/modales/modal-crear-alumno/modal-crear-alumno.component'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

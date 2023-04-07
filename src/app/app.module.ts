@@ -11,13 +11,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import { GrillaComponent } from './components/grilla/grilla.component';
-import { ModalCrearAlumnoComponent } from './components/modal-crear-alumno/modal-crear-alumno.component';
+import { ModalCrearAlumnoComponent } from './components/modales/modal-crear-alumno/modal-crear-alumno.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { ControlErrorMessagesPipe } from './pipes/control-error-messages.pipe';
+import { DeleteStudentComponent } from './components/modales/delete-student/delete-student.component';
 
 
 
@@ -27,7 +28,8 @@ import { ControlErrorMessagesPipe } from './pipes/control-error-messages.pipe';
     NavbarComponent,
     GrillaComponent,
     ModalCrearAlumnoComponent,
-    ControlErrorMessagesPipe
+    ControlErrorMessagesPipe,
+    DeleteStudentComponent
   ],
   imports: [
     BrowserModule,

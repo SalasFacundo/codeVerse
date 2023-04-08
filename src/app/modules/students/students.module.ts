@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { StudentsModule } from './modules/students/students.module';
-import { NavbarComponent } from './components/navbar/navbar.component';
-/*import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+//import { AppComponent } from './app.component';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -18,22 +16,22 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { ControlErrorMessagesPipe } from './pipes/control-error-messages.pipe';
+//import { ControlErrorMessagesPipe } from './pipes/control-error-messages.pipe';
 import { DeleteStudentComponent } from './components/modales/delete-student/delete-student.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ModifyStudentComponent } from './components/modales/modify-student/modify-student.component'; */
-
+import { ModifyStudentComponent } from './components/modales/modify-student/modify-student.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent
-  ],
+    GrillaComponent,
+    GrillaComponent,
+    ModalCrearAlumnoComponent,
+    DeleteStudentComponent,
+    ModifyStudentComponent],
   imports: [
-    BrowserModule,
-    StudentsModule,
-    /* NgbModule,
+    CommonModule,
+    NgbModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatProgressBarModule,
@@ -46,9 +44,14 @@ import { ModifyStudentComponent } from './components/modales/modify-student/modi
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
-    HttpClientModule, */
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+    GrillaComponent,
+    GrillaComponent,
+    ModalCrearAlumnoComponent,
+    DeleteStudentComponent,
+    ModifyStudentComponent
+  ]
 })
-export class AppModule { }
+export class StudentsModule { }

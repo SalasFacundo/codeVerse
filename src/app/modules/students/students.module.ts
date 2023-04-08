@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //import { AppComponent } from './app.component';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
@@ -16,11 +15,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-//import { ControlErrorMessagesPipe } from './pipes/control-error-messages.pipe';
 import { DeleteStudentComponent } from './components/modales/delete-student/delete-student.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModifyStudentComponent } from './components/modales/modify-student/modify-student.component';
-
+import { ControlErrorMessagesPipe } from '../../pipes/control-error-messages.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +26,8 @@ import { ModifyStudentComponent } from './components/modales/modify-student/modi
     GrillaComponent,
     ModalCrearAlumnoComponent,
     DeleteStudentComponent,
-    ModifyStudentComponent],
+    ModifyStudentComponent,
+    ControlErrorMessagesPipe],
   imports: [
     CommonModule,
     NgbModule,
@@ -44,7 +43,7 @@ import { ModifyStudentComponent } from './components/modales/modify-student/modi
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports: [
     GrillaComponent,

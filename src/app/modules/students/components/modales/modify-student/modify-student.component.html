@@ -7,7 +7,7 @@
                 [formControl]="nameControl"
                 type="text" 
                 matInput>
-                <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error}} </mat-error>
+                <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -16,7 +16,7 @@
                 [formControl]="lastNameControl"
                 type="text" 
                 matInput>
-                <mat-error *ngFor="let error of lastNameControl.errors | keyvalue">{{error}} </mat-error>
+                <mat-error *ngFor="let error of lastNameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -25,7 +25,7 @@
                 [formControl]="dniControl"
                 type="number" 
                 matInput>
-                <mat-error *ngFor="let error of dniControl.errors | keyvalue">{{error}} </mat-error>
+                <mat-error *ngFor="let error of dniControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -34,7 +34,7 @@
                 [formControl]="courseControl"
                 type="text" 
                 matInput>
-                <mat-error *ngFor="let error of courseControl.errors | keyvalue">{{error}} </mat-error>
+                <mat-error *ngFor="let error of courseControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <div class="grid-action">

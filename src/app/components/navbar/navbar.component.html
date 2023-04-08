@@ -1,9 +1,8 @@
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="over" opened="false">
+    <mat-sidenav #sidenav mode="over" opened="fa">
         <mat-toolbar class="toolbar" color="primary">
             <h1 class="title">Cursos de programación</h1>
-            <button mat-icon-button class="toggle" >
-                <mat-icon>{{ true ? 'chevron_left' : 'menu' }}</mat-icon>
+            <button mat-icon-button class="toggle" (click)="sidenav.toggle()">
             </button>
         </mat-toolbar>
         <mat-nav-list>

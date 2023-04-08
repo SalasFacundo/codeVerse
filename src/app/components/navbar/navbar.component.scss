@@ -1,12 +1,13 @@
-.ancho{
-    width: 100%;
-}
-
-.justificar{
-    display: flex;
-    justify-content: end;
-
-    li{
-        margin-right: 15px;
-    }
-}
+.mat-sidenav-container {
+    height: 100vh;
+  }
+  
+  .mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .mat-sidenav {
+    width: 250px;
+  }

@@ -1,22 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">&lt;Codeverse&gt;</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justificar" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-                <div ngbDropdown class="d-inline-block nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="dropdown1" ngbDropdownToggle>Dropdown</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" opened="false">
+        <mat-toolbar class="toolbar" color="primary">
+            <h1 class="title">Cursos de programación</h1>
+            <button mat-icon-button class="toggle" >
+                <mat-icon>{{ true ? 'chevron_left' : 'menu' }}</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <mat-list-item>
+                <a mat-list-item-link href="#">Inicio</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-list-item-link href="#">Cursos disponibles</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-list-item-link href="#">Inscripciones</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-list-item-link href="#">Contacto</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-list-item-link href="#">Acerca de</a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>CodeVerse</span>
+        </mat-toolbar>
+
+        <app-grilla></app-grilla>
+    </mat-sidenav-content>
+</mat-sidenav-container>

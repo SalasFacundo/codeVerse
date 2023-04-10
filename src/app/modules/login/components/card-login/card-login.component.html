@@ -1,0 +1,28 @@
+
+<div class="body">
+    <mat-card class="example-card" 
+        [style.width.px]="width" 
+        [style.height.px]="height" 
+        [ngStyle]="{ 'min-width.px':150, 'min-height.px': 350 }">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-subtitle>Registrarse</mat-card-subtitle>
+    </mat-card-header>   
+    <mat-card-content>
+        <form class="form">
+            <mat-form-field class="user">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="Ingrese su usuario">
+            </mat-form-field>
+        
+            <mat-form-field>
+                <mat-label>Contraseña</mat-label>
+                <input matInput placeholder="Ingrese su contraseña" type="password">
+            </mat-form-field>
+        
+            <button mat-raised-button color="primary">Ingresar</button>
+        </form>
+    </mat-card-content>
+    </mat-card>
+</div>

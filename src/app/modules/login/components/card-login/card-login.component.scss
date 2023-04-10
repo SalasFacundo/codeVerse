@@ -1,0 +1,20 @@
+.example-header-image {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1077/1077063.png');
+    background-size: cover;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px !important;
+
+    .user{
+        margin-bottom: 15px;
+    }
+
+    button {
+        margin-top: 50px;
+        width: 100%;
+    }
+}

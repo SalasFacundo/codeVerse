@@ -19,6 +19,8 @@ import { DeleteStudentComponent } from './components/modales/delete-student/dele
 import { HttpClientModule } from '@angular/common/http';
 import { ModifyStudentComponent } from './components/modales/modify-student/modify-student.component';
 import { ControlErrorMessagesPipe } from '../../pipes/control-error-messages.pipe';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ControlErrorMessagesPipe } from '../../pipes/control-error-messages.pip
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSlideToggleModule
   ],
   exports: [
     GrillaComponent,

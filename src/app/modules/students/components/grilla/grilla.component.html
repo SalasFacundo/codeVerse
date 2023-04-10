@@ -1,7 +1,18 @@
 <div class="container">
     
     <div class="grid-action">
-        <button mat-raised-button color="primary" (click)="openFormCreateStudent()">Agregar alumno</button>
+        <button 
+            mat-raised-button color="primary" 
+            (click)="openFormCreateStudent()">
+            Agregar alumno
+        </button>
+
+        <mat-slide-toggle
+            class="m-4"
+            [(ngModel)]="isAdmin" 
+            (change)="toggleSlider()">
+            Vista administrador (Solo para pruebas)
+        </mat-slide-toggle>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
 
@@ -25,7 +36,7 @@
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.course}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="action">
+        <ng-container *ngIf="isAdmin" matColumnDef="action">
             <th class="list-head" mat-header-cell *matHeaderCellDef> Accion </th>
             <td class="list-body" mat-cell *matCellDef="let element">
                     <div class="actions">

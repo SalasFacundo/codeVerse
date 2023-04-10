@@ -1,9 +1,7 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over" opened="false">
-        <mat-toolbar class="toolbar primaryCustom" color="primary">
+        <mat-toolbar class="toolbar primaryCustom toggleSidebar" (click)="sidenav.toggle()">
             <h1 class="title">Cursos de programación</h1>
-            <button mat-icon-button class="toggle" (click)="sidenav.toggle()">
-            </button>
         </mat-toolbar>
         <mat-nav-list>
             <mat-list-item>

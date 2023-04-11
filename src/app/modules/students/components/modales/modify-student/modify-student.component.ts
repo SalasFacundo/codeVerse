@@ -16,7 +16,7 @@ export class ModifyStudentComponent implements OnInit {
   
   nameControl = new FormControl('', [Validators.required]);
   lastNameControl = new FormControl('', [Validators.required]);
-  dniControl = new FormControl('', [Validators.required, Validators.minLength(8), customValidator.dniDuplicated( this.data.students, this.data.idSelected.id)]);
+  dniControl = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8), customValidator.dniDuplicated( this.data.students, this.data.idSelected.id), customValidator.dniJustNumbers()]);
   courseControl = new FormControl('', [Validators.required]);
 
   alumnosForm = new FormGroup({

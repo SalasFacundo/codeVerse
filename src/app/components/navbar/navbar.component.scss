@@ -10,8 +10,13 @@
   
   .mat-sidenav {
     width: 250px;
+    background-color: rgb(39, 40, 45) !important;
   }
+  
+  mat-list-item{
 
+    color: white !important;
+  }
   .toolbar{
     background-color: grey ;
   }
@@ -19,3 +24,12 @@
   .toggleSidebar{
     cursor: pointer;
   }
+
+  mat-sidenav-content{
+    background-color: rgb(31, 32, 35);
+  }
+
+  mat-toolbar{
+    background-color: rgb(20, 20, 20) !important;
+  }
+  

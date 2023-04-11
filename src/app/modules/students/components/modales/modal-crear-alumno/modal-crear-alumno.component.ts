@@ -17,7 +17,7 @@ export class ModalCrearAlumnoComponent implements OnInit {
 
   nameControl = new FormControl('', [Validators.required]);
   lastNameControl = new FormControl('', [Validators.required]);
-  dniControl = new FormControl('', [Validators.required, Validators.maxLength(8), Validators.minLength(8), customValidator.dniDuplicated(this.data.students)]);
+  dniControl = new FormControl('', [Validators.required, Validators.maxLength(8), Validators.minLength(8), customValidator.dniDuplicated(this.data.students), customValidator.dniJustNumbers()]);
   courseControl = new FormControl('', [Validators.required]);
 
   alumnosForm = new FormGroup({

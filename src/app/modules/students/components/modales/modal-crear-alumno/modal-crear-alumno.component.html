@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>Crear Alumnos</h1>
 <div mat-dialog-content>
     <form  [formGroup]="alumnosForm">
-        <mat-form-field>
+        <mat-form-field class="my-form-field">
             <mat-label>Nombre</mat-label>
             <input 
                 [formControl]="nameControl"
@@ -10,7 +10,7 @@
                 <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="my-form-field">
             <mat-label>Apellido</mat-label>
             <input 
                 [formControl]="lastNameControl"
@@ -19,7 +19,7 @@
                 <mat-error *ngFor="let error of lastNameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="my-form-field">
             <mat-label>Dni</mat-label>
             <input 
                 [formControl]="dniControl"
@@ -28,7 +28,7 @@
                 <mat-error *ngFor="let error of dniControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="my-form-field">
             <mat-label>Curso</mat-label>
             <input 
                 [formControl]="courseControl"
@@ -38,7 +38,7 @@
         </mat-form-field>
 
         <div class="grid-action">
-            <button mat-raised-button color="primary" (click)="guardar()" [disabled]="alumnosForm.invalid">Agregar alumno</button>
+            <button mat-raised-button class="primaryCustom" (click)="guardar()" [disabled]="alumnosForm.invalid">Agregar alumno</button>
         </div>
     </form>
 </div>

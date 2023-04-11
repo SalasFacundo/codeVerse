@@ -1,3 +1,7 @@
+:host{
+    color: rgb(207, 193, 193);
+}
+
 h1{
     margin-bottom: 70px;
 }
@@ -6,4 +10,18 @@ h1{
     display: flex;
     justify-content: center;
     margin-top: 70px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(207, 193, 193) !important;
+}
+
+::ng-deep.mat-form-field-underline, ::ng-deep.mat-form-field-ripple {
+    /*change color of underline*/
+    background-color: rgb(67, 70, 68)!important;}
+
+.my-form-field ::ng-deep .mat-form-field-label,
+.my-form-field ::ng-deep .mat-form-field-placeholder {
+    color: rgb(207, 193, 193) !important;
 }

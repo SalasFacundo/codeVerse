@@ -40,7 +40,9 @@ export class GrillaComponent implements OnInit {
   openDeleteStudent(value: number): void {
     const dialog = this.matDialog.open(DeleteStudentComponent);
     dialog.afterClosed().subscribe((valor) => {
-      this.dataSource = this.dataSource.filter((item: any) => item.dni !== value)
+      if(valor == 'delete'){
+        this.dataSource = this.dataSource.filter((item: any) => item.dni !== value);
+      }
     })
   }
 

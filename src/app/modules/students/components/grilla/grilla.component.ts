@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteStudentComponent } from '../modales/delete-student/delete-student.component';
 import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-crear-alumno.component';
@@ -10,20 +10,16 @@ import { ModifyStudentComponent } from '../modales/modify-student/modify-student
   templateUrl: './grilla.component.html',
   styleUrls: ['./grilla.component.scss']
 })
-export class GrillaComponent implements OnInit, OnDestroy {
+export class GrillaComponent implements OnInit {
 
   readonly studentsUrl: string = '/assets/data/json/students.json';
-  displayedColumns: string[] = ['dni', 'name', 'lastName', 'course'];
+  displayedColumns: string[] = ['dni', 'fullName', 'course'];
   dataSource: any;
   isAdmin: any;
   value: any;
 
   constructor(private matDialog: MatDialog,
     private http: HttpClient) { }
-
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnInit(): void {
     this.http.get<any[]>(this.studentsUrl).subscribe(data => {
@@ -32,7 +28,7 @@ export class GrillaComponent implements OnInit, OnDestroy {
   }
 
   openFormCreateStudent(): void {
-    const dialog = this.matDialog.open(ModalCrearAlumnoComponent);
+    const dialog = this.matDialog.open(ModalCrearAlumnoComponent, { data: {students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
         valor.id = (this.getLastId() + 1)
@@ -49,7 +45,7 @@ export class GrillaComponent implements OnInit, OnDestroy {
   }
 
   openModifyStudent(value: any): void {
-    const dialog = this.matDialog.open(ModifyStudentComponent, { data: value });
+    const dialog = this.matDialog.open(ModifyStudentComponent, { data: {idSelected: value, students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
         this.replaceObjectById(this.dataSource, valor)

@@ -7,7 +7,7 @@
                 [formControl]="nameControl"
                 type="text" 
                 matInput>
-                <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+                <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>               
         </mat-form-field>
 
         <mat-form-field>

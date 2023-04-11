@@ -2,6 +2,7 @@ import { Input, OnInit } from '@angular/core';
 import {Component, Inject} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { customValidator } from 'src/app/Validators/customValidators';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ModalCrearAlumnoComponent implements OnInit {
 
   nameControl = new FormControl('', [Validators.required]);
   lastNameControl = new FormControl('', [Validators.required]);
-  dniControl = new FormControl('', [Validators.required, Validators.minLength(8)]);
+  dniControl = new FormControl('', [Validators.required, Validators.maxLength(8), Validators.minLength(8), customValidator.dniDuplicated(this.data.students)]);
   courseControl = new FormControl('', [Validators.required]);
 
   alumnosForm = new FormGroup({
@@ -25,8 +26,10 @@ export class ModalCrearAlumnoComponent implements OnInit {
     dni: this.dniControl,
     course: this.courseControl
   })
-  constructor(private dialogRef: MatDialogRef<ModalCrearAlumnoComponent>) { }
+  constructor(private dialogRef: MatDialogRef<ModalCrearAlumnoComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
+  
   ngOnInit(): void {
   }
 

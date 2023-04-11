@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModifyStudentComponent } from './components/modales/modify-student/modify-student.component';
 import { ControlErrorMessagesPipe } from '../../pipes/control-error-messages.pipe';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { DirectivesModule } from 'src/app/directives/directives.module';
 
 
 @NgModule({
@@ -28,8 +30,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     GrillaComponent,
     ModalCrearAlumnoComponent,
     DeleteStudentComponent,
-    ModifyStudentComponent,
-    ControlErrorMessagesPipe],
+    ModifyStudentComponent],
   imports: [
     CommonModule,
     NgbModule,
@@ -46,7 +47,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     FormsModule,
     MatInputModule,
     HttpClientModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    PipesModule,
+    DirectivesModule
+    
   ],
   exports: [
     GrillaComponent,

@@ -9,7 +9,9 @@ export class ControlErrorMessagesPipe implements PipeTransform {
 
     const opciones: Record<string, string> = {
       required: 'Este campo es requerido',
-      minlength: `Este campo debe tener al menos ${error.value.requiredLength} caracteres`
+      minlength: `Este campo debe tener ${error.value.requiredLength} caracteres`,
+      maxlength: `Este campo debe tener ${error.value.requiredLength} caracteres`,
+      dniDuplicated: 'El dni ya se encuentra',
     }
         
     return opciones[error.key];

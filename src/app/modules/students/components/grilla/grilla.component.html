@@ -2,7 +2,7 @@
     
     <div class="grid-action">
         <button 
-            mat-raised-button color="primary" 
+            mat-raised-button class="primaryCustom" 
             (click)="openFormCreateStudent()">
             Agregar alumno
         </button>
@@ -17,27 +17,22 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
 
         <ng-container matColumnDef="dni">
-            <th class="list-head" mat-header-cell *matHeaderCellDef> Dni </th>
+            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Dni </th>
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.dni}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="name">
-            <th class="list-head" mat-header-cell *matHeaderCellDef> Nombre </th>
-            <td class="list-body" mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="lastName">
-            <th class="list-head" mat-header-cell *matHeaderCellDef> Apellido </th>
-            <td class="list-body" mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        <ng-container matColumnDef="fullName">
+            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Nombre y Apellido </th>
+            <td class="list-body" mat-cell *matCellDef="let element"> {{element.name | fullName:element.lastName}} </td>
         </ng-container>
 
         <ng-container matColumnDef="course">
-            <th class="list-head" mat-header-cell *matHeaderCellDef> Curso </th>
+            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Curso </th>
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.course}} </td>
         </ng-container>
 
         <ng-container *ngIf="isAdmin" matColumnDef="action">
-            <th class="list-head" mat-header-cell *matHeaderCellDef> Accion </th>
+            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Accion </th>
             <td class="list-body" mat-cell *matCellDef="let element">
                     <div class="actions">
                         <button mat-mini-fab color="warn" (click)="openDeleteStudent(element.dni)">

@@ -1,10 +1,13 @@
 .list-body{
     text-align: center;
+    background-color: rgb(39, 40, 45) !important;
+    color: rgb(207, 193, 193);
 }
 .list-head{
     text-align: center;
     width: 20%;
-    background-color: rgb(201, 198, 189) !important;
+    background-color: rgb(39, 40, 45) !important;
+    color: rgb(179, 170, 170);
 }
 .actions{
     display: flex;
@@ -18,8 +21,25 @@
 }
 .grid-action{
     margin: 30px 0;
+
+    button{
+        background-color: rgb(39, 40, 45) !important 
+    }
 }
 
 .icon-display{
     font-size: 18px;
+}
+
+mat-slide-toggle{
+    color: white;
+}
+
+.mat-table{    
+    border-radius: 8px;
+    overflow:hidden !important;
+}
+
+table{
+    background-color: rgb(39, 40, 45) !important;
 }

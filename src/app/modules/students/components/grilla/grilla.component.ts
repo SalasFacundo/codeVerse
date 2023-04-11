@@ -4,6 +4,7 @@ import { DeleteStudentComponent } from '../modales/delete-student/delete-student
 import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-crear-alumno.component';
 import { HttpClient } from '@angular/common/http';
 import { ModifyStudentComponent } from '../modales/modify-student/modify-student.component';
+import { Student } from '../../models/student';
 
 @Component({
   selector: 'app-grilla',
@@ -14,15 +15,15 @@ export class GrillaComponent implements OnInit {
 
   readonly studentsUrl: string = '/assets/data/json/students.json';
   displayedColumns: string[] = ['dni', 'fullName', 'course'];
-  dataSource: any;
-  isAdmin: any;
-  value: any;
+  dataSource: Student[] = [];
+  isAdmin: boolean = false;
+  value: number = 0;
 
   constructor(private matDialog: MatDialog,
     private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any[]>(this.studentsUrl).subscribe(data => {
+    this.http.get<Student[]>(this.studentsUrl).subscribe(data => {
       this.dataSource = data;
     });
   }
@@ -41,22 +42,24 @@ export class GrillaComponent implements OnInit {
     const dialog = this.matDialog.open(DeleteStudentComponent);
     dialog.afterClosed().subscribe((valor) => {
       if(valor == 'delete'){
-        this.dataSource = this.dataSource.filter((item: any) => item.dni !== value);
+        this.dataSource = this.dataSource.filter((item: Student) => Number(item.dni) !== value);
       }
     })
   }
 
-  openModifyStudent(value: any): void {
+  openModifyStudent(value: number): void {
     const dialog = this.matDialog.open(ModifyStudentComponent, { data: {idSelected: value, students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
+        console.log(valor)
+        console.log("valor")
         this.replaceObjectById(this.dataSource, valor)
       }
     })
   }
 
-  replaceObjectById(array: any, newObject: any): void {
-    const index = array.findIndex((obj: any) => obj.id === newObject.originalId);
+  replaceObjectById(array: Student[], newObject: any): void {
+    const index = array.findIndex((obj: Student) => obj.id === newObject.originalId);
     if (index !== -1) {
       array[index] = newObject.formValue;
     } else {

@@ -32,9 +32,13 @@ export class ModifyStudentComponent implements OnInit {
       this.loadDate();
   }
 
-  guardar(){
+  save(){
     this.dialogRef.close({formValue: this.alumnosForm.value,
                           originalId: this.data.idSelected.id})
+  }
+
+  cancel(){
+    this.dialogRef.close();
   }
 
   loadDate(){

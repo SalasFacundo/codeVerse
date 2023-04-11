@@ -29,7 +29,7 @@ export class ModifyStudentComponent implements OnInit {
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
-      this.loadDate();
+    this.loadDate();
   }
 
   save(){

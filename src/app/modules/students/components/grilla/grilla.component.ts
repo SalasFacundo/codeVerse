@@ -51,8 +51,6 @@ export class GrillaComponent implements OnInit {
     const dialog = this.matDialog.open(ModifyStudentComponent, { data: {idSelected: value, students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        console.log(valor)
-        console.log("valor")
         this.replaceObjectById(this.dataSource, valor)
       }
     })
@@ -62,6 +60,7 @@ export class GrillaComponent implements OnInit {
     const index = array.findIndex((obj: Student) => obj.id === newObject.originalId);
     if (index !== -1) {
       array[index] = newObject.formValue;
+      array[index].id = newObject.originalId;
     } else {
       throw new Error(`Object with ID ${newObject.id} not found in array`);
     }

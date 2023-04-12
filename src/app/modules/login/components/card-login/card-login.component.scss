@@ -1,3 +1,10 @@
+.login-card{
+    background-color: rgb(39, 40, 45) !important;
+
+    span{
+        color: white;
+    }
+}
 .example-header-image {
     background-image: url('https://cdn-icons-png.flaticon.com/512/1077/1077063.png');
     background-size: cover;
@@ -8,6 +15,7 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 30px !important;
+    
 
     .user{
         margin-bottom: 15px;
@@ -17,4 +25,20 @@
         margin-top: 50px;
         width: 100%;
     }
+
+    input{
+        color: white;
+    }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    color: rgb(207, 193, 193) !important;
+}
+
+::ng-deep.mat-form-field-underline, ::ng-deep.mat-form-field-ripple {
+    background-color: rgb(67, 70, 68)!important;}
+
+.my-form-field ::ng-deep .mat-form-field-label,
+.my-form-field ::ng-deep .mat-form-field-placeholder {
+    color: rgb(207, 193, 193) !important;
 }

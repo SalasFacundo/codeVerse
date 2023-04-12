@@ -1,27 +1,27 @@
 
 <div class="body">
-    <mat-card class="example-card" 
+    <mat-card class="login-card" 
         [style.width.px]="width" 
         [style.height.px]="height" 
         [ngStyle]="{ 'min-width.px':150, 'min-height.px': 350 }">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Login</mat-card-title>
-        <mat-card-subtitle>Registrarse</mat-card-subtitle>
+        <mat-card-title><span>Login</span></mat-card-title>
+        <mat-card-subtitle><span>Registrarse</span></mat-card-subtitle>
     </mat-card-header>   
     <mat-card-content>
         <form class="form">
-            <mat-form-field class="user">
+            <mat-form-field class="user my-form-field">
                 <mat-label>Usuario</mat-label>
-                <input matInput placeholder="Ingrese su usuario">
+                <input matInput>
             </mat-form-field>
         
-            <mat-form-field>
+            <mat-form-field class="my-form-field">
                 <mat-label>Contraseña</mat-label>
-                <input matInput placeholder="Ingrese su contraseña" type="password">
+                <input matInput type="password">
             </mat-form-field>
         
-            <button mat-raised-button color="primary">Ingresar</button>
+            <button mat-raised-button class="primaryCustom">Ingresar</button>
         </form>
     </mat-card-content>
     </mat-card>

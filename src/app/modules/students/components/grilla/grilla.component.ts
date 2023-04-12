@@ -38,11 +38,11 @@ export class GrillaComponent implements OnInit {
     })
   }
 
-  openDeleteStudent(value: number): void {
+  openDeleteStudent(value: string): void {
     const dialog = this.matDialog.open(DeleteStudentComponent);
     dialog.afterClosed().subscribe((valor) => {
       if(valor == 'delete'){
-        this.dataSource = this.dataSource.filter((item: Student) => Number(item.dni) !== value);
+        this.dataSource = this.dataSource.filter((item: Student) => item.dni !== value);
       }
     })
   }

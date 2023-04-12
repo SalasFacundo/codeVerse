@@ -18,11 +18,11 @@ Esta es una plataforma para la administracion de cursos online, diseñada para s
 
 ## Instrucciones para usar
 
-1. Abra consola de comandos.
-2. Ejecute git clone https://github.com/SalasFacundo/1PF-Salas.
+1. Abra consola de comandos (inicio + R -> cmd).
+2. Ejecute "git clone https://github.com/SalasFacundo/1PF-Salas" (sin comillas).
 3. Ingrese a la carpeta clonada desde la consola usando cd (ex: cd nombre_carpeta).
-4. Ejecute npm install.
-5. Ejecute ng serve -o.
+4. Ejecute "npm install" (sin comillas).
+5. Ejecute "ng serve -o" (sin comillas).
 
 En breve el sitio se abrira en su navegador predeterminado.
 

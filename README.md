@@ -33,6 +33,7 @@ En breve el sitio se abrira en su navegador predeterminado.
 	![admin](https://user-images.githubusercontent.com/66442210/231355382-da5b7190-1e7d-43ba-af22-ba7c73776fa1.png)<br><br><br>
 
 - Grilla vista por estudiante<br>
+
 	![student](https://user-images.githubusercontent.com/66442210/231355569-fab95ae7-c593-4d7a-910f-635610a8ca63.png)
 <br>
 

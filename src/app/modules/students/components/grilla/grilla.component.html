@@ -1,18 +1,17 @@
 <div class="container">
     
     <div class="grid-action">
-        <button 
-            mat-raised-button class="primaryCustom" 
-            (click)="openFormCreateStudent()">
-            Agregar alumno
-        </button>
-
         <mat-slide-toggle
             class="m-4"
             [(ngModel)]="isAdmin" 
             (change)="toggleSlider()">
             Vista administrador (Solo para pruebas)
         </mat-slide-toggle>
+        <button *ngIf="isAdmin"
+            mat-raised-button class="primaryCustom" 
+            (click)="openFormCreateStudent()">
+            Agregar alumno
+        </button>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
 

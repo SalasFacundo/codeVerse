@@ -38,7 +38,7 @@
         </mat-form-field>
 
         <div class="grid-action">
-            <button mat-raised-button class="primaryCustom" (click)="guardar()" [disabled]="true">Agregar alumno</button>
+            <button mat-raised-button class="primaryCustom" (click)="guardar()" [disabled]="alumnosForm.invalid">Agregar alumno</button>
         </div>
     </form>
 </div>

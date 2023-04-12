@@ -12,7 +12,8 @@ export class ControlErrorMessagesPipe implements PipeTransform {
       minlength: `Este campo debe tener ${error.value.requiredLength} caracteres`,
       maxlength: `Este campo debe tener ${error.value.requiredLength} caracteres`,
       dniDuplicated: 'El dni ya se encuentra',
-      justNumbers: 'El dni solo puede contener numeros'
+      justNumbers: 'Solo puede contener numeros',
+      justLetters: 'Solo puede contener letras'
     }
         
     return opciones[error.key];

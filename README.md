@@ -13,7 +13,7 @@ Esta es una plataforma con fines educativos, para la administracion de cursos on
 
 ## Tecnologías utilizadas
 
-**Front-end:** Angular, Angular material, CSS.
+**Front-end:** Angular, Angular material, CSS.<br>
 **Back-end:** json.
 
 ## Instrucciones para usar

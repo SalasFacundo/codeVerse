@@ -1,6 +1,6 @@
 # CodeVerse
 
-Esta es una plataforma para la administracion de cursos online, diseñada para ser utilizada por profesores, aministradores de escuelas o universidades y alumnos. La plataforma permite a los usuarios agregar, editar y eliminar información de los alumnos y clases, como rol de profesor o adminsitrador, y a los alumnos les permite ver sus claes, y modificar sus datos.
+Esta es una plataforma para la administracion de cursos online, diseñada para ser utilizada por profesores, aministradores de escuelas o universidades y alumnos. La plataforma permite a los usuarios agregar, editar y eliminar información de los alumnos y clases, como rol de profesor o adminsitrador, y a los alumnos les permite ver sus clases, y modificar sus datos.
 
 ## Características
 
@@ -11,7 +11,7 @@ Esta es una plataforma para la administracion de cursos online, diseñada para s
 - Ver información de los alumnos, profesores y clases de forma ordenada y estructurada.
 - Fácil de usar e intuitiva para alumnos, profesores y administradores.
 
-##Tecnologías utilizadas
+## Tecnologías utilizadas
 
 **Front-end:** Angular, Angular material, CSS.
 **Back-end:** json.

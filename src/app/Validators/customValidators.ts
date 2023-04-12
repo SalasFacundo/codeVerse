@@ -18,14 +18,14 @@ export class customValidator {
         };
     }
 
-    static dniJustNumbers() {
+    static justNumbers() {
         
         return (control: AbstractControl): any => {
             const regex = /^[0-9]+$/;
             if (control.value.toString().match(regex) !== null) {
                 return null;
             } else {
-                return { dniJustNumbers: true };
+                return { justNumbers: true };
             }
         };
     }

@@ -5,6 +5,7 @@ import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-c
 import { HttpClient } from '@angular/common/http';
 import { ModifyStudentComponent } from '../modales/modify-student/modify-student.component';
 import { Student } from '../../models/student';
+import { DatosService } from 'src/app/services/datos.service';
 
 @Component({
   selector: 'app-grilla',
@@ -18,12 +19,16 @@ export class GrillaComponent implements OnInit {
   dataSource: Student[] = [];
   isAdmin: boolean = false;
   value: number = 0;
+  articulos: any;
 
   constructor(private matDialog: MatDialog,
-    private http: HttpClient) { }
+              private http: HttpClient,
+              private datosService: DatosService
+    ) { }
 
   ngOnInit(): void {
-    this.http.get<Student[]>(this.studentsUrl).subscribe(data => {
+
+    this.datosService.getStudents().subscribe(data => {
       this.dataSource = data;
     });
   }

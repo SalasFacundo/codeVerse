@@ -38,7 +38,7 @@ export class GrillaComponent implements OnInit {
     })
   }
 
-  openDeleteStudent(value: string): void {
+  openDeleteStudent(value: number): void {
     const dialog = this.matDialog.open(DeleteStudentComponent);
     dialog.afterClosed().subscribe((valor) => {
       if(valor == 'delete'){

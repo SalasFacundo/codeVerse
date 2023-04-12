@@ -29,4 +29,16 @@ export class customValidator {
             }
         };
     }
+
+    static justLetters() {
+        
+        return (control: AbstractControl): any => {
+            const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+$/;
+            if (control.value.match(regex) !== null) {
+                return null;
+            } else {
+                return { justLetters: true };
+            }
+        };
+    }
 }

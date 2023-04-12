@@ -1,27 +1,27 @@
 # CodeVerse
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+Esta es una plataforma para la administracion de cursos online, diseñada para ser utilizada por profesores, aministradores de escuelas o universidades y alumnos. La plataforma permite a los usuarios agregar, editar y eliminar información de los alumnos y clases, como rol de profesor o adminsitrador, y a los alumnos les permite ver sus claes, y modificar sus datos.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Agregar información de los alumnos, incluyendo su nombre, apellido, documento, y curso al que asiste.
+- Agregar información de clases.
+- Modificar información existente.
+- Eliminar información de los alumnos, profesores y clases,.
+- Ver información de los alumnos, profesores y clases de forma ordenada y estructurada.
+- Fácil de usar e intuitiva para alumnos, profesores y administradores.
 
-## Code scaffolding
+##Tecnologías utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Front-end:** Angular, Angular material, CSS.
+**Back-end:** json.
 
-## Build
+## Instrucciones para usar
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Abra consola de comandos.
+2. Ejecute git clone https://github.com/SalasFacundo/1PF-Salas.
+3. Ingrese a la carpeta clonada desde la consola usando cd (ex: cd nombre_carpeta).
+4. Ejecute npm install.
+5. Ejecute ng serve -o.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+En breve el sitio se abrira en su navegador predeterminado.

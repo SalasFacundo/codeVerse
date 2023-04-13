@@ -26,8 +26,10 @@
             color: rgb(243, 243, 130);
         }
 
+        .subtitle2::second {
+            color: rgb(243, 243, 130);
+        }
     }
-
 
     .items {
         font-size: 20px;
@@ -38,19 +40,19 @@
         div {
             margin-top: 40px;
 
-            a{
+            a {
                 text-decoration: none;
                 color: rgb(243, 243, 130);
             }
 
-            a:hover{
+            a:hover {
                 border-bottom: 1px solid rgb(243, 243, 130);
             }
-            
+
         }
 
-        
+
     }
 
-    
+
 }

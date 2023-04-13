@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-login',
@@ -11,9 +12,14 @@ export class CardLoginComponent implements OnInit {
   width: number=600;
   @Input()
   height: number=350;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  redirect(){
+    alert("entra")
+    this.router.navigate(['/students']);
   }
 
 }

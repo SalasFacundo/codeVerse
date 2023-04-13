@@ -6,12 +6,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { NavbarModule } from '../navbar/navbar.module';
+import { AppRoutingModule } from 'src/app/app.routing.module';
 
 
 
 @NgModule({
   declarations: [
-    CardLoginComponent
+    CardLoginComponent,
+    LoginPageComponent
   ],
   imports: [
     CommonModule,
@@ -19,10 +23,13 @@ import {MatDividerModule} from '@angular/material/divider';
     MatButtonModule,
     MatFormFieldModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    NavbarModule,
+    AppRoutingModule
   ],
   exports: [
-    CardLoginComponent
+    CardLoginComponent,
+    LoginPageComponent    
     ]
 })
 export class LoginModule { }

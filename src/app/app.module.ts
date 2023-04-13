@@ -10,7 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { NavbarModule } from './modules/navbar/navbar.module';
-
+import { AppRoutingModule } from './app.routing.module';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,9 @@ import { NavbarModule } from './modules/navbar/navbar.module';
     MatListModule,
     LoginModule,
     NavbarModule,
+    AppRoutingModule,
+    RouterModule.forRoot([]),
+    AppRoutingModule
     
   ],
   providers: [],

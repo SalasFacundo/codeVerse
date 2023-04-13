@@ -6,7 +6,7 @@
     }
 }
 .example-header-image {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/1077/1077063.png');
+    background-image: url('../../../../../assets/img/user-icon.png');
     background-size: cover;
 }
 
@@ -36,7 +36,7 @@
 }
 
 ::ng-deep.mat-form-field-underline, ::ng-deep.mat-form-field-ripple {
-    background-color: rgb(67, 70, 68)!important;}
+    background-color: rgb(245, 245, 159)!important;}
 
 .my-form-field ::ng-deep .mat-form-field-label,
 .my-form-field ::ng-deep .mat-form-field-placeholder {

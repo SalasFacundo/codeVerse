@@ -23,6 +23,11 @@
             <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Nombre y Apellido </th>
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.name | fullName:element.lastName}} </td>
         </ng-container>
+        
+        <ng-container matColumnDef="email">
+            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Email </th>
+            <td class="list-body" mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
 
         <ng-container matColumnDef="course">
             <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Curso </th>

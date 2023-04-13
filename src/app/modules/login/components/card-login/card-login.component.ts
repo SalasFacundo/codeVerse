@@ -1,6 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/modules/students/models/user';
+import { DatosService } from 'src/app/services/datos.service';
+import { UserLoggedService } from 'src/app/services/user-logged.service';
 import { customValidator } from 'src/app/Validators/customValidators';
 
 @Component({
@@ -15,17 +19,25 @@ export class CardLoginComponent implements OnInit {
 
   @Input()
   height: number=350;
-  constructor(private router: Router) { }
+
+  users: User[] = [];
+  
+  constructor(private router: Router,
+              private datosService: DatosService,
+              private userLogged: UserLoggedService) { }
 
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   passwordControl = new FormControl('', [Validators.required]);
 
   loginForm = new FormGroup({
     email: this.emailControl,
-    passwordName: this.passwordControl
+    password: this.passwordControl
   })
 
   ngOnInit(): void {
+    this.datosService.getUsers().subscribe(data => {
+      this.users = data;
+    });
   }
 
   redirect(){
@@ -33,4 +45,17 @@ export class CardLoginComponent implements OnInit {
     this.router.navigate(['/students']);
   }
 
+  loginValidator(){
+    console.log("entra")
+    this.users.forEach(user => {
+      if(user.email == this.emailControl.value && user.password == this.passwordControl.value)
+      {
+        this.userLogged.setUser(user);
+        this.router.navigate(['/students']);
+        console.log("USUARIO")
+        console.log(this.userLogged.getUser())
+      }
+    });
+    
+  }
 }

@@ -15,7 +15,7 @@ import { DatosService } from 'src/app/services/datos.service';
 export class GrillaComponent implements OnInit {
 
   readonly studentsUrl: string = '/assets/data/json/students.json';
-  displayedColumns: string[] = ['dni', 'fullName', 'course'];
+  displayedColumns: string[] = ['dni', 'fullName', 'email', 'course'];
   dataSource: Student[] = [];
   isAdmin: boolean = false;
   value: number = 0;

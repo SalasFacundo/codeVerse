@@ -8,12 +8,16 @@ import { Student } from '../modules/students/models/student';
 })
 export class DatosService {
 
-  private url = "./assets/data/json/students.json"
+  private urlStudents = "./assets/data/json/students.json"
+  private urlUsers = "./assets/data/json/users.json"
 
   constructor( private http: HttpClient) { }
 
   
   getStudents(): Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get(this.urlStudents);
+  }
+  getUsers(): Observable<any> {
+    return this.http.get(this.urlUsers);
   }
 }

@@ -28,7 +28,8 @@
                 [formControl]="passwordControl">
                 <mat-error *ngFor="let error of passwordControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
             </mat-form-field>
-            <button mat-raised-button class="primaryCustom" routerLink="/students" [disabled]="loginForm.invalid">Ingresar</button>
+            <!-- <button mat-raised-button class="primaryCustom" routerLink="/students" [disabled]="loginForm.invalid">Ingresar</button> -->
+            <button mat-raised-button class="primaryCustom" (click)="loginValidator()" [disabled]="false">Ingresar</button>
         </form>
     </mat-card-content>
     </mat-card>

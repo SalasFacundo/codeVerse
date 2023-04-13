@@ -1,7 +1,10 @@
-export interface Student {
+import { User } from "./user";
+
+export interface Student extends User{
     id: number;
     dni: number
     name: string;
     lastName: string;
-    curso: number;
+    email: string
+    isAdmin: boolean
 }

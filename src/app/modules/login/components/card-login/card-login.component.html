@@ -10,17 +10,25 @@
         <mat-card-subtitle><span>Registrarse</span></mat-card-subtitle>
     </mat-card-header>   
     <mat-card-content>
-        <form class="form">
+        <form class="form" [formGroup]="loginForm">
             <mat-form-field class="user my-form-field">
-                <mat-label>Usuario</mat-label>
-                <input matInput>
+                <mat-label>Email</mat-label>
+                <input 
+                matInput 
+                type="text"
+                [formControl]="emailControl">
+                <mat-error *ngFor="let error of emailControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
             </mat-form-field>
         
             <mat-form-field class="my-form-field">
                 <mat-label>Contraseña</mat-label>
-                <input matInput type="password">
+                <input 
+                matInput 
+                type="password"
+                [formControl]="passwordControl">
+                <mat-error *ngFor="let error of passwordControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
             </mat-form-field>
-            <button mat-raised-button class="primaryCustom" routerLink="/students">Ingresar</button>
+            <button mat-raised-button class="primaryCustom" routerLink="/students" [disabled]="loginForm.invalid">Ingresar</button>
         </form>
     </mat-card-content>
     </mat-card>

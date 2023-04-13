@@ -9,6 +9,7 @@ export class ControlErrorMessagesPipe implements PipeTransform {
 
     const opciones: Record<string, string> = {
       required: 'Este campo es requerido',
+      email: 'Ingrese un email valido',
       minlength: `Este campo debe tener ${error.value.requiredLength} caracteres`,
       maxlength: `Este campo debe tener ${error.value.requiredLength} caracteres`,
       dniDuplicated: 'El dni ya se encuentra',

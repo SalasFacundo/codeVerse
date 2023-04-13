@@ -9,7 +9,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NavbarModule } from '../navbar/navbar.module';
 import { AppRoutingModule } from 'src/app/app.routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { AppRoutingModule } from 'src/app/app.routing.module';
     MatCardModule,
     MatDividerModule,
     NavbarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    PipesModule
   ],
   exports: [
     CardLoginComponent,

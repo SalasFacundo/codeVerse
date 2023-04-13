@@ -1,11 +1,5 @@
 <div class="container">
-    <div class="grid-action">
-        <mat-slide-toggle
-            class="m-4"
-            [(ngModel)]="isAdmin" 
-            (change)="toggleSlider()">
-            Vista administrador (Solo para pruebas)
-        </mat-slide-toggle>
+    <div class="grid-action">        
         <button *ngIf="isAdmin"
             mat-raised-button class="primaryCustom" 
             (click)="openFormCreateStudent()">

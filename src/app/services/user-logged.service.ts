@@ -13,7 +13,7 @@ export class UserLoggedService {
     lastName: "",
     email: "",
     password: "",
-    isAdmin: false
+    isAdmin: true
   };
 
   constructor() { }

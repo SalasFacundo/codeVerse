@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/modules/students/models/user';
 import { DatosService } from 'src/app/services/datos.service';
@@ -24,7 +25,8 @@ export class CardLoginComponent implements OnInit {
   
   constructor(private router: Router,
               private datosService: DatosService,
-              private userLogged: UserLoggedService) { }
+              private userLogged: UserLoggedService,
+              private _snackBar: MatSnackBar) { }
 
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   passwordControl = new FormControl('', [Validators.required]);
@@ -46,16 +48,22 @@ export class CardLoginComponent implements OnInit {
   }
 
   loginValidator(){
-    console.log("entra")
+    let logged = false;
     this.users.forEach(user => {
       if(user.email == this.emailControl.value && user.password == this.passwordControl.value)
       {
         this.userLogged.setUser(user);
+        logged = true;
         this.router.navigate(['/students']);
-        console.log("USUARIO")
-        console.log(this.userLogged.getUser())
+        this._snackBar.dismiss();   
       }
     });
+    if(this.loginForm.valid && !logged){
+      this._snackBar.open("Email o contraseña incorrectos", "Cerrar", {
+        horizontalPosition: "center",
+        verticalPosition: "top",
+      });
+    }
     
   }
 }

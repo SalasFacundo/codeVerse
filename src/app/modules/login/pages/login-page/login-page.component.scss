@@ -1,4 +1,4 @@
-.container-fluid{
+.container-fluid {
     width: 100%;
     height: 100%;
     display: flex;
@@ -8,9 +8,9 @@
     flex-direction: column;
     background-image: url("../../../../../assets/img/w3.jpg");
     background-size: cover;
-  background-position: center;
-    
-    .title{
+    background-position: center;
+
+    .title {
         display: flex;
         color: grey;
         font-size: 40px;
@@ -18,24 +18,39 @@
         margin-bottom: 60px;
         font-family: 'Schibsted Grotesk', sans-serif;
 
-        .subtitle1{
+        .subtitle1 {
             color: white
         }
-        .subtitle2{
+
+        .subtitle2 {
             color: rgb(243, 243, 130);
         }
 
     }
 
 
-    .items{
+    .items {
         font-size: 20px;
         font-weight: 10px;
         letter-spacing: 1px;
         text-align: center;
-        div{
+
+        div {
             margin-top: 40px;
-            color: rgb(243, 243, 130);
+
+            a{
+                text-decoration: none;
+                color: rgb(243, 243, 130);
+            }
+
+            a:hover{
+                border-bottom: 1px solid rgb(243, 243, 130);
+            }
+            
         }
+
+        
     }
+
+    
 }

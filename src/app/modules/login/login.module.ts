@@ -11,6 +11,8 @@ import { NavbarModule } from '../navbar/navbar.module';
 import { AppRoutingModule } from 'src/app/app.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     NavbarModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    MatSnackBarModule
   ],
   exports: [
     CardLoginComponent,

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ModifyStudentComponent } from '../modales/modify-student/modify-student.component';
 import { Student } from '../../models/student';
 import { DatosService } from 'src/app/services/datos.service';
+import { UserLoggedService } from 'src/app/services/user-logged.service';
 
 @Component({
   selector: 'app-grilla',
@@ -23,7 +24,8 @@ export class GrillaComponent implements OnInit {
 
   constructor(private matDialog: MatDialog,
               private http: HttpClient,
-              private datosService: DatosService
+              private datosService: DatosService,
+              private userLogged: UserLoggedService
     ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,8 @@ export class GrillaComponent implements OnInit {
     this.datosService.getStudents().subscribe(data => {
       this.dataSource = data;
     });
+    this.isAdmin = this.userLogged.user.isAdmin;
+    this.addColumns();
   }
 
   openFormCreateStudent(): void {
@@ -76,7 +80,7 @@ export class GrillaComponent implements OnInit {
     return this.dataSource[this.dataSource.length - 1].id;
   }
 
-  toggleSlider() {
+  addColumns() {
     if (this.isAdmin) {
       this.displayedColumns.push('action')
     } else if (this.displayedColumns.indexOf('action') != -1) {

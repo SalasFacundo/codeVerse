@@ -6,15 +6,8 @@ import { User } from '../modules/students/models/user';
 })
 export class UserLoggedService {
 
-  user: User = {
-    id: 1,
-    dni: 1,
-    name: "",
-    lastName: "",
-    email: "",
-    password: "",
-    isAdmin: true
-  };
+  user!: User ;
+  isAuthenticated: boolean = false;
 
   constructor() { }
 

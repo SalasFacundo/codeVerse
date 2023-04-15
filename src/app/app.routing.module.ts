@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './modules/login/pages/login-page/login-page.component';
 import { NavbarComponent } from './modules/navbar/components/navbar/navbar.component';
 import { AuthGuard } from './guards/auth-guard';
+import { LoginGuard } from './guards/login-guard';
 
 const routes: Routes = [
-  { path: '', component: LoginPageComponent },
-  { path: 'login', component: LoginPageComponent },
+  { path: '', component: LoginPageComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginPageComponent, canActivate: [LoginGuard] },
   { path: 'students', component: NavbarComponent, canActivate: [AuthGuard] },
 ];
 

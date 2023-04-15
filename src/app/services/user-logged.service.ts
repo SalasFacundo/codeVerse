@@ -9,14 +9,24 @@ export class UserLoggedService {
   user!: User ;
   isAuthenticated: boolean = false;
 
-  constructor() { }
+  constructor() {
+    if(window.localStorage['loggedUser']){
+      this.isAuthenticated = true;      
+    }
+   }
 
-  setUser(user: User): void {
+  logIn(user: User): void {
     this.user = user; 
+    this.isAuthenticated = true;
+    window.localStorage.setItem('loggedUser', JSON.stringify(user));
+  }
+
+  logOut(): void{
+    this.isAuthenticated = false;
+    window.localStorage.clear();
   }
 
   getUser(): User {
-    return this.user;
+    return JSON.parse(window.localStorage['loggedUser']);
   }
-
 }

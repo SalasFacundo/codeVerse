@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosService } from 'src/app/services/datos.service';
+import { UserLoggedService } from 'src/app/services/user-logged.service';
 
 @Component({
   selector: 'app-login-page',
@@ -7,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datos: DatosService, private loginService: UserLoggedService) { }
 
   ngOnInit(): void {
-    alert("Usuarios para probar en la consola del navegador");
-    console.log("Usuarios de prueba\n\n Admin: \n User: admin@admin \n Password: admin \n\n NO admin: \n User: ana.garcia@example.com \n Password: password")
+    this.loginService.logOut()
+    console.log("Usuarios de prueba\n\n Admin: \n User: admin@admin\n Password: admin\n\n NO admin: \n User: ana.garcia@example.com\n Password: password")
   }
 
 }

@@ -42,17 +42,12 @@ export class CardLoginComponent implements OnInit {
     });
   }
 
-  redirect(){
-    alert("entra")
-    this.router.navigate(['/students']);
-  }
-
   loginValidator(){
     let logged = false;
     this.users.forEach(user => {
       if(user.email == this.emailControl.value && user.password == this.passwordControl.value)
       {
-        this.userLogged.setUser(user);
+        this.userLogged.logIn(user);
         logged = true;
         this.router.navigate(['/students']);
         this._snackBar.dismiss();   

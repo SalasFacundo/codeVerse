@@ -28,6 +28,7 @@
                 [formControl]="passwordControl">
                 <mat-error *ngFor="let error of passwordControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
             </mat-form-field>
+            <span style="color: red;">Usuarios de prueba en la consola del navegador</span>
             <button mat-raised-button class="primaryCustom" (click)="loginValidator()" [disabled]="loginForm.invalid">Ingresar</button>
         </form>
     </mat-card-content>

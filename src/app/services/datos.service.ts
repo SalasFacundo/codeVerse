@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Student } from '../modules/students/models/student';
+import { User } from '../modules/students/models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,11 @@ export class DatosService {
   }
   getUsers(): Observable<any> {
     return this.http.get(this.urlUsers);
+  }
+
+  getUsersById(id: number): Observable<User[]> {
+    return this.http.get<User[]>(this.urlUsers).pipe(
+      map((users) => users.filter(user => user.id === id))
+    );
   }
 }

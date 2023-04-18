@@ -10,6 +10,7 @@ import { UserLoggedService } from 'src/app/services/user-logged.service';
 export class NavbarComponent implements OnInit {
 
   isOpened: boolean = false;
+  replace : boolean = true;
 
   constructor(private loginService: UserLoggedService, private router: Router) { }
 
@@ -19,5 +20,11 @@ export class NavbarComponent implements OnInit {
   logOut(){
     this.loginService.logOut();
     this.router.navigate(['/login']);
+  }
+
+  navigateTo(url: string){
+    console.log("REDIRECCIONANDO A");
+    console.log(url)
+    this.router.navigate([url]);
   }
 }

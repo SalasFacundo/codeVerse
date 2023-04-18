@@ -11,6 +11,7 @@ export class DatosService {
 
   private urlStudents = "./assets/data/json/students.json"
   private urlUsers = "./assets/data/json/users.json"
+  private urlCourses = "./assets/data/json/courses.json"
 
   constructor( private http: HttpClient) { }
 
@@ -21,8 +22,15 @@ export class DatosService {
   getUsers(): Observable<any> {
     return this.http.get(this.urlUsers);
   }
-
+  getCourses(): Observable<any> {
+    return this.http.get(this.urlCourses);
+  }
   getUsersById(id: number): Observable<User[]> {
+    return this.http.get<User[]>(this.urlUsers).pipe(
+      map((users) => users.filter(user => user.id === id))
+    );
+  }
+  getCoursesByUser(id: number): Observable<User[]> {
     return this.http.get<User[]>(this.urlUsers).pipe(
       map((users) => users.filter(user => user.id === id))
     );

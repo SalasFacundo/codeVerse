@@ -7,6 +7,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { StudentsModule } from '../students/students.module';
 import { MatButtonModule } from '@angular/material/button';
+import { AppRoutingModule } from 'src/app/app.routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -24,7 +26,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatIconModule,
     StudentsModule,
-    MatButtonModule
+    MatButtonModule,    
+    AppRoutingModule,
+    RouterModule.forChild([]),    
   ],
   exports: [
     NavbarComponent

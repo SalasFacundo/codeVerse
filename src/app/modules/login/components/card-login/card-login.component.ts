@@ -49,7 +49,7 @@ export class CardLoginComponent implements OnInit {
       {
         this.userLogged.logIn(user);
         logged = true;
-        this.router.navigate(['/students']);
+        this.router.navigate(['/inicio']);
         this._snackBar.dismiss();   
       }
     });

@@ -4,11 +4,11 @@
             <h1 class="title">Cursos de programación</h1>
         </mat-toolbar>
         <mat-nav-list>
-            <mat-list-item>
-                <a mat-list-item-link href="#">Inicio</a>
+            <mat-list-item routerLink="/inicio">
+                Inicio
             </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item-link href="#">Cursos disponibles</a>
+            <mat-list-item routerLink="/inicio/courses">
+                Cursos
             </mat-list-item>
             <mat-list-item>
                 <a mat-list-item-link href="#">Inscripciones</a>
@@ -32,7 +32,6 @@
             </button>
             <span>CodeVerse</span>
         </mat-toolbar>
-
-        <app-grilla></app-grilla>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

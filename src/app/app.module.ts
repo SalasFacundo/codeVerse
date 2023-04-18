@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { NavbarModule } from './modules/navbar/navbar.module';
 import { AppRoutingModule } from './app.routing.module';
 import { RouterModule, Routes } from '@angular/router';
+import { CoursesModule } from './modules/courses/courses.module';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,9 @@ import { RouterModule, Routes } from '@angular/router';
     MatListModule,
     LoginModule,
     NavbarModule,
-    AppRoutingModule,
     RouterModule.forRoot([]),
-    AppRoutingModule
+    AppRoutingModule,
+    CoursesModule
     
   ],
   providers: [],

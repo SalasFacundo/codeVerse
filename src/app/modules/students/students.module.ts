@@ -22,6 +22,7 @@ import { ControlErrorMessagesPipe } from '../../pipes/control-error-messages.pip
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { DirectivesModule } from 'src/app/directives/directives.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { DirectivesModule } from 'src/app/directives/directives.module';
     HttpClientModule,
     MatSlideToggleModule,
     PipesModule,
-    DirectivesModule
+    DirectivesModule,
+    RouterModule
     
   ],
   exports: [

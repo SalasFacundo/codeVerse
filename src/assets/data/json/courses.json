@@ -1,0 +1,577 @@
+[
+  {
+    "id": 1,
+    "name": "Introducción a Python",
+    "capacity": 50,
+    "teachers": [
+      {
+        "id": 1,
+        "name": "Juan",
+        "lastName": "Pérez",
+        "email": "juan.perez@example.com",
+        "password": "password1",
+        "isAdmin": true
+      },
+      {
+        "id": 2,
+        "name": "María",
+        "lastName": "González",
+        "email": "maria.gonzalez@example.com",
+        "password": "password2",
+        "isAdmin": true
+      },
+      {
+        "id": 3,
+        "name": "Carlos",
+        "lastName": "Sánchez",
+        "email": "carlos.sanchez@example.com",
+        "password": "password3",
+        "isAdmin": true
+      }
+    ],
+    "students": [
+      {
+        "id": 1,
+        "name": "Pedro",
+        "lastName": "Martínez",
+        "email": "pedro.martinez@example.com",
+        "password": "password1",
+        "isAdmin": false
+      },
+      {
+        "id": 2,
+        "name": "Ana",
+        "lastName": "López",
+        "email": "ana.lopez@example.com",
+        "password": "password2",
+        "isAdmin": false
+      },
+      {
+        "id": 3,
+        "name": "Juan",
+        "lastName": "Pérez",
+        "email": "juan.perez@example.com",
+        "password": "password3",
+        "isAdmin": false
+      },
+      {
+        "id": 4,
+        "name": "Laura",
+        "lastName": "González",
+        "email": "laura.gonzalez@example.com",
+        "password": "password4",
+        "isAdmin": false
+      },
+      {
+        "id": 5,
+        "name": "Carlos",
+        "lastName": "Sánchez",
+        "email": "carlos.sanchez@example.com",
+        "password": "password5",
+        "isAdmin": false
+      },
+      {
+        "id": 6,
+        "name": "Paola",
+        "lastName": "Hernández",
+        "email": "paola.hernandez@example.com",
+        "password": "password6",
+        "isAdmin": false
+      },
+      {
+        "id": 7,
+        "name": "Diego",
+        "lastName": "Gómez",
+        "email": "diego.gomez@example.com",
+        "password": "password7",
+        "isAdmin": false
+      },
+      {
+        "id": 8,
+        "name": "Isabel",
+        "lastName": "Fernández",
+        "email": "isabel.fernandez@example.com",
+        "password": "password8",
+        "isAdmin": false
+      },
+      {
+        "id": 9,
+        "name": "Jorge",
+        "lastName": "Rodríguez",
+        "email": "jorge.rodriguez@example.com",
+        "password": "password9",
+        "isAdmin": false
+      },
+      {
+        "id": 10,
+        "name": "María",
+        "lastName": "Jiménez",
+        "email": "maria.jimenez@example.com",
+        "password": "password10",
+        "isAdmin": false
+      }
+    ],
+    "startDate": "2023-05-01",
+    "endDate": "2023-06-01"
+  },
+  {
+    "id": 2,
+    "name": "Desarrollo web con HTML y CSS",
+    "capacity": 30,
+    "teachers": [
+      {
+        "id": 4,
+        "name": "Laura",
+        "lastName": "Hernández",
+        "email": "laura.hernandez@example.com",
+        "password": "password4",
+        "isAdmin": true
+      },
+      {
+        "id": 5,
+        "name": "Alejandro",
+        "lastName": "Martínez",
+        "email": "alejandro.martinez@example.com",
+        "password": "password5",
+        "isAdmin": true
+      },
+      {
+        "id": 6,
+        "name": "Mónica",
+        "lastName": "Rodríguez",
+        "email": "monica.rodriguez@example.com",
+        "password": "password6",
+        "isAdmin": true
+      }
+    ],
+    "students": [
+      {
+        "id": 11,
+        "name": "Alberto",
+        "lastName": "González",
+        "email": "alberto.gonzalez@example.com",
+        "password": "password11",
+        "isAdmin": false
+      },
+      {
+        "id": 12,
+        "name": "Lucía",
+        "lastName": "Santos",
+        "email": "lucia.santos@example.com",
+        "password": "password12",
+        "isAdmin": false
+      },
+      {
+        "id": 13,
+        "name": "Sergio",
+        "lastName": "Martínez",
+        "email": "sergio.martinez@example.com",
+        "password": "password13",
+        "isAdmin": false
+      },
+      {
+        "id": 14,
+        "name": "Carla",
+        "lastName": "Ramírez",
+        "email": "carla.ramirez@example.com",
+        "password": "password14",
+        "isAdmin": false
+      },
+      {
+        "id": 15,
+        "name": "Pablo",
+        "lastName": "Cruz",
+        "email": "pablo.cruz@example.com",
+        "password": "password15",
+        "isAdmin": false
+      },
+      {
+        "id": 16,
+        "name": "Mariana",
+        "lastName": "Vargas",
+        "email": "mariana.vargas@example.com",
+        "password": "password16",
+        "isAdmin": false
+      },
+      {
+        "id": 17,
+        "name": "Héctor",
+        "lastName": "Guzmán",
+        "email": "hector.guzman@example.com",
+        "password": "password17",
+        "isAdmin": false
+      },
+      {
+        "id": 18,
+        "name": "Valeria",
+        "lastName": "Torres",
+        "email": "valeria.torres@example.com",
+        "password": "password18",
+        "isAdmin": false
+      },
+      {
+        "id": 19,
+        "name": "Mario",
+        "lastName": "Santiago",
+        "email": "mario.santiago@example.com",
+        "password": "password19",
+        "isAdmin": false
+      },
+      {
+        "id": 20,
+        "name": "Karla",
+        "lastName": "Fernández",
+        "email": "karla.fernandez@example.com",
+        "password": "password20",
+        "isAdmin": false
+      }
+    ],
+    "startDate": "2023-07-01",
+    "endDate": "2023-08-01"
+  },
+  {
+    "id": 3,
+    "name": "Introduccion a C++",
+    "capacity": 40,
+    "teachers": [
+      {
+        "id": 7,
+        "name": "Pedro",
+        "lastName": "Ruiz",
+        "email": "pedro.ruiz@example.com",
+        "password": "password7",
+        "isAdmin": true
+      },
+      {
+        "id": 8,
+        "name": "Ana",
+        "lastName": "López",
+        "email": "ana.lopez@example.com",
+        "password": "password8",
+        "isAdmin": true
+      },
+      {
+        "id": 9,
+        "name": "Jorge",
+        "lastName": "García",
+        "email": "jorge.garcia@example.com",
+        "password": "password9",
+        "isAdmin": true
+      }
+    ],
+    "students": [
+      {
+        "id": 21,
+        "name": "Daniel",
+        "lastName": "Álvarez",
+        "email": "daniel.alvarez@example.com",
+        "password": "password21",
+        "isAdmin": false
+      },
+      {
+        "id": 22,
+        "name": "Silvia",
+        "lastName": "González",
+        "email": "silvia.gonzalez@example.com",
+        "password": "password22",
+        "isAdmin": false
+      },
+      {
+        "id": 23,
+        "name": "César",
+        "lastName": "Hernández",
+        "email": "cesar.hernandez@example.com",
+        "password": "password23",
+        "isAdmin": false
+      },
+      {
+        "id": 24,
+        "name": "Luis",
+        "lastName": "Rivas",
+        "email": "luis.rivas@example.com",
+        "password": "password24",
+        "isAdmin": false
+      },
+      {
+        "id": 25,
+        "name": "Verónica",
+        "lastName": "López",
+        "email": "veronica.lopez@example.com",
+        "password": "password25",
+        "isAdmin": false
+      },
+      {
+        "id": 26,
+        "name": "Francisco",
+        "lastName": "García",
+        "email": "francisco.garcia@example.com",
+        "password": "password26",
+        "isAdmin": false
+      },
+      {
+        "id": 27,
+        "name": "Laura",
+        "lastName": "Sánchez",
+        "email": "laura.sanchez@example.com",
+        "password": "password27",
+        "isAdmin": false
+      },
+      {
+        "id": 28,
+        "name": "Jorge",
+        "lastName": "Herrera",
+        "email": "jorge.herrera@example.com",
+        "password": "password28",
+        "isAdmin": false
+      },
+      {
+        "id": 29,
+        "name": "Marcela",
+        "lastName": "Jiménez",
+        "email": "marcela.jimenez@example.com",
+        "password": "password29",
+        "isAdmin": false
+      },
+      {
+        "id": 30,
+        "name": "José",
+        "lastName": "Vega",
+        "email": "jose.vega@example.com",
+        "password": "password30",
+        "isAdmin": false
+      }
+    ],
+    "startDate": "2023-09-01",
+    "endDate": "2023-10-01"
+  },
+  {
+    "id": 4,
+    "name": "Inteligencia artificial",
+    "capacity": 40,
+    "teachers": [
+      {
+        "id": 10,
+        "name": "Fernando",
+        "lastName": "Sánchez",
+        "email": "fernando.sanchez@example.com",
+        "password": "password10",
+        "isAdmin": true
+      },
+      {
+        "id": 11,
+        "name": "Marcela",
+        "lastName": "González",
+        "email": "marcela.gonzalez@example.com",
+        "password": "password11",
+        "isAdmin": true
+      },
+      {
+        "id": 12,
+        "name": "Roberto",
+        "lastName": "Mendoza",
+        "email": "roberto.mendoza@example.com",
+        "password": "password12",
+        "isAdmin": true
+      }
+    ],
+    "students": [
+      {
+        "id": 31,
+        "name": "Ana",
+        "lastName": "Ramos",
+        "email": "ana.ramos@example.com",
+        "password": "password31",
+        "isAdmin": false
+      },
+      {
+        "id": 32,
+        "name": "Cristina",
+        "lastName": "González",
+        "email": "cristina.gonzalez@example.com",
+        "password": "password32",
+        "isAdmin": false
+      },
+      {
+        "id": 33,
+        "name": "Diego",
+        "lastName": "Martínez",
+        "email": "diego.martinez@example.com",
+        "password": "password33",
+        "isAdmin": false
+      },
+      {
+        "id": 34,
+        "name": "Sofía",
+        "lastName": "Mendoza",
+        "email": "sofia.mendoza@example.com",
+        "password": "password34",
+        "isAdmin": false
+      },
+      {
+        "id": 35,
+        "name": "Fernando",
+        "lastName": "Gómez",
+        "email": "fernando.gomez@example.com",
+        "password": "password35",
+        "isAdmin": false
+      },
+      {
+        "id": 36,
+        "name": "Carla",
+        "lastName": "Hernández",
+        "email": "carla.hernandez@example.com",
+        "password": "password36",
+        "isAdmin": false
+      },
+      {
+        "id": 37,
+        "name": "David",
+        "lastName": "Guerrero",
+        "email": "david.guerrero@example.com",
+        "password": "password37",
+        "isAdmin": false
+      },
+      {
+        "id": 38,
+        "name": "Laura",
+        "lastName": "Torres",
+        "email": "laura.torres@example.com",
+        "password": "password38",
+        "isAdmin": false
+      },
+      {
+        "id": 39,
+        "name": "Andrés",
+        "lastName": "Reyes",
+        "email": "andres.reyes@example.com",
+        "password": "password39",
+        "isAdmin": false
+      },
+      {
+        "id": 40,
+        "name": "Carolina",
+        "lastName": "Castillo",
+        "email": "carolina.castillo@example.com",
+        "password": "password40",
+        "isAdmin": false
+      }
+    ],
+    "startDate": "2023-09-01",
+    "endDate": "2023-10-01"
+  },
+  {
+    "id": 5,
+    "name": "Robotica",
+    "capacity": 40,
+    "teachers": [
+      {
+        "id": 13,
+        "name": "Silvia",
+        "lastName": "Castro",
+        "email": "silvia.castro@example.com",
+        "password": "password13",
+        "isAdmin": true
+      },
+      {
+        "id": 14,
+        "name": "Luis",
+        "lastName": "Gutiérrez",
+        "email": "luis.gutierrez@example.com",
+        "password": "password14",
+        "isAdmin": true
+      },
+      {
+        "id": 15,
+        "name": "Carla",
+        "lastName": "Méndez",
+        "email": "carla.mendez@example.com",
+        "password": "password15",
+        "isAdmin": true
+      }
+    ],
+    "students": [
+      {
+        "id": 41,
+        "name": "Luis",
+        "lastName": "Santana",
+        "email": "luis.santana@example.com",
+        "password": "password41",
+        "isAdmin": false
+      },
+      {
+        "id": 42,
+        "name": "Gabriela",
+        "lastName": "Flores",
+        "email": "gabriela.flores@example.com",
+        "password": "password42",
+        "isAdmin": false
+      },
+      {
+        "id": 43,
+        "name": "Juan",
+        "lastName": "Pérez",
+        "email": "juan.perez@example.com",
+        "password": "password43",
+        "isAdmin": false
+      },
+      {
+        "id": 44,
+        "name": "María",
+        "lastName": "Chávez",
+        "email": "maria.chavez@example.com",
+        "password": "password44",
+        "isAdmin": false
+      },
+      {
+        "id": 45,
+        "name": "Daniel",
+        "lastName": "Castro",
+        "email": "daniel.castro@example.com",
+        "password": "password45",
+        "isAdmin": false
+      },
+      {
+        "id": 46,
+        "name": "Alejandra",
+        "lastName": "Valencia",
+        "email": "alejandra.valencia@example.com",
+        "password": "password46",
+        "isAdmin": false
+      },
+      {
+        "id": 47,
+        "name": "Jorge",
+        "lastName": "Navarro",
+        "email": "jorge.navarro@example.com",
+        "password": "password47",
+        "isAdmin": false
+      },
+      {
+        "id": 48,
+        "name": "Ana",
+        "lastName": "García",
+        "email": "ana.garcia@example.com",
+        "password": "password48",
+        "isAdmin": false
+      },
+      {
+        "id": 49,
+        "name": "Miguel",
+        "lastName": "Herrera",
+        "email": "miguel.herrera@example.com",
+        "password": "password49",
+        "isAdmin": false
+      },
+      {
+        "id": 50,
+        "name": "Lucía",
+        "lastName": "Rojas",
+        "email": "lucia.rojas@example.com",
+        "password": "password50",
+        "isAdmin": false
+      }
+    ],
+    "startDate": "2023-09-01",
+    "endDate": "2023-10-01"
+  }
+]

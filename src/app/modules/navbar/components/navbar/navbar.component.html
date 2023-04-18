@@ -4,10 +4,10 @@
             <h1 class="title">Cursos de programación</h1>
         </mat-toolbar>
         <mat-nav-list>
-            <mat-list-item routerLink="/inicio">
+            <mat-list-item (click)="updateUrl('/inicio')" routerLink="/inicio">
                 Inicio
             </mat-list-item>
-            <mat-list-item routerLink="/inicio/courses">
+            <mat-list-item (click)="updateUrl('/inicio/courses')" routerLink="/inicio/courses">
                 Cursos
             </mat-list-item>
             <mat-list-item>
@@ -32,6 +32,10 @@
             </button>
             <span>CodeVerse</span>
         </mat-toolbar>
-        <router-outlet></router-outlet>
+
+
+        <div *ngIf="currentUrl == '/inicio'"> <app-default-navbar></app-default-navbar></div>
+        <div *ngIf="currentUrl != '/inicio'"><router-outlet></router-outlet></div>
+
     </mat-sidenav-content>
 </mat-sidenav-container>

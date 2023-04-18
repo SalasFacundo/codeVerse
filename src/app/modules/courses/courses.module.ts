@@ -16,6 +16,9 @@ import { RouterModule } from '@angular/router';
     MatCardModule,    
     MatButtonModule,
     RouterModule
+  ],
+  exports: [
+    CoursesComponent
   ]
 })
 export class CoursesModule { }

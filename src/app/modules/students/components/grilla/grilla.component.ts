@@ -37,6 +37,8 @@ export class GrillaComponent implements OnInit {
     this.user = this.userLogged.getUser();
     this.isAdmin = this.user.isAdmin;
     this.addColumns();
+
+    this.datosService.getCoursesByUser(this.userLogged.getUser()).subscribe( data => { console.log("USERS POR ID"); console.log(data)})
   }
 
   openFormCreateStudent(): void {

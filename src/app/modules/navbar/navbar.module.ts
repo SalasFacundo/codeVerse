@@ -9,6 +9,9 @@ import { StudentsModule } from '../students/students.module';
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from 'src/app/app.routing.module';
 import { RouterModule } from '@angular/router';
+import { DefaultNavbarComponent } from './components/default-navbar/default-navbar.component';
+import { CoursesModule } from '../courses/courses.module';
+import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 
 
 
@@ -18,6 +21,8 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     NavbarComponent,
+    DefaultNavbarComponent,
+    AllCoursesComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +33,8 @@ import { RouterModule } from '@angular/router';
     StudentsModule,
     MatButtonModule,    
     AppRoutingModule,
-    RouterModule.forChild([]),    
+    RouterModule.forChild([]),
+    CoursesModule
   ],
   exports: [
     NavbarComponent

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserLoggedService } from 'src/app/services/user-logged.service';
 
 @Component({
@@ -11,8 +11,12 @@ export class NavbarComponent implements OnInit {
 
   isOpened: boolean = false;
   replace : boolean = true;
+  onHome: boolean = false;
+  currentUrl = window.location.pathname;
 
-  constructor(private loginService: UserLoggedService, private router: Router) { }
+  constructor(private loginService: UserLoggedService, 
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -22,9 +26,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  navigateTo(url: string){
-    console.log("REDIRECCIONANDO A");
-    console.log(url)
-    this.router.navigate([url]);
+  updateUrl(url: string){
+    this.currentUrl = url;
   }
 }

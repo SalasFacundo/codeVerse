@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth-guard';
 import { LoginGuard } from './guards/login-guard';
 import { GrillaComponent } from './modules/students/components/grilla/grilla.component';
 import { CoursesComponent } from './modules/courses/components/courses/courses.component';
+import { AllCoursesComponent } from './modules/navbar/pages/all-courses/all-courses.component';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent, canActivate: [LoginGuard] },
@@ -15,7 +16,7 @@ const routes: Routes = [
     path: 'inicio', component: NavbarComponent, canActivate: [AuthGuard],
     children: [
       { path: 'students', component: GrillaComponent },
-      { path: 'courses', component: CoursesComponent},
+      { path: 'courses', component: AllCoursesComponent},
     ]
   },
 

@@ -38,7 +38,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     RouterModule.forChild([]),
     CoursesModule,
     MatMenuModule,
-    MatButtonToggleModule
+    MatButtonToggleModule    
   ],
   exports: [
     NavbarComponent

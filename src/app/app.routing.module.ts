@@ -6,9 +6,9 @@ import { NavbarComponent } from './modules/navbar/components/navbar/navbar.compo
 import { AuthGuard } from './guards/auth-guard';
 import { LoginGuard } from './guards/login-guard';
 import { GrillaComponent } from './modules/students/components/grilla/grilla.component';
-import { CoursesComponent } from './modules/courses/components/courses/courses.component';
 import { AllCoursesComponent } from './modules/navbar/pages/all-courses/all-courses.component';
 import { PurchasedCourseComponent } from './modules/courses/pages/purchased-course/purchased-course.component';
+import { BuyCourseComponent } from './modules/courses/components/buy-course/buy-course.component';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent, canActivate: [LoginGuard] },
@@ -18,7 +18,7 @@ const routes: Routes = [
     children: [
       { path: 'students', component: GrillaComponent },
       { path: 'courses', component: AllCoursesComponent},
-      { path: 'courseDetail/:id', component: GrillaComponent},
+      { path: 'courseDetail/:id', component: PurchasedCourseComponent},
     ]
   },
 

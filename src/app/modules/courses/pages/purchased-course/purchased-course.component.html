@@ -1,5 +1,37 @@
 <div class="container">
-    Profesores :
-    
-    <app-grilla></app-grilla>
+    <div class="title">
+        <h1>¡ Aqui encontraras detalles del curso de {{course.name}} !</h1>
+        <mat-divider></mat-divider>
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Alumnos
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="grilla">
+                <app-grilla [filter]="'students'"></app-grilla>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Profesores
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            
+            <div class="grilla">
+                <app-grilla [filter]="'teachers'"></app-grilla>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Clases
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-class-card [classes]="course.classes"></app-class-card>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>

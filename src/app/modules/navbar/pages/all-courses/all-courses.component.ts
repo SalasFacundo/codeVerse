@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd } from '@angular/router';
+import { UpdateRouteService } from 'src/app/services/update-route.service';
 
 @Component({
   selector: 'app-all-courses',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllCoursesComponent implements OnInit {
 
-  constructor() { }
+  currentUrl = window.location.pathname;
+
+  constructor(private updateRoute: UpdateRouteService) { }
 
   ngOnInit(): void {
+    this.updateRoute.subscribeToUrlChanges().subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentUrl = event.url;
+      }
+    });
   }
 
 }

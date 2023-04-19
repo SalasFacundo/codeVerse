@@ -4,10 +4,10 @@
             <h1 class="title">Cursos de programación</h1>
         </mat-toolbar>
         <mat-nav-list>
-            <mat-list-item (click)="updateUrl('/home')" routerLink="/home">
+            <mat-list-item routerLink="/home" (click)="sidenav.toggle()">
                 Inicio
             </mat-list-item>
-            <mat-list-item (click)="updateUrl('/home/courses')" routerLink="/home/courses">
+            <mat-list-item routerLink="/home/courses" (click)="sidenav.toggle()">
                 Cursos
             </mat-list-item>
             <mat-list-item>
@@ -44,6 +44,9 @@
         <router-outlet></router-outlet>
         <div *ngIf="currentUrl == '/home'">
             <app-default-navbar></app-default-navbar>
+        </div>        
+        <div *ngIf="currentUrl == '/home/courses/courseDetail'">
+            <app-buy-course></app-buy-course>
         </div>        
 
     </mat-sidenav-content>

@@ -10,7 +10,12 @@
                     <div class="hour">20:30 - 22:30</div>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button class="primaryCustom" [routerLink]="['/home/courseDetail', course.id]" routerLinkActive="active">Ver detalles</button>
+                    <div *ngIf="url == '/home/courses'">
+                        <button mat-raised-button class="primaryCustom" (click)="openFormBuyCourse()">Ver detalles</button>
+                    </div>
+                    <div *ngIf="url == '/home'">
+                        <button mat-raised-button class="primaryCustom" [routerLink]="['/home/courseDetail', course.id]" routerLinkActive="active">Ver detalles</button>
+                    </div>
                 </mat-card-actions>
             </mat-card>
     </div>

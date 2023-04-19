@@ -32,8 +32,4 @@ export class NavbarComponent implements OnInit {
     this.loginService.logOut();
     this.router.navigate(['/login']);
   }
-
-  updateUrl(url: string){
-    this.currentUrl = url;
-  }
 }

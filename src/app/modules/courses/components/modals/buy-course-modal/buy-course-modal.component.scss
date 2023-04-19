@@ -1,0 +1,79 @@
+.container{
+    height: 100%;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+mat-divider{
+    background-color: rgb(241, 241, 145);
+    margin: 30px 0;
+}
+
+mat-horizontal-stepper{
+    height: 600px;
+}
+
+form {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+mat-step{
+    background-color: blue;
+}
+
+mat-horizontal-stepper{
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+
+  mat-form-field {
+    margin-bottom: 30px;
+    input {
+        color: rgb(207, 193, 193);
+    }
+
+    mat-hint{
+        color: white;
+    }
+
+    .mat-icon-button {
+        color: white !important;
+      }
+}
+
+.mat-datepicker-toggle {
+    color: white !important;
+}
+  
+
+::ng-deep .mat-focused .mat-form-field-label {
+    color: rgb(207, 193, 193) !important;
+}
+
+::ng-deep.mat-form-field-underline, ::ng-deep.mat-form-field-ripple {
+    background-color: rgb(67, 70, 68)!important;}
+
+.my-form-field ::ng-deep .mat-form-field-label,
+.my-form-field ::ng-deep .mat-form-field-placeholder {
+    color: rgb(207, 193, 193) !important;
+}
+
+
+.chico{
+    background-color: red;
+    width: 20%;
+}

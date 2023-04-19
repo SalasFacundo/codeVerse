@@ -8,7 +8,7 @@
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
 
-        <ng-container matColumnDef="dni">
+        <ng-container *ngIf="isAdmin" matColumnDef="dni">
             <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Dni </th>
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.dni}} </td>
         </ng-container>

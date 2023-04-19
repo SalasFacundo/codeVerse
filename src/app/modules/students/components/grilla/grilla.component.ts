@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteStudentComponent } from '../modales/delete-student/delete-student.component';
 import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-crear-alumno.component';
@@ -16,9 +16,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./grilla.component.scss']
 })
 export class GrillaComponent implements OnInit {
-
-  readonly studentsUrl: string = '/assets/data/json/students.json';
-  displayedColumns: string[] = ['dni', 'fullName', 'email', 'course'];
+  
+  @Input()
+  filter: string = ""
+  displayedColumns: string[] = ['fullName', 'email', 'course'];
   dataSource: User[] = [];
   isAdmin: boolean = false;
   value: number = 0;
@@ -32,13 +33,13 @@ export class GrillaComponent implements OnInit {
               private activatedRoute: ActivatedRoute
     ) { }
 
-  ngOnInit(): void {
-    
-    
-    console.log("parametro: ")
-
+  ngOnInit(): void {    
     if(this.activatedRoute.snapshot.paramMap.get('id')){
-      this.datosService.getCourseById(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe(value=>{this.dataSource = value[0].students})
+      if(this.filter == 'students'){
+        this.datosService.getCourseById(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe(value=>{this.dataSource = value[0].students})
+      } else if(this.filter == 'teachers'){
+        this.datosService.getCourseById(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe(value=>{this.dataSource = value[0].teachers})
+      }
     } else {
       this.datosService.getStudents().subscribe(data => {
         this.dataSource = data;
@@ -100,7 +101,9 @@ export class GrillaComponent implements OnInit {
   addColumns() {
     if (this.isAdmin) {
       this.displayedColumns.push('action')
-    } else if (this.displayedColumns.indexOf('action') != -1) {
+      this.displayedColumns.push('dni')
+    } else if (this.displayedColumns.indexOf('action') != -1 && this.displayedColumns.indexOf('dni') != -1 ) {
+      this.displayedColumns.splice(this.displayedColumns.indexOf('dni'), 1)
       this.displayedColumns.splice(this.displayedColumns.indexOf('action'), 1)
     }
 

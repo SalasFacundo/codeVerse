@@ -1,3 +1,4 @@
+import { Class } from "./class";
 import { User } from "./user";
 
 export interface Course{
@@ -6,6 +7,7 @@ export interface Course{
     capacity: number;
     teachers: User[];
     students: User[];
+    classes: Class[];
     startDate: Date;
     endDate: Date;
 }

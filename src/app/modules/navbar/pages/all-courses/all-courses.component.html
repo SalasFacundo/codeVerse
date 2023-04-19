@@ -1,1 +1,4 @@
-<app-courses [filter]="'all'"></app-courses>
+<router-outlet></router-outlet>
+<div *ngIf="currentUrl == '/home/courses'">
+    <app-courses [filter]="'all'"></app-courses>
+</div>

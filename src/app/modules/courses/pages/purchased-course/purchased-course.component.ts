@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Course } from 'src/app/modules/students/models/course';
+import { DatosService } from 'src/app/services/datos.service';
+import { UpdateRouteService } from 'src/app/services/update-route.service';
 
 @Component({
   selector: 'app-purchased-course',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchasedCourseComponent implements OnInit {
 
-  constructor() { }
+  panelOpenState = false;
+  course!: Course;
+
+  constructor(private dataService: DatosService, private updateRoute: UpdateRouteService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
+    this.dataService.getCourseById(Number(this.activatedRoute.snapshot.paramMap.get('id')))
+      .subscribe(course => {
+        this.course = course[0];
+      });
   }
-
 }

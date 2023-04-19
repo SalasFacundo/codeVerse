@@ -1,677 +1,902 @@
 [
-  {
-    "id": 1,
-    "name": "Introducción a Python",
-    "capacity": 50,
-    "teachers": [
-      {
+    {
         "id": 1,
-        "name": "Juan",
-        "lastName": "Pérez",
-        "email": "juan.perez@example.com",
-        "password": "password1",
-        "isAdmin": true
-      },
-      {
+        "name": "Introducción a Python",
+        "capacity": 50,
+        "teachers": [
+            {
+                "id": 51,
+                "dni": 10000051,
+                "name": "Juan",
+                "lastName": "Pérez",
+                "email": "juan.perez@example.com",
+                "password": "password1",
+                "course": "Introducción a Python",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 52,
+                "dni": 10000052,
+                "name": "María",
+                "lastName": "González",
+                "email": "maria.gonzalez@example.com",
+                "password": "password2",
+                "course": "Introducción a Python",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 53,
+                "dni": 10000053,
+                "name": "Carlos",
+                "lastName": "Sánchez",
+                "email": "carlos.sanchez@example.com",
+                "password": "password3",
+                "course": "Introducción a Python",
+                "isAdmin": true,
+                "role": "teacher"
+            }
+        ],
+        "students": [
+            {
+                "id": 1,
+                "dni": 10000001,
+                "name": "Pedro",
+                "lastName": "Martínez",
+                "email": "pedro.martinez@example.com",
+                "password": "password1",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 2,
+                "dni": 10000002,
+                "name": "Ana",
+                "lastName": "López",
+                "email": "ana.lopez@example.com",
+                "password": "password2",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 3,
+                "dni": 10000003,
+                "name": "Juan",
+                "lastName": "Pérez",
+                "email": "juan.perez@example.com",
+                "password": "password3",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 4,
+                "dni": 10000004,
+                "name": "Laura",
+                "lastName": "González",
+                "email": "laura.gonzalez@example.com",
+                "password": "password4",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 5,
+                "dni": 10000005,
+                "name": "Carlos",
+                "lastName": "Sánchez",
+                "email": "carlos.sanchez@example.com",
+                "password": "password5",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 6,
+                "dni": 10000006,
+                "name": "Paola",
+                "lastName": "Hernández",
+                "email": "paola.hernandez@example.com",
+                "password": "password6",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 7,
+                "dni": 10000007,
+                "name": "Diego",
+                "lastName": "Gómez",
+                "email": "diego.gomez@example.com",
+                "password": "password7",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 8,
+                "dni": 10000008,
+                "name": "Isabel",
+                "lastName": "Fernández",
+                "email": "isabel.fernandez@example.com",
+                "password": "password8",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 9,
+                "dni": 10000009,
+                "name": "Jorge",
+                "lastName": "Rodríguez",
+                "email": "jorge.rodriguez@example.com",
+                "password": "password9",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 10,
+                "dni": 10000010,
+                "name": "María",
+                "lastName": "Jiménez",
+                "email": "maria.jimenez@example.com",
+                "password": "password10",
+                "course": "Introducción a Python",
+                "isAdmin": false,
+                "role": "student"
+            }
+        ],
+        "classes": [
+            {
+                "name": "Introducción a Python",
+                "description": "En esta clase se presentará el lenguaje de programación Python, sus características y beneficios. También se mostrará cómo instalar Python y configurar el entorno de trabajo."
+            },
+            {
+                "name": "Variables y tipos de datos",
+                "description": "En esta clase se enseñará cómo crear y manipular variables en Python, y se presentarán los diferentes tipos de datos básicos como números, cadenas de texto y booleanos."
+            },
+            {
+                "name": "Estructuras de control de flujo",
+                "description": " En esta clase se explicará cómo controlar el flujo de ejecución de un programa en Python utilizando estructuras como if-else, while, for y try-except."
+            },
+            {
+                "name": "Funciones",
+                "description": "En esta clase se presentarán las funciones en Python, cómo crearlas, llamarlas y pasar argumentos a ellas. También se discutirá sobre la importancia de las funciones y cómo se utilizan en la programación."
+            },
+            {
+                "name": "Listas y diccionarios",
+                "description": "En esta clase se mostrará cómo utilizar listas y diccionarios en Python para almacenar y manipular datos. También se discutirán las operaciones básicas en estas estructuras de datos y se darán ejemplos de su uso en programas simples."
+            },
+            {
+                "name": "Archivos y excepciones",
+                "description": "En esta clase se enseñará cómo trabajar con archivos en Python, cómo leer y escribir en ellos, y cómo cerrarlos adecuadamente. También se explicará cómo manejar excepciones en Python, incluyendo cómo lanzar excepciones, cómo manejarlas y cómo crear excepciones personalizadas."
+            }
+        ],
+        "startDate": "2023-05-01",
+        "endDate": "2023-06-01"
+    },
+    {
         "id": 2,
-        "name": "María",
-        "lastName": "González",
-        "email": "maria.gonzalez@example.com",
-        "password": "password2",
-        "isAdmin": true
-      },
-      {
+        "name": "Desarrollo web con HTML y CSS",
+        "capacity": 30,
+        "teachers": [
+            {
+                "id": 54,
+                "dni": 10000054,
+                "name": "Laura",
+                "lastName": "Hernández",
+                "email": "laura.hernandez@example.com",
+                "password": "password4",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 55,
+                "dni": 10000055,
+                "name": "Alejandro",
+                "lastName": "Martínez",
+                "email": "alejandro.martinez@example.com",
+                "password": "password5",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 56,
+                "dni": 10000056,
+                "name": "Mónica",
+                "lastName": "Rodríguez",
+                "email": "monica.rodriguez@example.com",
+                "password": "password6",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": true,
+                "role": "teacher"
+            }
+        ],
+        "students": [
+            {
+                "id": 11,
+                "dni": 10000011,
+                "name": "Alberto",
+                "lastName": "González",
+                "email": "alberto.gonzalez@example.com",
+                "password": "password11",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 12,
+                "dni": 10000012,
+                "name": "Lucía",
+                "lastName": "Santos",
+                "email": "lucia.santos@example.com",
+                "password": "password12",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 13,
+                "dni": 10000013,
+                "name": "Sergio",
+                "lastName": "Martínez",
+                "email": "sergio.martinez@example.com",
+                "password": "password13",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 14,
+                "dni": 10000014,
+                "name": "Carla",
+                "lastName": "Ramírez",
+                "email": "carla.ramirez@example.com",
+                "password": "password14",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 15,
+                "dni": 10000015,
+                "name": "Pablo",
+                "lastName": "Cruz",
+                "email": "pablo.cruz@example.com",
+                "password": "password15",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 16,
+                "dni": 10000016,
+                "name": "Mariana",
+                "lastName": "Vargas",
+                "email": "mariana.vargas@example.com",
+                "password": "password16",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 17,
+                "dni": 10000017,
+                "name": "Héctor",
+                "lastName": "Guzmán",
+                "email": "hector.guzman@example.com",
+                "password": "password17",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 18,
+                "dni": 10000018,
+                "name": "Valeria",
+                "lastName": "Torres",
+                "email": "valeria.torres@example.com",
+                "password": "password18",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 19,
+                "dni": 10000019,
+                "name": "Mario",
+                "lastName": "Santiago",
+                "email": "mario.santiago@example.com",
+                "password": "password19",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 20,
+                "dni": 10000020,
+                "name": "Karla",
+                "lastName": "Fernández",
+                "email": "karla.fernandez@example.com",
+                "password": "password20",
+                "course": "Desarrollo web con HTML y CSS",
+                "isAdmin": false,
+                "role": "student"
+            }
+        ],
+        "classes": [
+            {
+                "name": "Introducción a HTML",
+                "description": "En esta clase se presentará HTML y su estructura básica, incluyendo las etiquetas, los elementos y los atributos. También se mostrará cómo crear una página HTML básica y cómo visualizarla en un navegador web."
+            },
+            {
+                "name": "Introducción a CSS",
+                "description": "En esta clase se presentará CSS y cómo se utiliza para dar estilo y diseño a las páginas web. Se discutirán los diferentes tipos de selectores, la cascada y la herencia, y se mostrará cómo aplicar estilos básicos a una página HTML."
+            },
+            {
+                "name": "Diseño de páginas web con CSS",
+                "description": "En esta clase se explicará cómo diseñar páginas web más complejas utilizando CSS, incluyendo el diseño de cajas, el posicionamiento de elementos y la creación de diseños responsivos para diferentes dispositivos."
+            },
+            {
+                "name": "Diseño de formularios en HTML",
+                "description": "En esta clase se presentará cómo crear formularios en HTML y cómo se utilizan para recopilar información de los usuarios. También se discutirán los diferentes tipos de elementos de formulario y cómo darles estilo con CSS."
+            },
+            {
+                "name": "Diseño de tablas en HTML",
+                "description": "En esta clase se enseñará cómo crear tablas en HTML y cómo se utilizan para mostrar datos de manera organizada. También se discutirán las diferentes etiquetas de tabla y cómo darles estilo con CSS."
+            },
+            {
+                "name": "Publicación y mantenimiento de sitios web",
+                "description": "En esta clase se explicará cómo publicar un sitio web en un servidor web y cómo mantenerlo actualizado. Se discutirán las diferentes opciones de alojamiento web, así como las herramientas y técnicas para actualizar y mantener un sitio web."
+            }
+        ],
+        "startDate": "2023-07-01",
+        "endDate": "2023-08-01"
+    },
+    {
         "id": 3,
-        "name": "Carlos",
-        "lastName": "Sánchez",
-        "email": "carlos.sanchez@example.com",
-        "password": "password3",
-        "isAdmin": true
-      }
-    ],
-    "students": [
-      {
-        "id": 1,
-        "dni": 11111111,
-        "name": "Pedro",
-        "lastName": "Martínez",
-        "email": "pedro.martinez@example.com",
-        "password": "password1",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
-        "id": 2,
-        "dni": 11111112,
-        "name": "Ana",
-        "lastName": "López",
-        "email": "ana.lopez@example.com",
-        "password": "password2",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
-        "id": 3,
-        "dni": 11111113,
-        "name": "Juan",
-        "lastName": "Pérez",
-        "email": "juan.perez@example.com",
-        "password": "password3",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
+        "name": "Introduccion a C++",
+        "capacity": 40,
+        "teachers": [
+            {
+                "id": 57,
+                "dni": 10000057,
+                "name": "Pedro",
+                "lastName": "Ruiz",
+                "email": "pedro.ruiz@example.com",
+                "password": "password7",
+                "course": "Introduccion a C++",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 58,
+                "dni": 10000058,
+                "name": "Ana",
+                "lastName": "López",
+                "email": "ana.lopez@example.com",
+                "password": "password8",
+                "course": "Introduccion a C++",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 59,
+                "dni": 10000059,
+                "name": "Jorge",
+                "lastName": "García",
+                "email": "jorge.garcia@example.com",
+                "password": "password9",
+                "course": "Introduccion a C++",
+                "isAdmin": true,
+                "role": "teacher"
+            }
+        ],
+        "students": [
+            {
+                "id": 21,
+                "dni": 10000021,
+                "name": "Daniel",
+                "lastName": "Álvarez",
+                "email": "daniel.alvarez@example.com",
+                "password": "password21",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 22,
+                "dni": 10000022,
+                "name": "Silvia",
+                "lastName": "González",
+                "email": "silvia.gonzalez@example.com",
+                "password": "password22",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 23,
+                "dni": 10000023,
+                "name": "César",
+                "lastName": "Hernández",
+                "email": "cesar.hernandez@example.com",
+                "password": "password23",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 24,
+                "dni": 10000024,
+                "name": "Luis",
+                "lastName": "Rivas",
+                "email": "luis.rivas@example.com",
+                "password": "password24",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 25,
+                "dni": 10000025,
+                "name": "Verónica",
+                "lastName": "López",
+                "email": "veronica.lopez@example.com",
+                "password": "password25",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 26,
+                "dni": 10000026,
+                "name": "Francisco",
+                "lastName": "García",
+                "email": "francisco.garcia@example.com",
+                "password": "password26",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 27,
+                "dni": 10000027,
+                "name": "Laura",
+                "lastName": "Sánchez",
+                "email": "laura.sanchez@example.com",
+                "password": "password27",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 28,
+                "dni": 10000028,
+                "name": "Jorge",
+                "lastName": "Herrera",
+                "email": "jorge.herrera@example.com",
+                "password": "password28",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 29,
+                "dni": 10000029,
+                "name": "Marcela",
+                "lastName": "Jiménez",
+                "email": "marcela.jimenez@example.com",
+                "password": "password29",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 30,
+                "dni": 10000030,
+                "name": "José",
+                "lastName": "Vega",
+                "email": "jose.vega@example.com",
+                "password": "password30",
+                "course": "Introduccion a C++",
+                "isAdmin": false,
+                "role": "student"
+            }
+        ],
+        "classes": [
+            {
+                "name": "Introducción a C++",
+                "description": "En esta clase se presentará el lenguaje de programación C++, su historia, características y beneficios. También se mostrará cómo instalar C++ y configurar el entorno de trabajo."
+            },
+            {
+                "name": "Variables y tipos de datos",
+                "description": " En esta clase se enseñará cómo crear y manipular variables en C++, y se presentarán los diferentes tipos de datos básicos como enteros, flotantes, caracteres y booleanos."
+            },
+            {
+                "name": "Estructuras de control de flujo",
+                "description": "En esta clase se explicará cómo controlar el flujo de ejecución de un programa en C++ utilizando estructuras como if-else, while, for y switch."
+            },
+            {
+                "name": "Funciones",
+                "description": "En esta clase se presentarán las funciones en C++, cómo crearlas, llamarlas y pasar argumentos a ellas. También se discutirá sobre la importancia de las funciones y cómo se utilizan en la programación."
+            },
+            {
+                "name": "Arreglos y punteros",
+                "description": "En esta clase se enseñará cómo utilizar arreglos y punteros en C++ para almacenar y manipular datos. También se discutirán las operaciones básicas en estas estructuras de datos y se darán ejemplos de su uso en programas simples."
+            },
+            {
+                "name": "Programación orientada a objetos",
+                "description": "En esta clase se presentará la programación orientada a objetos en C++, incluyendo la creación de clases y objetos, herencia, polimorfismo y encapsulamiento. También se discutirán las buenas prácticas para la programación orientada a objetos y cómo se utiliza en proyectos reales."
+            }
+        ],
+        "startDate": "2023-09-01",
+        "endDate": "2023-10-01"
+    },
+    {
         "id": 4,
-        "dni": 11111114,
-        "name": "Laura",
-        "lastName": "González",
-        "email": "laura.gonzalez@example.com",
-        "password": "password4",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
+        "name": "Inteligencia Artificial",
+        "capacity": 40,
+        "teachers": [
+            {
+                "id": 60,
+                "dni": 10000060,
+                "name": "Fernando",
+                "lastName": "Sánchez",
+                "email": "fernando.sanchez@example.com",
+                "password": "password10",
+                "course": "Inteligencia Artificial",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 61,
+                "dni": 10000061,
+                "name": "Marcela",
+                "lastName": "González",
+                "email": "marcela.gonzalez@example.com",
+                "password": "password11",
+                "course": "Inteligencia Artificial",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 62,
+                "dni": 10000062,
+                "name": "Roberto",
+                "lastName": "Mendoza",
+                "email": "roberto.mendoza@example.com",
+                "password": "password12",
+                "course": "Inteligencia Artificial",
+                "isAdmin": true,
+                "role": "teacher"
+            }
+        ],
+        "students": [
+            {
+                "id": 31,
+                "dni": 10000031,
+                "name": "Ana",
+                "lastName": "Ramos",
+                "email": "ana.ramos@example.com",
+                "password": "password31",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 32,
+                "dni": 10000032,
+                "name": "Cristina",
+                "lastName": "González",
+                "email": "cristina.gonzalez@example.com",
+                "password": "password32",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 33,
+                "dni": 10000033,
+                "name": "Diego",
+                "lastName": "Martínez",
+                "email": "diego.martinez@example.com",
+                "password": "password33",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 34,
+                "dni": 10000034,
+                "name": "Sofía",
+                "lastName": "Mendoza",
+                "email": "sofia.mendoza@example.com",
+                "password": "password34",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 35,
+                "dni": 10000035,
+                "name": "Fernando",
+                "lastName": "Gómez",
+                "email": "fernando.gomez@example.com",
+                "password": "password35",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 36,
+                "dni": 10000036,
+                "name": "Carla",
+                "lastName": "Hernández",
+                "email": "carla.hernandez@example.com",
+                "password": "password36",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 37,
+                "dni": 10000037,
+                "name": "David",
+                "lastName": "Guerrero",
+                "email": "david.guerrero@example.com",
+                "password": "password37",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 38,
+                "dni": 10000038,
+                "name": "Laura",
+                "lastName": "Torres",
+                "email": "laura.torres@example.com",
+                "password": "password38",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 39,
+                "dni": 10000039,
+                "name": "Andrés",
+                "lastName": "Reyes",
+                "email": "andres.reyes@example.com",
+                "password": "password39",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 40,
+                "dni": 10000040,
+                "name": "Carolina",
+                "lastName": "Castillo",
+                "email": "carolina.castillo@example.com",
+                "password": "password40",
+                "course": "Inteligencia Artificial",
+                "isAdmin": false,
+                "role": "student"
+            }
+        ],
+        "classes": [
+            {
+                "name": "Introducción a la Inteligencia Artificial",
+                "description": "En esta clase se presentará una introducción general a la Inteligencia Artificial, sus aplicaciones y los diferentes enfoques que se utilizan para desarrollarla."
+            },
+            {
+                "name": "Aprendizaje automático",
+                "description": "En esta clase se discutirán los fundamentos del aprendizaje automático, incluyendo los algoritmos de clasificación, regresión, agrupamiento y aprendizaje por refuerzo."
+            },
+            {
+                "name": "Redes neuronales artificiales",
+                "description": "En esta clase se explicará cómo funcionan las redes neuronales artificiales, cómo se entrenan y cómo se utilizan para resolver problemas de aprendizaje profundo."
+            },
+            {
+                "name": "Procesamiento del lenguaje natural",
+                "description": "En esta clase se presentarán los fundamentos del procesamiento del lenguaje natural, incluyendo la comprensión del lenguaje natural, la generación de lenguaje natural y las aplicaciones prácticas como la traducción automática y la generación de texto."
+            },
+            {
+                "name": "Visión por computadora",
+                "description": "En esta clase se presentará cómo las computadoras pueden interpretar imágenes y videos, incluyendo la detección de objetos, el seguimiento de objetos y la segmentación de imágenes."
+            },
+            {
+                "name": "Ética y consideraciones sociales en la Inteligencia Artificial",
+                "description": "En esta clase se discutirán las preocupaciones éticas y sociales relacionadas con el desarrollo y uso de la Inteligencia Artificial, incluyendo temas como la privacidad, la responsabilidad y la equidad."
+            }
+        ],
+        "startDate": "2023-09-01",
+        "endDate": "2023-10-01"
+    },
+    {
         "id": 5,
-        "dni": 11111115,
-        "name": "Carlos",
-        "lastName": "Sánchez",
-        "email": "carlos.sanchez@example.com",
-        "password": "password5",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
-        "id": 6,
-        "dni": 11111116,
-        "name": "Paola",
-        "lastName": "Hernández",
-        "email": "paola.hernandez@example.com",
-        "password": "password6",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
-        "id": 7,
-        "dni": 11111117,
-        "name": "Diego",
-        "lastName": "Gómez",
-        "email": "diego.gomez@example.com",
-        "password": "password7",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
-        "id": 8,
-        "dni": 11111118,
-        "name": "Isabel",
-        "lastName": "Fernández",
-        "email": "isabel.fernandez@example.com",
-        "password": "password8",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
-        "id": 9,
-        "dni": 11111119,
-        "name": "Jorge",
-        "lastName": "Rodríguez",
-        "email": "jorge.rodriguez@example.com",
-        "password": "password9",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      },
-      {
-        "id": 10,
-        "dni": 11111101,
-        "name": "María",
-        "lastName": "Jiménez",
-        "email": "maria.jimenez@example.com",
-        "password": "password10",
-        "course": "Introducción a Python",
-        "isAdmin": false
-      }
-    ],
-    "startDate": "2023-05-01",
-    "endDate": "2023-06-01"
-  },
-  {
-    "id": 2,
-    "name": "Desarrollo web con HTML y CSS",
-    "capacity": 30,
-    "teachers": [
-      {
-        "id": 4,
-        "name": "Laura",
-        "lastName": "Hernández",
-        "email": "laura.hernandez@example.com",
-        "password": "password4",
-        "isAdmin": true
-      },
-      {
-        "id": 5,
-        "name": "Alejandro",
-        "lastName": "Martínez",
-        "email": "alejandro.martinez@example.com",
-        "password": "password5",
-        "isAdmin": true
-      },
-      {
-        "id": 6,
-        "name": "Mónica",
-        "lastName": "Rodríguez",
-        "email": "monica.rodriguez@example.com",
-        "password": "password6",
-        "isAdmin": true
-      }
-    ],
-    "students": [
-      {
-        "id": 11,
-        "dni": 11111102,
-        "name": "Alberto",
-        "lastName": "González",
-        "email": "alberto.gonzalez@example.com",
-        "password": "password11",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 12,
-        "dni": 11111103,
-        "name": "Lucía",
-        "lastName": "Santos",
-        "email": "lucia.santos@example.com",
-        "password": "password12",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 13,
-        "dni": 11111104,
-        "name": "Sergio",
-        "lastName": "Martínez",
-        "email": "sergio.martinez@example.com",
-        "password": "password13",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 14,
-        "dni": 11111105,
-        "name": "Carla",
-        "lastName": "Ramírez",
-        "email": "carla.ramirez@example.com",
-        "password": "password14",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 15,
-        "dni": 11111106,
-        "name": "Pablo",
-        "lastName": "Cruz",
-        "email": "pablo.cruz@example.com",
-        "password": "password15",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 16,
-        "dni": 11111107,
-        "name": "Mariana",
-        "lastName": "Vargas",
-        "email": "mariana.vargas@example.com",
-        "password": "password16",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 17,
-        "dni": 11111108,
-        "name": "Héctor",
-        "lastName": "Guzmán",
-        "email": "hector.guzman@example.com",
-        "password": "password17",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 18,
-        "dni": 11111109,
-        "name": "Valeria",
-        "lastName": "Torres",
-        "email": "valeria.torres@example.com",
-        "password": "password18",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 19,
-        "dni": 11111001,
-        "name": "Mario",
-        "lastName": "Santiago",
-        "email": "mario.santiago@example.com",
-        "password": "password19",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      },
-      {
-        "id": 20,
-        "dni": 11111002,
-        "name": "Karla",
-        "lastName": "Fernández",
-        "email": "karla.fernandez@example.com",
-        "password": "password20",
-        "course": "Desarrollo web con HTML y CSS",
-        "isAdmin": false
-      }
-    ],
-    "startDate": "2023-07-01",
-    "endDate": "2023-08-01"
-  },
-  {
-    "id": 3,
-    "name": "Introduccion a C++",
-    "capacity": 40,
-    "teachers": [
-      {
-        "id": 7,
-        "name": "Pedro",
-        "lastName": "Ruiz",
-        "email": "pedro.ruiz@example.com",
-        "password": "password7",
-        "isAdmin": true
-      },
-      {
-        "id": 8,
-        "name": "Ana",
-        "lastName": "López",
-        "email": "ana.lopez@example.com",
-        "password": "password8",
-        "isAdmin": true
-      },
-      {
-        "id": 9,
-        "name": "Jorge",
-        "lastName": "García",
-        "email": "jorge.garcia@example.com",
-        "password": "password9",
-        "isAdmin": true
-      }
-    ],
-    "students": [
-      {
-        "id": 21,
-        "dni": 11111003,
-        "name": "Daniel",
-        "lastName": "Álvarez",
-        "email": "daniel.alvarez@example.com",
-        "password": "password21",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 22,
-        "dni": 11111004,
-        "name": "Silvia",
-        "lastName": "González",
-        "email": "silvia.gonzalez@example.com",
-        "password": "password22",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 23,
-        "dni": 11111005,
-        "name": "César",
-        "lastName": "Hernández",
-        "email": "cesar.hernandez@example.com",
-        "password": "password23",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 24,
-        "dni": 11111006,
-        "name": "Luis",
-        "lastName": "Rivas",
-        "email": "luis.rivas@example.com",
-        "password": "password24",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 25,
-        "dni": 11111007,
-        "name": "Verónica",
-        "lastName": "López",
-        "email": "veronica.lopez@example.com",
-        "password": "password25",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 26,
-        "dni": 11111008,
-        "name": "Francisco",
-        "lastName": "García",
-        "email": "francisco.garcia@example.com",
-        "password": "password26",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 27,
-        "dni": 11111009,
-        "name": "Laura",
-        "lastName": "Sánchez",
-        "email": "laura.sanchez@example.com",
-        "password": "password27",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 28,
-        "dni": 11110001,
-        "name": "Jorge",
-        "lastName": "Herrera",
-        "email": "jorge.herrera@example.com",
-        "password": "password28",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 29,
-        "dni": 11110002,
-        "name": "Marcela",
-        "lastName": "Jiménez",
-        "email": "marcela.jimenez@example.com",
-        "password": "password29",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      },
-      {
-        "id": 30,
-        "dni": 11110003,
-        "name": "José",
-        "lastName": "Vega",
-        "email": "jose.vega@example.com",
-        "password": "password30",
-        "course": "Introduccion a C++",
-        "isAdmin": false
-      }
-    ],
-    "startDate": "2023-09-01",
-    "endDate": "2023-10-01"
-  },
-  {
-    "id": 4,
-    "name": "Inteligencia artificial",
-    "capacity": 40,
-    "teachers": [
-      {
-        "id": 10,
-        "name": "Fernando",
-        "lastName": "Sánchez",
-        "email": "fernando.sanchez@example.com",
-        "password": "password10",
-        "isAdmin": true
-      },
-      {
-        "id": 11,
-        "name": "Marcela",
-        "lastName": "González",
-        "email": "marcela.gonzalez@example.com",
-        "password": "password11",
-        "isAdmin": true
-      },
-      {
-        "id": 12,
-        "name": "Roberto",
-        "lastName": "Mendoza",
-        "email": "roberto.mendoza@example.com",
-        "password": "password12",
-        "isAdmin": true
-      }
-    ],
-    "students": [
-      {
-        "id": 31,
-        "dni": 11110004,
-        "name": "Ana",
-        "lastName": "Ramos",
-        "email": "ana.ramos@example.com",
-        "password": "password31",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 32,
-        "dni": 11110005,
-        "name": "Cristina",
-        "lastName": "González",
-        "email": "cristina.gonzalez@example.com",
-        "password": "password32",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 33,
-        "dni": 11110006,
-        "name": "Diego",
-        "lastName": "Martínez",
-        "email": "diego.martinez@example.com",
-        "password": "password33",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 34,
-        "dni": 11110007,
-        "name": "Sofía",
-        "lastName": "Mendoza",
-        "email": "sofia.mendoza@example.com",
-        "password": "password34",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 35,
-        "dni": 11110008,
-        "name": "Fernando",
-        "lastName": "Gómez",
-        "email": "fernando.gomez@example.com",
-        "password": "password35",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 36,
-        "dni": 11110009,
-        "name": "Carla",
-        "lastName": "Hernández",
-        "email": "carla.hernandez@example.com",
-        "password": "password36",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 37,
-        "dni": 11100001,
-        "name": "David",
-        "lastName": "Guerrero",
-        "email": "david.guerrero@example.com",
-        "password": "password37",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 38,
-        "dni": 11100002,
-        "name": "Laura",
-        "lastName": "Torres",
-        "email": "laura.torres@example.com",
-        "password": "password38",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 39,
-        "dni": 11100003,
-        "name": "Andrés",
-        "lastName": "Reyes",
-        "email": "andres.reyes@example.com",
-        "password": "password39",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      },
-      {
-        "id": 40,
-        "dni": 11100004,
-        "name": "Carolina",
-        "lastName": "Castillo",
-        "email": "carolina.castillo@example.com",
-        "password": "password40",
-        "course": "Inteligencia artificial",
-        "isAdmin": false
-      }
-    ],
-    "startDate": "2023-09-01",
-    "endDate": "2023-10-01"
-  },
-  {
-    "id": 5,
-    "name": "Robotica",
-    "capacity": 40,
-    "teachers": [
-      {
-        "id": 13,
-        "name": "Silvia",
-        "lastName": "Castro",
-        "email": "silvia.castro@example.com",
-        "password": "password13",
-        "isAdmin": true
-      },
-      {
-        "id": 14,
-        "name": "Luis",
-        "lastName": "Gutiérrez",
-        "email": "luis.gutierrez@example.com",
-        "password": "password14",
-        "isAdmin": true
-      },
-      {
-        "id": 15,
-        "name": "Carla",
-        "lastName": "Méndez",
-        "email": "carla.mendez@example.com",
-        "password": "password15",
-        "isAdmin": true
-      }
-    ],
-    "students": [
-      {
-        "id": 41,
-        "dni": 11100005,
-        "name": "Luis",
-        "lastName": "Santana",
-        "email": "luis.santana@example.com",
-        "password": "password41",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 42,
-        "dni": 11100006,
-        "name": "Gabriela",
-        "lastName": "Flores",
-        "email": "gabriela.flores@example.com",
-        "password": "password42",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 43,
-        "dni": 11100007,
-        "name": "Juan",
-        "lastName": "Pérez",
-        "email": "juan.perez@example.com",
-        "password": "password43",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 44,
-        "dni": 11100008,
-        "name": "María",
-        "lastName": "Chávez",
-        "email": "maria.chavez@example.com",
-        "password": "password44",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 45,
-        "dni": 11100009,
-        "name": "Daniel",
-        "lastName": "Castro",
-        "email": "daniel.castro@example.com",
-        "password": "password45",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 46,
-        "dni": 11000001,
-        "name": "Alejandra",
-        "lastName": "Valencia",
-        "email": "alejandra.valencia@example.com",
-        "password": "password46",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 47,
-        "dni": 11000002,
-        "name": "Jorge",
-        "lastName": "Navarro",
-        "email": "jorge.navarro@example.com",
-        "password": "password47",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 48,
-        "dni": 11000003,
-        "name": "Ana",
-        "lastName": "García",
-        "email": "ana.garcia@example.com",
-        "password": "password48",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 49,
-        "dni": 11000004,
-        "name": "Miguel",
-        "lastName": "Herrera",
-        "email": "miguel.herrera@example.com",
-        "password": "password49",
-        "course": "Robotica",
-        "isAdmin": false
-      },
-      {
-        "id": 50,
-        "dni": 11000005,
-        "name": "Lucía",
-        "lastName": "Rojas",
-        "email": "lucia.rojas@example.com",
-        "password": "password50",
-        "course": "Robotica",
-        "isAdmin": false
-      }
-    ],
-    "startDate": "2023-09-01",
-    "endDate": "2023-10-01"
-  }
+        "name": "Robotica",
+        "capacity": 40,
+        "teachers": [
+            {
+                "id": 63,
+                "dni": 10000063,
+                "name": "Silvia",
+                "lastName": "Castro",
+                "email": "silvia.castro@example.com",
+                "password": "password13",
+                "course": "Robotica",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 64,
+                "dni": 10000064,
+                "name": "Luis",
+                "lastName": "Gutiérrez",
+                "email": "luis.gutierrez@example.com",
+                "password": "password14",
+                "course": "Robotica",
+                "isAdmin": true,
+                "role": "teacher"
+            },
+            {
+                "id": 65,
+                "dni": 10000065,
+                "name": "Carla",
+                "lastName": "Méndez",
+                "email": "carla.mendez@example.com",
+                "password": "password15",
+                "course": "Robotica",
+                "isAdmin": true,
+                "role": "teacher"
+            }
+        ],
+        "students": [
+            {
+                "id": 41,
+                "dni": 10000041,
+                "name": "Luis",
+                "lastName": "Santana",
+                "email": "luis.santana@example.com",
+                "password": "password41",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 42,
+                "dni": 10000042,
+                "name": "Gabriela",
+                "lastName": "Flores",
+                "email": "gabriela.flores@example.com",
+                "password": "password42",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 43,
+                "dni": 10000043,
+                "name": "Juan",
+                "lastName": "Pérez",
+                "email": "juan.perez@example.com",
+                "password": "password43",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 44,
+                "dni": 10000044,
+                "name": "María",
+                "lastName": "Chávez",
+                "email": "maria.chavez@example.com",
+                "password": "password44",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 45,
+                "dni": 10000045,
+                "name": "Daniel",
+                "lastName": "Castro",
+                "email": "daniel.castro@example.com",
+                "password": "password45",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 46,
+                "dni": 10000046,
+                "name": "Alejandra",
+                "lastName": "Valencia",
+                "email": "alejandra.valencia@example.com",
+                "password": "password46",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 47,
+                "dni": 10000047,
+                "name": "Jorge",
+                "lastName": "Navarro",
+                "email": "jorge.navarro@example.com",
+                "password": "password47",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 48,
+                "dni": 10000048,
+                "name": "Ana",
+                "lastName": "García",
+                "email": "ana.garcia@example.com",
+                "password": "password48",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 49,
+                "dni": 10000049,
+                "name": "Miguel",
+                "lastName": "Herrera",
+                "email": "miguel.herrera@example.com",
+                "password": "password49",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            },
+            {
+                "id": 50,
+                "dni": 10000050,
+                "name": "Lucía",
+                "lastName": "Rojas",
+                "email": "lucia.rojas@example.com",
+                "password": "password50",
+                "course": "Robotica",
+                "isAdmin": false,
+                "role": "student"
+            }
+        ],
+        "classes": [
+            {
+                "name": "Introducción a la robótica",
+                "description": "En esta clase se presentará una introducción general a la robótica, sus aplicaciones y los diferentes tipos de robots que existen."
+            },
+            {
+                "name": "Diseño y construcción de robots",
+                "description": " En esta clase se enseñará cómo diseñar y construir robots desde cero, incluyendo la selección de materiales, la elección de componentes y la integración de hardware y software."
+            },
+            {
+                "name": "Control y programación de robots",
+                "description": "En esta clase se discutirán los fundamentos del control y la programación de robots, incluyendo la programación de microcontroladores, la programación de robots con ROS (Robot Operating System) y la integración de sensores y actuadores."
+            },
+            {
+                "name": "Visión y percepción en robots",
+                "description": "En esta clase se presentarán los fundamentos de la visión y la percepción en robots, incluyendo la detección de objetos, el seguimiento de objetos y la navegación autónoma."
+            },
+            {
+                "name": "Robótica colaborativa y aplicaciones prácticas",
+                "description": "En esta clase se discutirán las aplicaciones prácticas de la robótica, incluyendo la robótica colaborativa y el uso de robots en la industria, la salud y la educación."
+            },
+            {
+                "name": "Ética y consideraciones sociales en la robótica",
+                "description": "En esta clase se discutirán las preocupaciones éticas y sociales relacionadas con el desarrollo y uso de robots, incluyendo temas como la privacidad, la responsabilidad y la equidad."
+            }
+        ],
+        "startDate": "2023-09-01",
+        "endDate": "2023-10-01"
+    }
 ]

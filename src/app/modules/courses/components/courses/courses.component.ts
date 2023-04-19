@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Course } from 'src/app/modules/students/models/course';
 import { DatosService } from 'src/app/services/datos.service';
+import { UpdateRouteService } from 'src/app/services/update-route.service';
 import { UserLoggedService } from 'src/app/services/user-logged.service';
 
 @Component({
@@ -19,7 +21,9 @@ export class CoursesComponent implements OnInit {
 
 
   constructor(private datosService: DatosService,
-              private user: UserLoggedService) { }
+              private user: UserLoggedService,
+              private router: Router,
+              private updateRoute: UpdateRouteService) { }
 
   ngOnInit(): void {
 
@@ -34,4 +38,8 @@ export class CoursesComponent implements OnInit {
     }
   }
 
+  direccionar(){
+    console.log("entra a redireccionar")
+    this.router.navigate(['/home/courseDetail'], { replaceUrl: true });
+  }
 }

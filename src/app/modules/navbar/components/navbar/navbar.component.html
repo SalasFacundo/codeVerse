@@ -4,10 +4,10 @@
             <h1 class="title">Cursos de programación</h1>
         </mat-toolbar>
         <mat-nav-list>
-            <mat-list-item (click)="updateUrl('/inicio')" routerLink="/inicio">
+            <mat-list-item (click)="updateUrl('/home')" routerLink="/home">
                 Inicio
             </mat-list-item>
-            <mat-list-item (click)="updateUrl('/inicio/courses')" routerLink="/inicio/courses">
+            <mat-list-item (click)="updateUrl('/home/courses')" routerLink="/home/courses">
                 Cursos
             </mat-list-item>
             <mat-list-item>
@@ -19,23 +19,32 @@
             <mat-list-item>
                 <a mat-list-item-link href="#">Acerca de</a>
             </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item-link href="#" (click)="logOut()">Cerrar Sesion</a>
-            </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <mat-toolbar color="primary" >
+        <mat-toolbar color="primary">
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>CodeVerse</span>
+            <span>CodeVerse {{currentUrl}}</span>
+            <div class="user-boton">
+                <mat-toolbar color="primary">
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>Perfil</button>
+                        <button mat-menu-item (click)="logOut()">Cerrar sesión</button>
+                    </mat-menu>
+                </mat-toolbar>
+            </div>
         </mat-toolbar>
 
-
-        <div *ngIf="currentUrl == '/inicio'"> <app-default-navbar></app-default-navbar></div>
-        <div *ngIf="currentUrl != '/inicio'"><router-outlet></router-outlet></div>
+        <router-outlet></router-outlet>
+        <div *ngIf="currentUrl == '/home'">
+            <app-default-navbar></app-default-navbar>
+        </div>        
 
     </mat-sidenav-content>
 </mat-sidenav-container>

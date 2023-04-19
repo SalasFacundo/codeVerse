@@ -18,7 +18,7 @@ const routes: Routes = [
     children: [
       { path: 'students', component: GrillaComponent },
       { path: 'courses', component: AllCoursesComponent},
-      { path: 'courseDetail', component: GrillaComponent},
+      { path: 'courseDetail/:id', component: GrillaComponent},
     ]
   },
 

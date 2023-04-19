@@ -23,6 +23,12 @@ export class DatosService {
   getUsers(): Observable<any> {
     return this.http.get(this.urlUsers);
   }
+
+  getCourseById(id: number): Observable<Course[]> {
+    return this.http.get<Course[]>(this.urlCourses).pipe(
+      map((courses) => courses.filter(course => course.id === id))
+    );
+  }
   getAllCourses(): Observable<any> {
     return this.http.get(this.urlCourses);
   }

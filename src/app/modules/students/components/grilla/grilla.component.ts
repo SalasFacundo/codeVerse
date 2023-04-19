@@ -8,6 +8,7 @@ import { Student } from '../../models/student';
 import { DatosService } from 'src/app/services/datos.service';
 import { UserLoggedService } from 'src/app/services/user-logged.service';
 import { User } from '../../models/user';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-grilla',
@@ -18,7 +19,7 @@ export class GrillaComponent implements OnInit {
 
   readonly studentsUrl: string = '/assets/data/json/students.json';
   displayedColumns: string[] = ['dni', 'fullName', 'email', 'course'];
-  dataSource: Student[] = [];
+  dataSource: User[] = [];
   isAdmin: boolean = false;
   value: number = 0;
   articulos: any;
@@ -27,13 +28,25 @@ export class GrillaComponent implements OnInit {
   constructor(private matDialog: MatDialog,
               private http: HttpClient,
               private datosService: DatosService,
-              private userLogged: UserLoggedService
+              private userLogged: UserLoggedService,
+              private activatedRoute: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
-    this.datosService.getStudents().subscribe(data => {
-      this.dataSource = data;
-    });
+    
+    
+    console.log("parametro: ")
+
+    if(this.activatedRoute.snapshot.paramMap.get('id')){
+      this.datosService.getCourseById(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe(value=>{this.dataSource = value[0].students})
+    } else {
+      this.datosService.getStudents().subscribe(data => {
+        this.dataSource = data;
+      });
+    }
+    
+    
+
     this.user = this.userLogged.getUser();
     this.isAdmin = this.user.isAdmin;
     this.addColumns();

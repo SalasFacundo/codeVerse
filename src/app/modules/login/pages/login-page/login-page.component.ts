@@ -13,7 +13,6 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.logOut()
-    console.log("Usuarios de prueba\n\n Admin: \n User: admin@admin\n Password: admin\n\n NO admin: \n User: ana.garcia@example.com\n Password: password")
+    console.log("Usuarios de prueba\n\n Admin: \n User: admin@admin\n Password: admin\n\n NO admin: \n User: pedro.martinez@example.com\n Password: password1")
   }
-
 }

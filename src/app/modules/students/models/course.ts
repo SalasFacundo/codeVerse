@@ -5,8 +5,8 @@ export interface Course{
     id: number;
     name: string;
     capacity: number;
-    teachers: User[];
-    students: User[];
+    teachers: number[];
+    students: number[];
     classes: Class[];
     startDate: Date;
     endDate: Date;

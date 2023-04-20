@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filter, map, Observable } from 'rxjs';
 import { Student } from '../modules/students/models/student';
@@ -36,17 +36,19 @@ export class DatosService {
   getCoursesByUser(user: User): Observable<Course[]> {
     return this.http.get<Course[]>(this.urlCourses).pipe(
       map(courses => courses.filter(course => course.students.some(student => {
-        if(student.email === user.email){
+        if(student === user.id){
           return true;
         }
         return false;
       })))
     );
-  }
+  } 
 
-  getUsersById(id: number): Observable<User[]> {
+  getUsersById(ids:number[]): Observable<User[]> {
     return this.http.get<User[]>(this.urlUsers).pipe(
-      map((users) => users.filter(user => user.id === id))
+      map((users) => {
+        return users.filter(user => ids.includes(user.id));
+      })
     );
   }
 }

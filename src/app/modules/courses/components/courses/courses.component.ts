@@ -38,11 +38,11 @@ export class CoursesComponent implements OnInit {
         this.datosService.getAllCourses().subscribe(data => {
         this.courses = data;
       });
-    } else if(this.filter == "related"){
+    }  else if(this.filter == "related"){
       this.datosService.getCoursesByUser(this.user.getUser()).subscribe(data => {
         this.courses = data;
       });
-    }
+    } 
   }
 
   openFormBuyCourse(){

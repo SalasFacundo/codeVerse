@@ -23,7 +23,7 @@
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.email}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="course">
+        <ng-container *ngIf="isAdmin" matColumnDef="course">
             <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Curso </th>
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.course}} </td>
         </ng-container>

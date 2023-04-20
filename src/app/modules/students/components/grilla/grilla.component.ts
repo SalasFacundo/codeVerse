@@ -19,7 +19,7 @@ export class GrillaComponent implements OnInit {
   
   @Input()
   filter: string = ""
-  displayedColumns: string[] = ['fullName', 'email', 'course'];
+  displayedColumns: string[] = ['fullName', 'email'];
   dataSource: User[] = [];
   isAdmin: boolean = false;
   value: number = 0;
@@ -33,26 +33,11 @@ export class GrillaComponent implements OnInit {
               private activatedRoute: ActivatedRoute
     ) { }
 
-  ngOnInit(): void {    
-    if(this.activatedRoute.snapshot.paramMap.get('id')){
-      if(this.filter == 'students'){
-        this.datosService.getCourseById(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe(value=>{this.dataSource = value[0].students})
-      } else if(this.filter == 'teachers'){
-        this.datosService.getCourseById(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe(value=>{this.dataSource = value[0].teachers})
-      }
-    } else {
-      this.datosService.getStudents().subscribe(data => {
-        this.dataSource = data;
-      });
-    }
-    
-    
-
+  ngOnInit(): void {   
+    this.fillColumns();
     this.user = this.userLogged.getUser();
     this.isAdmin = this.user.isAdmin;
     this.addColumns();
-
-    this.datosService.getCoursesByUser(this.userLogged.getUser()).subscribe( data => { console.log("USERS POR ID"); console.log(data)})
   }
 
   openFormCreateStudent(): void {
@@ -99,14 +84,42 @@ export class GrillaComponent implements OnInit {
   }
 
   addColumns() {
-    if (this.isAdmin) {
-      this.displayedColumns.push('action')
+    if (this.isAdmin) {     
       this.displayedColumns.push('dni')
-    } else if (this.displayedColumns.indexOf('action') != -1 && this.displayedColumns.indexOf('dni') != -1 ) {
+      this.displayedColumns.push('course')
+      this.displayedColumns.push('action')
+    } else if (this.displayedColumns.indexOf('action') != -1 && this.displayedColumns.indexOf('dni') != -1 && this.displayedColumns.indexOf('course') != -1 ) {
       this.displayedColumns.splice(this.displayedColumns.indexOf('dni'), 1)
       this.displayedColumns.splice(this.displayedColumns.indexOf('action'), 1)
+      this.displayedColumns.splice(this.displayedColumns.indexOf('course'), 1)
     }
 
+  }
+
+  fillColumns(){
+    if (this.activatedRoute.snapshot.paramMap.get('id')) {
+      if (this.filter == 'students') {
+        this.datosService
+          .getCourseById(
+            Number(this.activatedRoute.snapshot.paramMap.get('id'))
+          )
+          .subscribe((value) => {
+            this.datosService.getUsersById(value[0].students).subscribe(valor => {console.log("varias id"); console.log(valor);this.dataSource = valor})
+          });
+      }  else if (this.filter == 'teachers') {
+        this.datosService
+          .getCourseById(
+            Number(this.activatedRoute.snapshot.paramMap.get('id'))
+          )
+          .subscribe((value) => {
+            this.datosService.getUsersById(value[0].teachers).subscribe(valor => {console.log("varias id"); console.log(valor);this.dataSource = valor})
+          });
+      } 
+    } else {
+      this.datosService.getStudents().subscribe((data) => {
+        this.dataSource = data;
+      });
+    } 
   }
 
 }

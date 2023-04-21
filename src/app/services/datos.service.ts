@@ -13,7 +13,9 @@ export class DatosService {
   private urlUsers = "./assets/data/json/users.json"
   private urlCourses = "./assets/data/json/courses.json"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    
+   }
 
 
   getStudents(): Observable<any> {
@@ -61,4 +63,21 @@ export class DatosService {
       })
     );
   }
+
+  addNewCourseToStudent(studentId: number, courseId: number) {
+    this.http.get<Course[]>(this.urlCourses).subscribe((data: Course[]) => {
+      if (courseId > 0 && courseId <= data.length) {
+        const course = data[courseId - 1];
+        course.students.push(studentId);
+        this.http.put<Course[]>(this.urlCourses, data).subscribe((value: Course[]) => {
+          console.log('La ID fue agregada con éxito', value);
+        });
+      } else {
+        console.error(`El ID del curso ${courseId} está fuera de rango.`);
+      }
+    }, error => {
+      console.error('Error al recuperar los cursos', error);
+    });
+  }
+  
 }

@@ -29,7 +29,8 @@ export class CoursesComponent implements OnInit {
   constructor(private datosService: DatosService,
               private user: UserLoggedService,
               private matDialog: MatDialog,
-              private updateRoute: UpdateRouteService) { }
+              private updateRoute: UpdateRouteService,
+              private loggedUser: UserLoggedService) { }
 
   ngOnInit(): void {
 
@@ -53,7 +54,7 @@ export class CoursesComponent implements OnInit {
     const dialog = this.matDialog.open(BuyCourseModalComponent, { data: {students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        
+        this.datosService.addNewCourseToStudent(this.loggedUser.getUser().id, courseId)
       }
     })
   }

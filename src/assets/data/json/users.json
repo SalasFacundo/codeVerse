@@ -5,8 +5,7 @@
         "name": "Pedro",
         "lastName": "Martínez",
         "email": "pedro.martinez@example.com",
-        "password": "password1",
-       "courses": [1],
+        "password": "password1",      
         "isAdmin": false,
         "role": "student"
     },
@@ -16,8 +15,7 @@
         "name": "Ana",
         "lastName": "López",
         "email": "ana.lopez@example.com",
-        "password": "password2",
-       "courses": [1],
+        "password": "password2",      
         "isAdmin": false,
         "role": "student"
     },
@@ -27,8 +25,7 @@
         "name": "Juan",
         "lastName": "Pérez",
         "email": "juan.perez@example.com",
-        "password": "password3",
-       "courses": [1],
+        "password": "password3",      
         "isAdmin": false,
         "role": "student"
     },
@@ -38,8 +35,7 @@
         "name": "Laura",
         "lastName": "González",
         "email": "laura.gonzalez@example.com",
-        "password": "password4",
-       "courses": [1],
+        "password": "password4",      
         "isAdmin": false,
         "role": "student"
     },
@@ -49,8 +45,7 @@
         "name": "Carlos",
         "lastName": "Sánchez",
         "email": "carlos.sanchez@example.com",
-        "password": "password5",
-       "courses": [1],
+        "password": "password5",      
         "isAdmin": false,
         "role": "student"
     },
@@ -60,8 +55,7 @@
         "name": "Paola",
         "lastName": "Hernández",
         "email": "paola.hernandez@example.com",
-        "password": "password6",
-       "courses": [1],
+        "password": "password6",      
         "isAdmin": false,
         "role": "student"
     },
@@ -71,8 +65,7 @@
         "name": "Diego",
         "lastName": "Gómez",
         "email": "diego.gomez@example.com",
-        "password": "password7",
-       "courses": [1],
+        "password": "password7",      
         "isAdmin": false,
         "role": "student"
     },
@@ -82,8 +75,7 @@
         "name": "Isabel",
         "lastName": "Fernández",
         "email": "isabel.fernandez@example.com",
-        "password": "password8",
-       "courses": [1],
+        "password": "password8",      
         "isAdmin": false,
         "role": "student"
     },
@@ -93,8 +85,7 @@
         "name": "Jorge",
         "lastName": "Rodríguez",
         "email": "jorge.rodriguez@example.com",
-        "password": "password9",
-       "courses": [1],
+        "password": "password9",      
         "isAdmin": false,
         "role": "student"
     },
@@ -104,8 +95,7 @@
         "name": "María",
         "lastName": "Jiménez",
         "email": "maria.jimenez@example.com",
-        "password": "password10",
-        "courses": [1],
+        "password": "password10",       
         "isAdmin": false,
         "role": "student"
     },
@@ -115,8 +105,7 @@
         "name": "Alberto",
         "lastName": "González",
         "email": "alberto.gonzalez@example.com",
-        "password": "password11",
-        "courses": [2],
+        "password": "password11",       
         "isAdmin": false,
         "role": "student"
     },
@@ -126,8 +115,7 @@
         "name": "Lucía",
         "lastName": "Santos",
         "email": "lucia.santos@example.com",
-        "password": "password12",
-        "courses": [2],
+        "password": "password12",       
         "isAdmin": false,
         "role": "student"
     },
@@ -137,8 +125,7 @@
         "name": "Sergio",
         "lastName": "Martínez",
         "email": "sergio.martinez@example.com",
-        "password": "password13",
-        "courses": [2],
+        "password": "password13",       
         "isAdmin": false,
         "role": "student"
     },
@@ -148,8 +135,7 @@
         "name": "Carla",
         "lastName": "Ramírez",
         "email": "carla.ramirez@example.com",
-        "password": "password14",
-        "courses": [2],
+        "password": "password14",       
         "isAdmin": false,
         "role": "student"
     },
@@ -159,8 +145,7 @@
         "name": "Pablo",
         "lastName": "Cruz",
         "email": "pablo.cruz@example.com",
-        "password": "password15",
-        "courses": [2],
+        "password": "password15",       
         "isAdmin": false,
         "role": "student"
     },
@@ -170,8 +155,7 @@
         "name": "Mariana",
         "lastName": "Vargas",
         "email": "mariana.vargas@example.com",
-        "password": "password16",
-        "courses": [2],
+        "password": "password16",       
         "isAdmin": false,
         "role": "student"
     },
@@ -181,8 +165,7 @@
         "name": "Héctor",
         "lastName": "Guzmán",
         "email": "hector.guzman@example.com",
-        "password": "password17",
-        "courses": [2],
+        "password": "password17",       
         "isAdmin": false,
         "role": "student"
     },
@@ -192,8 +175,7 @@
         "name": "Valeria",
         "lastName": "Torres",
         "email": "valeria.torres@example.com",
-        "password": "password18",
-        "courses": [2],
+        "password": "password18",       
         "isAdmin": false,
         "role": "student"
     },
@@ -203,8 +185,7 @@
         "name": "Mario",
         "lastName": "Santiago",
         "email": "mario.santiago@example.com",
-        "password": "password19",
-        "courses": [2],
+        "password": "password19",       
         "isAdmin": false,
         "role": "student"
     },
@@ -214,8 +195,7 @@
         "name": "Karla",
         "lastName": "Fernández",
         "email": "karla.fernandez@example.com",
-        "password": "password20",
-        "courses": [2],
+        "password": "password20",       
         "isAdmin": false,
         "role": "student"
     },
@@ -225,8 +205,7 @@
         "name": "Daniel",
         "lastName": "Álvarez",
         "email": "daniel.alvarez@example.com",
-        "password": "password21",
-        "courses": [3],
+        "password": "password21",       
         "isAdmin": false,
         "role": "student"
     },
@@ -236,8 +215,7 @@
         "name": "Silvia",
         "lastName": "González",
         "email": "silvia.gonzalez@example.com",
-        "password": "password22",
-        "courses": [1],
+        "password": "password22",       
         "isAdmin": false,
         "role": "student"
     },
@@ -247,8 +225,7 @@
         "name": "César",
         "lastName": "Hernández",
         "email": "cesar.hernandez@example.com",
-        "password": "password23",
-        "courses": [1],
+        "password": "password23",       
         "isAdmin": false,
         "role": "student"
     },
@@ -258,8 +235,7 @@
         "name": "Luis",
         "lastName": "Rivas",
         "email": "luis.rivas@example.com",
-        "password": "password24",
-        "courses": [1],
+        "password": "password24",       
         "isAdmin": false,
         "role": "student"
     },
@@ -269,8 +245,7 @@
         "name": "Verónica",
         "lastName": "López",
         "email": "veronica.lopez@example.com",
-        "password": "password25",
-        "courses": [1],
+        "password": "password25",       
         "isAdmin": false,
         "role": "student"
     },
@@ -280,8 +255,7 @@
         "name": "Francisco",
         "lastName": "García",
         "email": "francisco.garcia@example.com",
-        "password": "password26",
-        "courses": [1],
+        "password": "password26",       
         "isAdmin": false,
         "role": "student"
     },
@@ -291,8 +265,7 @@
         "name": "Laura",
         "lastName": "Sánchez",
         "email": "laura.sanchez@example.com",
-        "password": "password27",
-        "courses": [1],
+        "password": "password27",       
         "isAdmin": false,
         "role": "student"
     },
@@ -302,8 +275,7 @@
         "name": "Jorge",
         "lastName": "Herrera",
         "email": "jorge.herrera@example.com",
-        "password": "password28",
-        "courses": [1],
+        "password": "password28",       
         "isAdmin": false,
         "role": "student"
     },
@@ -313,8 +285,7 @@
         "name": "Marcela",
         "lastName": "Jiménez",
         "email": "marcela.jimenez@example.com",
-        "password": "password29",
-        "courses": [1],
+        "password": "password29",       
         "isAdmin": false,
         "role": "student"
     },
@@ -324,8 +295,7 @@
         "name": "José",
         "lastName": "Vega",
         "email": "jose.vega@example.com",
-        "password": "password30",
-        "courses": [1],
+        "password": "password30",       
         "isAdmin": false,
         "role": "student"
     },
@@ -335,8 +305,7 @@
         "name": "Ana",
         "lastName": "Ramos",
         "email": "ana.ramos@example.com",
-        "password": "password31",
-        "courses": [4],
+        "password": "password31",       
         "isAdmin": false,
         "role": "student"
     },
@@ -346,8 +315,7 @@
         "name": "Cristina",
         "lastName": "González",
         "email": "cristina.gonzalez@example.com",
-        "password": "password32",
-        "courses": [4],
+        "password": "password32",       
         "isAdmin": false,
         "role": "student"
     },
@@ -357,8 +325,7 @@
         "name": "Diego",
         "lastName": "Martínez",
         "email": "diego.martinez@example.com",
-        "password": "password33",
-        "courses": [4],
+        "password": "password33",       
         "isAdmin": false,
         "role": "student"
     },
@@ -368,8 +335,7 @@
         "name": "Sofía",
         "lastName": "Mendoza",
         "email": "sofia.mendoza@example.com",
-        "password": "password34",
-        "courses": [4],
+        "password": "password34",       
         "isAdmin": false,
         "role": "student"
     },
@@ -379,8 +345,7 @@
         "name": "Fernando",
         "lastName": "Gómez",
         "email": "fernando.gomez@example.com",
-        "password": "password35",
-        "courses": [4],
+        "password": "password35",       
         "isAdmin": false,
         "role": "student"
     },
@@ -390,8 +355,7 @@
         "name": "Carla",
         "lastName": "Hernández",
         "email": "carla.hernandez@example.com",
-        "password": "password36",
-        "courses": [4],
+        "password": "password36",       
         "isAdmin": false,
         "role": "student"
     },
@@ -401,8 +365,7 @@
         "name": "David",
         "lastName": "Guerrero",
         "email": "david.guerrero@example.com",
-        "password": "password37",
-        "courses": [4],
+        "password": "password37",       
         "isAdmin": false,
         "role": "student"
     },
@@ -412,8 +375,7 @@
         "name": "Laura",
         "lastName": "Torres",
         "email": "laura.torres@example.com",
-        "password": "password38",
-        "courses": [4],
+        "password": "password38",       
         "isAdmin": false,
         "role": "student"
     },
@@ -423,8 +385,7 @@
         "name": "Andrés",
         "lastName": "Reyes",
         "email": "andres.reyes@example.com",
-        "password": "password39",
-        "courses": [4],
+        "password": "password39",       
         "isAdmin": false,
         "role": "student"
     },
@@ -434,8 +395,7 @@
         "name": "Carolina",
         "lastName": "Castillo",
         "email": "carolina.castillo@example.com",
-        "password": "password40",
-        "courses": [4],
+        "password": "password40",       
         "isAdmin": false,
         "role": "student"
     },
@@ -445,8 +405,7 @@
         "name": "Luis",
         "lastName": "Santana",
         "email": "luis.santana@example.com",
-        "password": "password41",
-        "courses": [5],
+        "password": "password41",       
         "isAdmin": false,
         "role": "student"
     },
@@ -456,8 +415,7 @@
         "name": "Gabriela",
         "lastName": "Flores",
         "email": "gabriela.flores@example.com",
-        "password": "password42",
-        "courses": [5],
+        "password": "password42",       
         "isAdmin": false,
         "role": "student"
     },
@@ -467,8 +425,7 @@
         "name": "Juan",
         "lastName": "Pérez",
         "email": "juan.perez@example.com",
-        "password": "password43",
-        "courses": [5],
+        "password": "password43",       
         "isAdmin": false,
         "role": "student"
     },
@@ -478,8 +435,7 @@
         "name": "María",
         "lastName": "Chávez",
         "email": "maria.chavez@example.com",
-        "password": "password44",
-        "courses": [5],
+        "password": "password44",       
         "isAdmin": false,
         "role": "student"
     },
@@ -489,8 +445,7 @@
         "name": "Daniel",
         "lastName": "Castro",
         "email": "daniel.castro@example.com",
-        "password": "password45",
-        "courses": [5],
+        "password": "password45",       
         "isAdmin": false,
         "role": "student"
     },
@@ -500,8 +455,7 @@
         "name": "Alejandra",
         "lastName": "Valencia",
         "email": "alejandra.valencia@example.com",
-        "password": "password46",
-        "courses": [5],
+        "password": "password46",       
         "isAdmin": false,
         "role": "student"
     },
@@ -511,8 +465,7 @@
         "name": "Jorge",
         "lastName": "Navarro",
         "email": "jorge.navarro@example.com",
-        "password": "password47",
-        "courses": [5],
+        "password": "password47",       
         "isAdmin": false,
         "role": "student"
     },
@@ -522,8 +475,7 @@
         "name": "Ana",
         "lastName": "García",
         "email": "ana.garcia@example.com",
-        "password": "password48",
-        "courses": [5],
+        "password": "password48",       
         "isAdmin": false,
         "role": "student"
     },
@@ -533,8 +485,7 @@
         "name": "Miguel",
         "lastName": "Herrera",
         "email": "miguel.herrera@example.com",
-        "password": "password49",
-        "courses": [5],
+        "password": "password49",       
         "isAdmin": false,
         "role": "student"
     },
@@ -544,8 +495,7 @@
         "name": "Lucía",
         "lastName": "Rojas",
         "email": "lucia.rojas@example.com",
-        "password": "password50",
-        "courses": [5],
+        "password": "password50",       
         "isAdmin": false,
         "role": "student"
     },
@@ -565,8 +515,7 @@
         "name": "María",
         "lastName": "González",
         "email": "maria.gonzalez@example.com",
-        "password": "password2",
-        "course": "",
+        "password": "password2",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -576,8 +525,7 @@
         "name": "Carlos",
         "lastName": "Sánchez",
         "email": "carlos.sanchez@example.com",
-        "password": "password3",
-        "course": "",
+        "password": "password3",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -587,8 +535,7 @@
         "name": "Laura",
         "lastName": "Hernández",
         "email": "laura.hernandez@example.com",
-        "password": "password4",
-        "course": "",
+        "password": "password4",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -598,8 +545,7 @@
         "name": "Alejandro",
         "lastName": "Martínez",
         "email": "alejandro.martinez@example.com",
-        "password": "password5",
-        "course": "",
+        "password": "password5",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -609,8 +555,7 @@
         "name": "Mónica",
         "lastName": "Rodríguez",
         "email": "monica.rodriguez@example.com",
-        "password": "password6",
-        "course": "",
+        "password": "password6",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -620,8 +565,7 @@
         "name": "Pedro",
         "lastName": "Ruiz",
         "email": "pedro.ruiz@example.com",
-        "password": "password7",
-        "course": "",
+        "password": "password7",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -631,8 +575,7 @@
         "name": "Ana",
         "lastName": "López",
         "email": "ana.lopez@example.com",
-        "password": "password8",
-        "course": "",
+        "password": "password8",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -642,8 +585,7 @@
         "name": "Jorge",
         "lastName": "García",
         "email": "jorge.garcia@example.com",
-        "password": "password9",
-        "course": "",
+        "password": "password9",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -653,8 +595,7 @@
         "name": "Fernando",
         "lastName": "Sánchez",
         "email": "fernando.sanchez@example.com",
-        "password": "password10",
-        "course": "",
+        "password": "password10",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -664,8 +605,7 @@
         "name": "Marcela",
         "lastName": "González",
         "email": "marcela.gonzalez@example.com",
-        "password": "password11",
-        "course": "",
+        "password": "password11",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -675,8 +615,7 @@
         "name": "Roberto",
         "lastName": "Mendoza",
         "email": "roberto.mendoza@example.com",
-        "password": "password12",
-        "course": "",
+        "password": "password12",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -686,8 +625,7 @@
         "name": "Silvia",
         "lastName": "Castro",
         "email": "silvia.castro@example.com",
-        "password": "password13",
-        "course": "",
+        "password": "password13",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -697,8 +635,7 @@
         "name": "Luis",
         "lastName": "Gutiérrez",
         "email": "luis.gutierrez@example.com",
-        "password": "password14",
-        "course": "",
+        "password": "password14",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -708,8 +645,7 @@
         "name": "Carla",
         "lastName": "Méndez",
         "email": "carla.mendez@example.com",
-        "password": "password15",
-        "course": "",
+        "password": "password15",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -719,8 +655,7 @@
         "name": "Andrés",
         "lastName": "Fernández",
         "email": "andres.fernandez@example.com",
-        "password": "password16",
-        "course": "",
+        "password": "password16",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -730,8 +665,7 @@
         "name": "Cristina",
         "lastName": "Santos",
         "email": "cristina.santos@example.com",
-        "password": "password17",
-        "course": "",
+        "password": "password17",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -741,8 +675,7 @@
         "name": "Ricardo",
         "lastName": "Molina",
         "email": "ricardo.molina@example.com",
-        "password": "password18",
-        "course": "",
+        "password": "password18",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -752,8 +685,7 @@
         "name": "Lucía",
         "lastName": "Morales",
         "email": "lucia.morales@example.com",
-        "password": "password19",
-        "course": "",
+        "password": "password19",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -763,8 +695,7 @@
         "name": "José",
         "lastName": "González",
         "email": "jose.gonzalez@example.com",
-        "password": "password20",
-        "course": "",
+        "password": "password20",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -774,8 +705,7 @@
         "name": "Ana",
         "lastName": "Pérez",
         "email": "ana.perez@example.com",
-        "password": "password21",
-        "course": "",
+        "password": "password21",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -785,8 +715,7 @@
         "name": "Pedro",
         "lastName": "Hernández",
         "email": "pedro.hernandez@example.com",
-        "password": "password22",
-        "course": "",
+        "password": "password22",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -796,8 +725,7 @@
         "name": "Sara",
         "lastName": "García",
         "email": "sara.garcia@example.com",
-        "password": "password23",
-        "course": "",
+        "password": "password23",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -807,8 +735,7 @@
         "name": "Javier",
         "lastName": "Vargas",
         "email": "javier.vargas@example.com",
-        "password": "password24",
-        "course": "",
+        "password": "password24",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -818,8 +745,7 @@
         "name": "Mónica",
         "lastName": "Ruiz",
         "email": "monica.ruiz@example.com",
-        "password": "password25",
-        "course": "",
+        "password": "password25",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -829,8 +755,7 @@
         "name": "Roberto",
         "lastName": "García",
         "email": "roberto.garcia@example.com",
-        "password": "password26",
-        "course": "",
+        "password": "password26",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -840,8 +765,7 @@
         "name": "María",
         "lastName": "Sánchez",
         "email": "maria.sanchez@example.com",
-        "password": "password27",
-        "course": "",
+        "password": "password27",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -851,8 +775,7 @@
         "name": "Jorge",
         "lastName": "Martínez",
         "email": "jorge.martinez@example.com",
-        "password": "password28",
-        "course": "",
+        "password": "password28",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -862,8 +785,7 @@
         "name": "Fernanda",
         "lastName": "González",
         "email": "fernanda.gonzalez@example.com",
-        "password": "password29",
-        "course": "",
+        "password": "password29",        
         "isAdmin": true,
         "role": "teacher"
     },
@@ -873,8 +795,7 @@
         "name": "Diego",
         "lastName": "Pérez",
         "email": "diego.perez@example.com",
-        "password": "password30",
-        "course": "",
+        "password": "password30",        
         "isAdmin": true,
         "role": "teacher"
     },

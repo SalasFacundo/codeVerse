@@ -1,7 +1,7 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over" opened="false">
         <mat-toolbar class="toolbar primaryCustom toggleSidebar" (click)="sidenav.toggle()">
-            <h1 class="title">Cursos de programación</h1>
+            <h1>Cursos de programación</h1>
         </mat-toolbar>
         <mat-nav-list>
             <mat-list-item routerLink="/home" (click)="sidenav.toggle()">
@@ -9,16 +9,7 @@
             </mat-list-item>
             <mat-list-item routerLink="/home/courses" (click)="sidenav.toggle()">
                 Cursos
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item-link href="#">Inscripciones</a>
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item-link href="#">Contacto</a>
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-list-item-link href="#">Acerca de</a>
-            </mat-list-item>
+            </mat-list-item>            
         </mat-nav-list>
     </mat-sidenav>
 
@@ -27,7 +18,11 @@
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>CodeVerse {{currentUrl}}</span>
+            <div class="title">
+                <div class="subtitle1">CODE</div>
+                <div class="pipe">&nbsp;|&nbsp;</div>
+                <div class="subtitle2">VERSE</div>
+            </div>
             <div class="user-boton">
                 <mat-toolbar color="primary">
                     <button mat-icon-button [matMenuTriggerFor]="menu">

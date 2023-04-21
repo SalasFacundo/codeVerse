@@ -4,7 +4,6 @@ import { DeleteStudentComponent } from '../modales/delete-student/delete-student
 import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-crear-alumno.component';
 import { HttpClient } from '@angular/common/http';
 import { ModifyStudentComponent } from '../modales/modify-student/modify-student.component';
-import { Student } from '../../models/student';
 import { DatosService } from 'src/app/services/datos.service';
 import { UserLoggedService } from 'src/app/services/user-logged.service';
 import { User } from '../../models/user';
@@ -54,7 +53,7 @@ export class GrillaComponent implements OnInit {
     const dialog = this.matDialog.open(DeleteStudentComponent);
     dialog.afterClosed().subscribe((valor) => {
       if(valor == 'delete'){
-        this.dataSource = this.dataSource.filter((item: Student) => item.dni !== value);
+        this.dataSource = this.dataSource.filter((item: User) => item.dni !== value);
       }
     })
   }
@@ -68,8 +67,8 @@ export class GrillaComponent implements OnInit {
     })
   }
 
-  replaceObjectById(array: Student[], newObject: any): void {
-    const index = array.findIndex((obj: Student) => obj.id === newObject.originalId);
+  replaceObjectById(array: User[], newObject: any): void {
+    const index = array.findIndex((obj: User) => obj.id === newObject.originalId);
     if (index !== -1) {
       array[index] = newObject.formValue;
       array[index].id = newObject.originalId;

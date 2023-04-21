@@ -9,6 +9,7 @@ import { GrillaComponent } from './modules/students/components/grilla/grilla.com
 import { AllCoursesComponent } from './modules/navbar/pages/all-courses/all-courses.component';
 import { PurchasedCourseComponent } from './modules/courses/pages/purchased-course/purchased-course.component';
 import { BuyCourseComponent } from './modules/courses/components/buy-course/buy-course.component';
+import { CourseGuard } from './guards/course-guard';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent, canActivate: [LoginGuard] },
@@ -16,12 +17,10 @@ const routes: Routes = [
   {
     path: 'home', component: NavbarComponent, canActivate: [AuthGuard],
     children: [
-      { path: 'students', component: GrillaComponent },
       { path: 'courses', component: AllCoursesComponent},
-      { path: 'courseDetail/:id', component: PurchasedCourseComponent},
+      { path: 'courseDetail/:id', component: PurchasedCourseComponent, canActivate: [CourseGuard]},
     ]
   },
-
 ];
 
 @NgModule({

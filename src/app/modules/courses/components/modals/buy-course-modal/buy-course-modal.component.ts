@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-buy-course-modal',
@@ -8,49 +8,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class BuyCourseModalComponent implements OnInit {
 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
-  creditCardForm!: FormGroup;
   
-  constructor(private _formBuilder: FormBuilder) { 
-    this.firstFormGroup = this._formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required]
-    });
+  cardNameControl = new FormControl('', [Validators.required]);
+  cardNumberControl = new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]);
+  cardDateControl = new FormControl('', [Validators.required]);
+  cvvControl = new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]);
+  
+  creditCardForm = new FormGroup({
+    cardName: this.cardNameControl,
+    CardNumber: this.cardNumberControl,
+    cardDate: this.cardDateControl,
+    cvv: this.cvvControl
+  })
+  constructor() {
 
-    this.secondFormGroup = this._formBuilder.group({
-      email: ['', Validators.required],
-      phone: ['', Validators.required]
-    });
-
-    this.thirdFormGroup = this._formBuilder.group({
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zip: ['', Validators.required]
-    });
-
-    this.createForm();
   }
 
   ngOnInit(): void {
+    
+    this.createForm();
 
     
   }
 
-  createForm() {
-    this.creditCardForm = this._formBuilder.group({
-      cardholderName: ['', Validators.required],
-      cardNumber: ['', [Validators.required]],
-      expirationMonth: ['', Validators.required],
-      expirationYear: ['', Validators.required],
-      cvv: ['', Validators.required]
-    });
+  createForm() {    
   }
 
   submitForm() {
-    console.log(this.creditCardForm.value);
+    console.log(this.creditCardForm.invalid);
+    console.log(this.creditCardForm.controls)
   }
 
 }

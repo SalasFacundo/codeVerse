@@ -6,7 +6,7 @@
         "lastName": "Martínez",
         "email": "pedro.martinez@example.com",
         "password": "password1",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -17,7 +17,7 @@
         "lastName": "López",
         "email": "ana.lopez@example.com",
         "password": "password2",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -28,7 +28,7 @@
         "lastName": "Pérez",
         "email": "juan.perez@example.com",
         "password": "password3",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -39,7 +39,7 @@
         "lastName": "González",
         "email": "laura.gonzalez@example.com",
         "password": "password4",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -50,7 +50,7 @@
         "lastName": "Sánchez",
         "email": "carlos.sanchez@example.com",
         "password": "password5",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -61,7 +61,7 @@
         "lastName": "Hernández",
         "email": "paola.hernandez@example.com",
         "password": "password6",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -72,7 +72,7 @@
         "lastName": "Gómez",
         "email": "diego.gomez@example.com",
         "password": "password7",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -83,7 +83,7 @@
         "lastName": "Fernández",
         "email": "isabel.fernandez@example.com",
         "password": "password8",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -94,7 +94,7 @@
         "lastName": "Rodríguez",
         "email": "jorge.rodriguez@example.com",
         "password": "password9",
-        "course": "Introducción a Python",
+       "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -105,7 +105,7 @@
         "lastName": "Jiménez",
         "email": "maria.jimenez@example.com",
         "password": "password10",
-        "course": "Introducción a Python",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -116,7 +116,7 @@
         "lastName": "González",
         "email": "alberto.gonzalez@example.com",
         "password": "password11",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -127,7 +127,7 @@
         "lastName": "Santos",
         "email": "lucia.santos@example.com",
         "password": "password12",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -138,7 +138,7 @@
         "lastName": "Martínez",
         "email": "sergio.martinez@example.com",
         "password": "password13",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -149,7 +149,7 @@
         "lastName": "Ramírez",
         "email": "carla.ramirez@example.com",
         "password": "password14",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -160,7 +160,7 @@
         "lastName": "Cruz",
         "email": "pablo.cruz@example.com",
         "password": "password15",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -171,7 +171,7 @@
         "lastName": "Vargas",
         "email": "mariana.vargas@example.com",
         "password": "password16",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -182,7 +182,7 @@
         "lastName": "Guzmán",
         "email": "hector.guzman@example.com",
         "password": "password17",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -193,7 +193,7 @@
         "lastName": "Torres",
         "email": "valeria.torres@example.com",
         "password": "password18",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -204,7 +204,7 @@
         "lastName": "Santiago",
         "email": "mario.santiago@example.com",
         "password": "password19",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -215,7 +215,7 @@
         "lastName": "Fernández",
         "email": "karla.fernandez@example.com",
         "password": "password20",
-        "course": "Desarrollo web con HTML y CSS",
+        "courses": [2],
         "isAdmin": false,
         "role": "student"
     },
@@ -226,7 +226,7 @@
         "lastName": "Álvarez",
         "email": "daniel.alvarez@example.com",
         "password": "password21",
-        "course": "Introduccion a C++",
+        "courses": [3],
         "isAdmin": false,
         "role": "student"
     },
@@ -237,7 +237,7 @@
         "lastName": "González",
         "email": "silvia.gonzalez@example.com",
         "password": "password22",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -248,7 +248,7 @@
         "lastName": "Hernández",
         "email": "cesar.hernandez@example.com",
         "password": "password23",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -259,7 +259,7 @@
         "lastName": "Rivas",
         "email": "luis.rivas@example.com",
         "password": "password24",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -270,7 +270,7 @@
         "lastName": "López",
         "email": "veronica.lopez@example.com",
         "password": "password25",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -281,7 +281,7 @@
         "lastName": "García",
         "email": "francisco.garcia@example.com",
         "password": "password26",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -292,7 +292,7 @@
         "lastName": "Sánchez",
         "email": "laura.sanchez@example.com",
         "password": "password27",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -303,7 +303,7 @@
         "lastName": "Herrera",
         "email": "jorge.herrera@example.com",
         "password": "password28",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -314,7 +314,7 @@
         "lastName": "Jiménez",
         "email": "marcela.jimenez@example.com",
         "password": "password29",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -325,7 +325,7 @@
         "lastName": "Vega",
         "email": "jose.vega@example.com",
         "password": "password30",
-        "course": "Introduccion a C++",
+        "courses": [1],
         "isAdmin": false,
         "role": "student"
     },
@@ -336,7 +336,7 @@
         "lastName": "Ramos",
         "email": "ana.ramos@example.com",
         "password": "password31",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -347,7 +347,7 @@
         "lastName": "González",
         "email": "cristina.gonzalez@example.com",
         "password": "password32",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -358,7 +358,7 @@
         "lastName": "Martínez",
         "email": "diego.martinez@example.com",
         "password": "password33",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -369,7 +369,7 @@
         "lastName": "Mendoza",
         "email": "sofia.mendoza@example.com",
         "password": "password34",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -380,7 +380,7 @@
         "lastName": "Gómez",
         "email": "fernando.gomez@example.com",
         "password": "password35",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -391,7 +391,7 @@
         "lastName": "Hernández",
         "email": "carla.hernandez@example.com",
         "password": "password36",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -402,7 +402,7 @@
         "lastName": "Guerrero",
         "email": "david.guerrero@example.com",
         "password": "password37",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -413,7 +413,7 @@
         "lastName": "Torres",
         "email": "laura.torres@example.com",
         "password": "password38",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -424,7 +424,7 @@
         "lastName": "Reyes",
         "email": "andres.reyes@example.com",
         "password": "password39",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -435,7 +435,7 @@
         "lastName": "Castillo",
         "email": "carolina.castillo@example.com",
         "password": "password40",
-        "course": "Inteligencia artificial",
+        "courses": [4],
         "isAdmin": false,
         "role": "student"
     },
@@ -446,7 +446,7 @@
         "lastName": "Santana",
         "email": "luis.santana@example.com",
         "password": "password41",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -457,7 +457,7 @@
         "lastName": "Flores",
         "email": "gabriela.flores@example.com",
         "password": "password42",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -468,7 +468,7 @@
         "lastName": "Pérez",
         "email": "juan.perez@example.com",
         "password": "password43",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -479,7 +479,7 @@
         "lastName": "Chávez",
         "email": "maria.chavez@example.com",
         "password": "password44",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -490,7 +490,7 @@
         "lastName": "Castro",
         "email": "daniel.castro@example.com",
         "password": "password45",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -501,7 +501,7 @@
         "lastName": "Valencia",
         "email": "alejandra.valencia@example.com",
         "password": "password46",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -512,7 +512,7 @@
         "lastName": "Navarro",
         "email": "jorge.navarro@example.com",
         "password": "password47",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -523,7 +523,7 @@
         "lastName": "García",
         "email": "ana.garcia@example.com",
         "password": "password48",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -534,7 +534,7 @@
         "lastName": "Herrera",
         "email": "miguel.herrera@example.com",
         "password": "password49",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },
@@ -545,7 +545,7 @@
         "lastName": "Rojas",
         "email": "lucia.rojas@example.com",
         "password": "password50",
-        "course": "Robotica",
+        "courses": [5],
         "isAdmin": false,
         "role": "student"
     },

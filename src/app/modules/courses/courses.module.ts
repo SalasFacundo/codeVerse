@@ -20,39 +20,41 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { PipesModule } from "../../pipes/pipes.module";
 
 
 @NgModule({
-  declarations: [
-    CoursesComponent,
-    PurchasedCourseComponent,
-    ClassCardComponent,
-    BuyCourseComponent,
-    BuyCourseModalComponent
-  ],
-  imports: [
-    CommonModule,
-    MatCardModule,    
-    MatButtonModule,
-    RouterModule,
-    StudentsModule,
-    MatExpansionModule,
-    MatDividerModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatStepperModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDatepickerModule,
-    MatNativeDateModule, 
-  ],
-  exports: [
-    CoursesComponent,
-    BuyCourseComponent
-  ]
+    declarations: [
+        CoursesComponent,
+        PurchasedCourseComponent,
+        ClassCardComponent,
+        BuyCourseComponent,
+        BuyCourseModalComponent
+    ],
+    exports: [
+        CoursesComponent,
+        BuyCourseComponent
+    ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        RouterModule,
+        StudentsModule,
+        MatExpansionModule,
+        MatDividerModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatStepperModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        PipesModule
+    ]
 })
 export class CoursesModule { }

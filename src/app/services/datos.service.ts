@@ -1,7 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filter, map, Observable } from 'rxjs';
-import { Student } from '../modules/students/models/student';
 import { User } from '../modules/students/models/user';
 import { Course } from '../modules/students/models/course';
 

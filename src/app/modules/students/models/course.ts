@@ -8,6 +8,7 @@ export interface Course{
     teachers: number[];
     students: number[];
     classes: Class[];
+    price: number;
     startDate: Date;
     endDate: Date;
 }

@@ -42,3 +42,23 @@
     display: flex;
   align-items: center;
   }
+
+  .title {
+    display: flex;
+    color: grey;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-family: 'Schibsted Grotesk', sans-serif;
+
+    .subtitle1 {
+        color: white
+    }
+
+    .subtitle2 {
+        color: rgb(243, 243, 130);
+    }
+
+    .subtitle2::second {
+        color: rgb(243, 243, 130);
+    }
+}

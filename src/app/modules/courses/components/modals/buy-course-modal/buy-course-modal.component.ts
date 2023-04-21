@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { customValidator } from 'src/app/Validators/customValidators';
 
 @Component({
@@ -39,13 +40,13 @@ export class BuyCourseModalComponent implements OnInit {
     cardYear: this.cardYearControl,
     cvv: this.cvvControl,
   });
-  constructor() {}
+  constructor(private dialogRef: MatDialogRef<BuyCourseModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
   }
 
   submitForm() {
-    console.log(this.creditCardForm.invalid);
-    console.log(this.creditCardForm.controls);
+    this.dialogRef.close(true)
   }
 }

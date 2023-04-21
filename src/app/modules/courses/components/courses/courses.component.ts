@@ -49,12 +49,11 @@ export class CoursesComponent implements OnInit {
     }
   }
 
-  openFormBuyCourse(){
+  openFormBuyCourse(courseId: number){
     const dialog = this.matDialog.open(BuyCourseModalComponent, { data: {students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        console.log("valor")
-        console.log(valor)
+        
       }
     })
   }

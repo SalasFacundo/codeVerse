@@ -23,6 +23,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { PipesModule } from "../../pipes/pipes.module";
 
 
+
 @NgModule({
     declarations: [
         CoursesComponent,

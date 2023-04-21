@@ -45,4 +45,15 @@ export class customValidator {
             }
         };
     }
+
+    static range(min: number, max: number){
+        return (control: AbstractControl): any => {
+            if((Number(control.value) >= min && Number(control.value) <= max) || control.value == '' || control.value.length < 2){
+                return null;
+            }
+            else {
+                return { range: true };
+            }
+        };
+    }
 }

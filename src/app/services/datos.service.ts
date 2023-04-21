@@ -43,6 +43,17 @@ export class DatosService {
     );
   } 
 
+  getCoursesLessByUser(user: User): Observable<Course[]> {
+    return this.http.get<Course[]>(this.urlCourses).pipe(
+      map(courses => courses.filter(course => !course.students.some(student => {
+        if(student === user.id){
+          return true;
+        }
+        return false;
+      })))
+    );
+  } 
+
   getUsersById(ids:number[]): Observable<User[]> {
     return this.http.get<User[]>(this.urlUsers).pipe(
       map((users) => {

@@ -42,7 +42,11 @@ export class CoursesComponent implements OnInit {
       this.datosService.getCoursesByUser(this.user.getUser()).subscribe(data => {
         this.courses = data;
       });
-    } 
+    } else if(this.filter == "available"){      
+      this.datosService.getCoursesLessByUser(this.user.getUser()).subscribe(data => {
+        this.courses = data;
+      });
+    }
   }
 
   openFormBuyCourse(){

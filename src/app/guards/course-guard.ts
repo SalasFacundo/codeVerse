@@ -7,6 +7,7 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Course } from '../modules/students/models/course';
 import { DatosService } from '../services/datos.service';
 import { UserLoggedService } from '../services/user-logged.service';
 
@@ -25,7 +26,7 @@ export class CourseGuard implements CanActivate {
     const courseId = next.params['id'];
     let url = window.location.pathname;
 
-    if (this.userLogged.getUser().courses.some(id => id == courseId)) {     
+    if (this.datos.getCoursesByUser(this.userLogged.getUser()).some((course: Course) => course.id == courseId)) {
         return true;
     } else {
         this.router.navigate(["home"]);

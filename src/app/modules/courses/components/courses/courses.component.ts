@@ -34,12 +34,38 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.url= window.location.pathname;
-    if (this.filter == "all") {
-        this.datosService.getAllCourses().subscribe(data => {
-        this.courses = data;
-      });
-    }  else if(this.filter == "related"){
+    this.url= window.location.pathname;    
+    const storedCourses = this.datosService.getCourses();
+
+    if(this.filter == "all"){
+      if (storedCourses.length != 0) {
+        this.courses = storedCourses;
+      } else {
+          this.datosService.getAllCourses().subscribe(data => {
+          this.courses = data;
+          this.datosService.setCourses(data);
+        });
+      }  
+    }
+
+    if(this.filter == "related"){
+      if (storedCourses.length != 0) {
+        this.courses = storedCourses;
+      } else {
+          this.datosService.getAllCourses().subscribe(data => {
+          this.courses = data;
+          this.datosService.setCourses(data);
+        });
+      }  
+    }
+    
+    
+    
+    
+    
+    
+    
+    /* else if(this.filter == "related"){
       this.datosService.getCoursesByUser(this.user.getUser()).subscribe(data => {
         this.courses = data;
       });
@@ -47,7 +73,7 @@ export class CoursesComponent implements OnInit {
       this.datosService.getCoursesLessByUser(this.user.getUser()).subscribe(data => {
         this.courses = data;
       });
-    }
+    }  */
   }
 
   openFormBuyCourse(courseId: number){

@@ -18,13 +18,13 @@ export class ModalCrearAlumnoComponent implements OnInit {
   nameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   lastNameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   dniControl = new FormControl('', [Validators.required, Validators.maxLength(8), Validators.minLength(8), customValidator.dniDuplicated(this.data.students), customValidator.justNumbers()]);
-  courseControl = new FormControl('', [Validators.required]);
+  emailControl = new FormControl('', [Validators.required, customValidator.emailDuplicated( this.data.students)]);
 
   alumnosForm = new FormGroup({
     name: this.nameControl,
     lastName: this.lastNameControl,
     dni: this.dniControl,
-    course: this.courseControl
+    course: this.emailControl
   })
   constructor(private dialogRef: MatDialogRef<ModalCrearAlumnoComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }

@@ -17,7 +17,7 @@ export class ModifyStudentComponent implements OnInit {
   nameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   lastNameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   dniControl = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8), customValidator.dniDuplicated( this.data.students, this.data.idSelected.id), customValidator.justNumbers()]);
-  emailControl = new FormControl('', [Validators.required, customValidator.emailDuplicated( this.data.students, this.data.idSelected.id)]);
+  emailControl = new FormControl('', [Validators.required, customValidator.emailDuplicated( this.data.students, this.data.idSelected.id), Validators.email]);
 
   alumnosForm = new FormGroup({
     name: this.nameControl,

@@ -29,7 +29,7 @@ export class customValidator {
                     return { emailDuplicated: true };
                 }
             } else {
-                if (students.find(obj => obj.dni == control.value)) {
+                if (students.find(obj => obj.email == control.value)) {
                     return { emailDuplicated: true };
                 }
             }

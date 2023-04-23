@@ -17,6 +17,7 @@ export class ControlErrorMessagesPipe implements PipeTransform {
       justLetters: 'Solo puede contener letras',
       invalidDate: 'Respete el formato mm/yy',
       range: `Campo Invalido`,
+      emailDuplicated: `El email ya se encuentra`,
     }
         
     return opciones[error.key];

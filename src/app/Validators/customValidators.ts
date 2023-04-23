@@ -22,6 +22,21 @@ export class customValidator {
         };
     }
 
+    static emailDuplicated(students: any[], id?: number,): ValidatorFn {
+        return (control: AbstractControl): any => {
+            if (id) {
+                if (students.find(obj => obj.email == control.value && obj.id != id)) {
+                    return { emailDuplicated: true };
+                }
+            } else {
+                if (students.find(obj => obj.dni == control.value)) {
+                    return { emailDuplicated: true };
+                }
+            }
+            return null;
+        };
+    }
+
     static justNumbers() {
 
         return (control: AbstractControl): any => {

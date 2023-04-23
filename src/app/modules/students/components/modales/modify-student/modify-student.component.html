@@ -31,10 +31,10 @@
         <mat-form-field class="my-form-field">
             <mat-label>Curso</mat-label>
             <input 
-                [formControl]="courseControl"
+                [formControl]="emailControl"
                 type="text" 
                 matInput>
-                <mat-error *ngFor="let error of courseControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+                <mat-error *ngFor="let error of emailControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <div class="grid-action">

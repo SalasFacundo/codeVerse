@@ -85,12 +85,10 @@ export class GrillaComponent implements OnInit {
   addColumns() {
     if (this.isAdmin) {     
       this.displayedColumns.push('dni')
-      this.displayedColumns.push('course')
       this.displayedColumns.push('action')
     } else if (this.displayedColumns.indexOf('action') != -1 && this.displayedColumns.indexOf('dni') != -1 && this.displayedColumns.indexOf('course') != -1 ) {
       this.displayedColumns.splice(this.displayedColumns.indexOf('dni'), 1)
       this.displayedColumns.splice(this.displayedColumns.indexOf('action'), 1)
-      this.displayedColumns.splice(this.displayedColumns.indexOf('course'), 1)
     }
 
   }
@@ -103,7 +101,7 @@ export class GrillaComponent implements OnInit {
             Number(this.activatedRoute.snapshot.paramMap.get('id'))
           )
           .subscribe((value) => {
-            this.datosService.getUsersById(value[0].students).subscribe(valor => {console.log("varias id"); console.log(valor);this.dataSource = valor})
+            this.datosService.getUsersById(value[0].students).subscribe(valor => {this.dataSource = valor})
           });
       }  else if (this.filter == 'teachers') {
         this.datosService
@@ -111,7 +109,7 @@ export class GrillaComponent implements OnInit {
             Number(this.activatedRoute.snapshot.paramMap.get('id'))
           )
           .subscribe((value) => {
-            this.datosService.getUsersById(value[0].teachers).subscribe(valor => {console.log("varias id"); console.log(valor);this.dataSource = valor})
+            this.datosService.getUsersById(value[0].teachers).subscribe(valor => {this.dataSource = valor})
           });
       } 
     } else {

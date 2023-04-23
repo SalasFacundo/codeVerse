@@ -17,13 +17,13 @@ export class ModifyStudentComponent implements OnInit {
   nameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   lastNameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   dniControl = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8), customValidator.dniDuplicated( this.data.students, this.data.idSelected.id), customValidator.justNumbers()]);
-  courseControl = new FormControl('', [Validators.required]);
+  emailControl = new FormControl('', [Validators.required, customValidator.emailDuplicated( this.data.students, this.data.idSelected.id)]);
 
   alumnosForm = new FormGroup({
     name: this.nameControl,
     lastName: this.lastNameControl,
     dni: this.dniControl,
-    course: this.courseControl
+    email: this.emailControl
   })
   constructor(private dialogRef: MatDialogRef<ModifyStudentComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -45,7 +45,7 @@ export class ModifyStudentComponent implements OnInit {
     this.alumnosForm.controls['name'].setValue(this.data.idSelected.name);
     this.alumnosForm.controls['lastName'].setValue(this.data.idSelected.lastName);
     this.alumnosForm.controls['dni'].setValue(this.data.idSelected.dni);
-    this.alumnosForm.controls['course'].setValue(this.data.idSelected.course);
+    this.alumnosForm.controls['email'].setValue(this.data.idSelected.email);
   }
 
 }

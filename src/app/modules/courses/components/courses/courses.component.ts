@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DeleteStudentComponent } from 'src/app/modules/students/components/modales/delete-student/delete-student.component';
@@ -24,38 +24,52 @@ export class CoursesComponent implements OnInit {
   dataSource: any;
 
   courses: Course[] = [];
-  url!:string;
+  url!: string;
+  coursesBuyed: number[] = [];
 
   constructor(private datosService: DatosService,
-              private user: UserLoggedService,
-              private matDialog: MatDialog,
-              private updateRoute: UpdateRouteService,
-              private loggedUser: UserLoggedService) { }
-
+    private user: UserLoggedService,
+    private matDialog: MatDialog,
+    private updateRoute: UpdateRouteService,
+    private loggedUser: UserLoggedService) { }
   ngOnInit(): void {
+    this.loadCourses();
 
-    this.url= window.location.pathname;
-    if (this.filter == "all") {
-        this.datosService.getAllCourses().subscribe(data => {
-        this.courses = data;
-      });
-    }  else if(this.filter == "related"){
-      this.datosService.getCoursesByUser(this.user.getUser()).subscribe(data => {
-        this.courses = data;
-      });
-    } else if(this.filter == "available"){      
-      this.datosService.getCoursesLessByUser(this.user.getUser()).subscribe(data => {
-        this.courses = data;
-      });
-    }
+    this.datosService.getCoursesByStudentId(this.user.getUser().id).subscribe(
+      data => data.forEach((e: Course) => this.coursesBuyed.push(e.id))
+    )
   }
 
-  openFormBuyCourse(courseId: number){
-    const dialog = this.matDialog.open(BuyCourseModalComponent, { data: {students: this.dataSource} });
+
+  openFormBuyCourse(courseId: number) {
+    const dialog = this.matDialog.open(BuyCourseModalComponent, { data: { students: this.dataSource } });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
         this.datosService.addNewCourseToStudent(this.loggedUser.getUser().id, courseId)
       }
     })
+  }
+
+
+  loadCourses() {
+    this.url = window.location.pathname;
+    if (this.filter == "all") {
+      this.datosService.getAllCourses().subscribe(data => {
+        this.courses = data;
+        this.datosService.setCourses(data);
+      });
+    }
+    if (this.filter == "related") {
+      this.datosService.getCoursesByStudentId(this.user.getUser().id).subscribe(
+        data => {
+          this.courses = data;
+          this.datosService.setCourses(data);
+        }
+      )
+    }
+  }
+
+  isBuyed(id: number) {
+    return this.coursesBuyed.some(course => course == id);
   }
 }

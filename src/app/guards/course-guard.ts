@@ -6,11 +6,7 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-<<<<<<< HEAD
-import { map, Observable } from 'rxjs';
-=======
 import { Observable } from 'rxjs';
->>>>>>> serviceObser
 import { Course } from '../modules/students/models/course';
 import { DatosService } from '../services/datos.service';
 import { UserLoggedService } from '../services/user-logged.service';
@@ -25,29 +21,15 @@ export class CourseGuard implements CanActivate {
     private router: Router
   ) {}
 
-  canActivate(next: ActivatedRouteSnapshot): Observable<boolean> {
+  canActivate(next: ActivatedRouteSnapshot) {
+
     const courseId = next.params['id'];
     let url = window.location.pathname;
-<<<<<<< HEAD
-  
-    return this.datos.getCoursesByUser(this.userLogged.getUser()).pipe(
-      map(value => {
-        if (value.some((course: Course) => course.id == courseId)) {
-          return true;
-        } else {
-          this.router.navigate(['home']);
-          return false;
-        }
-      })
-    );
-=======
-
     if (this.datos.getCoursesByUser(this.userLogged.getUser()).some((course: Course) => course.id == courseId)) {
         return true;
     } else {
         this.router.navigate(["home"]);
         return false;
     }
->>>>>>> serviceObser
   }
 }

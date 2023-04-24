@@ -91,13 +91,19 @@ export class DatosService {
   }
 
   addNewCourseToStudent(studentId: number, courseId: number) {
-    this.http.get<Course[]>(this.urlCourses).subscribe((data: Course[]) => {
+
+    
+    this.courses[this.courses.findIndex(objeto => objeto.id === courseId)].students.push(studentId);        
+        this.courses = this.courses;
+        this.coursesSubject.next(this.courses);
+
+    /* this.http.get<Course[]>(this.urlCourses).subscribe((data: Course[]) => {
       if (courseId > 0 && courseId <= data.length) {
-        data[courseId - 1].students.push(studentId);        
+        data[this.courses.findIndex(objeto => objeto.id === courseId)].students.push(studentId);        
         this.courses = data;
         this.coursesSubject.next(this.courses);
       }
-    });
+    }); */
   }
 
   defaultCourse(){

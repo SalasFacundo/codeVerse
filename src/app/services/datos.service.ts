@@ -32,10 +32,10 @@ export class DatosService {
   }
 
   getCoursesByStudentId(id: number): Observable<Course[]> {
-   return this.coursesSubject.pipe(
+    return this.coursesSubject.pipe(
       map(courses => courses.filter((course: Course) => course.students.some(student => student == id)))
     );
-  }  
+  }
 
   getStudents(): Observable<any> {
     return this.http.get(this.urlStudents);
@@ -62,12 +62,12 @@ export class DatosService {
 
   getCoursesByUser(user: User): Course[] {
     return this.courses.filter(course =>
-        course.students.some(student => student === user.id)
+      course.students.some(student => student === user.id)
     );
-}
+  }
 
   getCoursesLessByUser(user: User): Observable<Course[]> {
-    return this.http.get<Course[]>(this.urlCourses).pipe(
+    return this.coursesSubject.pipe(
       map((courses) =>
         courses.filter(
           (course) =>
@@ -91,32 +91,21 @@ export class DatosService {
   }
 
   addNewCourseToStudent(studentId: number, courseId: number) {
-
-    
-    this.courses[this.courses.findIndex(objeto => objeto.id === courseId)].students.push(studentId);        
-        this.courses = this.courses;
-        this.coursesSubject.next(this.courses);
-
-    /* this.http.get<Course[]>(this.urlCourses).subscribe((data: Course[]) => {
-      if (courseId > 0 && courseId <= data.length) {
-        data[this.courses.findIndex(objeto => objeto.id === courseId)].students.push(studentId);        
-        this.courses = data;
-        this.coursesSubject.next(this.courses);
-      }
-    }); */
+    this.courses[this.courses.findIndex(objeto => objeto.id === courseId)].students.push(studentId);
+    this.coursesSubject.next(this.courses);
   }
 
-  defaultCourse(){
+  defaultCourse() {
     return [{
-      id:0,
-      name:"",
-      capacity:0,
-      teachers:[],
-      students:[],
-      classes:[],
-      price:0,
-      startDate:new Date(),
-      endDate:new Date()
+      id: 0,
+      name: "",
+      capacity: 0,
+      teachers: [],
+      students: [],
+      classes: [],
+      price: 0,
+      startDate: new Date(),
+      endDate: new Date()
 
     }]
   }

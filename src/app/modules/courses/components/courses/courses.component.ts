@@ -24,20 +24,25 @@ export class CoursesComponent implements OnInit {
   dataSource: any;
 
   courses: Course[] = [];
-  url!:string;
+  url!: string;
+  coursesBuyed: number[] = [];
 
   constructor(private datosService: DatosService,
-              private user: UserLoggedService,
-              private matDialog: MatDialog,
-              private updateRoute: UpdateRouteService,
-              private loggedUser: UserLoggedService) { }
+    private user: UserLoggedService,
+    private matDialog: MatDialog,
+    private updateRoute: UpdateRouteService,
+    private loggedUser: UserLoggedService) { }
   ngOnInit(): void {
     this.loadCourses();
-  }
-  
 
-  openFormBuyCourse(courseId: number){
-    const dialog = this.matDialog.open(BuyCourseModalComponent, { data: {students: this.dataSource} });
+    this.datosService.getCoursesByStudentId(this.user.getUser().id).subscribe(
+      data => data.forEach((e: Course) => this.coursesBuyed.push(e.id))
+    )
+  }
+
+
+  openFormBuyCourse(courseId: number) {
+    const dialog = this.matDialog.open(BuyCourseModalComponent, { data: { students: this.dataSource } });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
         this.datosService.addNewCourseToStudent(this.loggedUser.getUser().id, courseId)
@@ -47,21 +52,24 @@ export class CoursesComponent implements OnInit {
 
 
   loadCourses() {
-    this.url= window.location.pathname;    
-    if(this.filter == "all"){
-      console.log("entra all")
-          this.datosService.getAllCourses().subscribe(data => {
-            console.log("this.courses")
-            console.log(this.courses)
+    this.url = window.location.pathname;
+    if (this.filter == "all") {
+      this.datosService.getAllCourses().subscribe(data => {
+        this.courses = data;
+        this.datosService.setCourses(data);
+      });
+    }
+    if (this.filter == "related") {
+      this.datosService.getCoursesByStudentId(this.user.getUser().id).subscribe(
+        data => {
           this.courses = data;
           this.datosService.setCourses(data);
-        });
-    }
-    else if (this.filter == "related") {
-      this.datosService.getCoursesByStudentId(this.user.getUser().id).subscribe(
-        data => {this.courses = data;
-          this.datosService.setCourses(data);}
+        }
       )
     }
+  }
+
+  isBuyed(id: number) {
+    return this.coursesBuyed.some(course => course == id);
   }
 }

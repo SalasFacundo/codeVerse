@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DeleteStudentComponent } from 'src/app/modules/students/components/modales/delete-student/delete-student.component';
@@ -31,50 +31,10 @@ export class CoursesComponent implements OnInit {
               private matDialog: MatDialog,
               private updateRoute: UpdateRouteService,
               private loggedUser: UserLoggedService) { }
-
   ngOnInit(): void {
-
-    this.url= window.location.pathname;    
-    const storedCourses = this.datosService.getCourses();
-
-    if(this.filter == "all"){
-      if (storedCourses.length != 0) {
-        this.courses = storedCourses;
-      } else {
-          this.datosService.getAllCourses().subscribe(data => {
-          this.courses = data;
-          this.datosService.setCourses(data);
-        });
-      }  
-    }
-
-    if(this.filter == "related"){
-      if (storedCourses.length != 0) {
-        this.courses = storedCourses;
-      } else {
-          this.datosService.getAllCourses().subscribe(data => {
-          this.courses = data;
-          this.datosService.setCourses(data);
-        });
-      }  
-    }
-    
-    
-    
-    
-    
-    
-    
-    /* else if(this.filter == "related"){
-      this.datosService.getCoursesByUser(this.user.getUser()).subscribe(data => {
-        this.courses = data;
-      });
-    } else if(this.filter == "available"){      
-      this.datosService.getCoursesLessByUser(this.user.getUser()).subscribe(data => {
-        this.courses = data;
-      });
-    }  */
+    this.loadCourses();
   }
+  
 
   openFormBuyCourse(courseId: number){
     const dialog = this.matDialog.open(BuyCourseModalComponent, { data: {students: this.dataSource} });
@@ -83,5 +43,25 @@ export class CoursesComponent implements OnInit {
         this.datosService.addNewCourseToStudent(this.loggedUser.getUser().id, courseId)
       }
     })
+  }
+
+
+  loadCourses() {
+    this.url= window.location.pathname;    
+    if(this.filter == "all"){
+      console.log("entra all")
+          this.datosService.getAllCourses().subscribe(data => {
+            console.log("this.courses")
+            console.log(this.courses)
+          this.courses = data;
+          this.datosService.setCourses(data);
+        });
+    }
+    else if (this.filter == "related") {
+      this.datosService.getCoursesByStudentId(this.user.getUser().id).subscribe(
+        data => {this.courses = data;
+          this.datosService.setCourses(data);}
+      )
+    }
   }
 }

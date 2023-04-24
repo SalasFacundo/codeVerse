@@ -13,8 +13,7 @@ export class DatosService {
   private urlCourses = './assets/data/json/courses.json';
 
   private courses: Course[] = [];
-  private coursesSubject = new Subject<Course[]>();
-  private loaded = false;
+  private coursesSubject = new BehaviorSubject<Course[]>(this.defaultCourse());
 
   constructor(private http: HttpClient) {
     this.loadCourses();
@@ -32,6 +31,12 @@ export class DatosService {
     this.coursesSubject.next(this.courses);
   }
 
+  getCoursesByStudentId(id: number): Observable<Course[]> {
+   return this.coursesSubject.pipe(
+      map(courses => courses.filter((course: Course) => course.students.some(student => student == id)))
+    );
+  }  
+
   getStudents(): Observable<any> {
     return this.http.get(this.urlStudents);
   }
@@ -45,7 +50,7 @@ export class DatosService {
       .pipe(map((courses) => courses.filter((course) => course.id === id)));
   }
   getAllCourses(): Observable<any> {
-    return this.http.get(this.urlCourses);
+    return this.coursesSubject.asObservable();
   }
   setCourses(courses: any[]) {
     this.courses = courses;
@@ -93,5 +98,20 @@ export class DatosService {
         this.coursesSubject.next(this.courses);
       }
     });
+  }
+
+  defaultCourse(){
+    return [{
+      id:0,
+      name:"",
+      capacity:0,
+      teachers:[],
+      students:[],
+      classes:[],
+      price:0,
+      startDate:new Date(),
+      endDate:new Date()
+
+    }]
   }
 }

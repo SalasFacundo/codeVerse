@@ -1,4 +1,8 @@
 <router-outlet></router-outlet>
 <div *ngIf="currentUrl == '/home/courses'">
+    <div class="container">
+        <h2>Cursos disponibles para comprar</h2>
+        <mat-divider></mat-divider>
+    </div>
     <app-courses [filter]="'all'"></app-courses>
 </div>

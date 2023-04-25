@@ -34,7 +34,7 @@
     <div class="courses">
       <h2>Courses</h2>
       <mat-divider></mat-divider>
-      <div *ngFor="let course of courses" class="courses">
+      <div *ngFor="let course of courses | async" class="courses">
         <div class="course col-12">
           <button mat-mini-fab color="warn" (click)="onClickButton(course)">
             <mat-icon class="icon-display">delete</mat-icon>

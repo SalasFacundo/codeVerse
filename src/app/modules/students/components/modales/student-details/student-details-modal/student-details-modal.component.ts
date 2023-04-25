@@ -10,21 +10,17 @@ import { DatosService } from 'src/app/services/datos.service';
 export class StudentDetailsModalComponent implements OnInit {
 
   user = this.data;
-  courses!:any;
+  courses = this.dataUser.getCoursesByStudentId(this.data.id);
 
   constructor(private dataUser: DatosService,
               private dialogRef: MatDialogRef<StudentDetailsModalComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,){}
 
   ngOnInit(): void {
-    this.dataUser.getCoursesByStudentId(this.data.id).subscribe(
-      value => {this.courses = value}
-    );
   }
 
   onClickButton(value: any){
     this.dataUser.removeStudentFromCourse(value.id, this.data.id)
-    this.closeModal();
   }
 
   closeModal(){

@@ -46,6 +46,8 @@ export class DatosService {
         this.courses[courseIndex].students.splice(studentIndex, 1);
       }
     }
+
+    this.coursesSubject.next(this.courses)
   }
 
   getCoursesByStudentId(id: number): Observable<Course[]> {

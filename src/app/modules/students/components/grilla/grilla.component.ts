@@ -122,7 +122,6 @@ export class GrillaComponent implements OnInit {
           });
       }
     } else {
-      console.log("entra")
       this.datosService.getStudents().subscribe((data) => {
         this.dataSource = data;
       });

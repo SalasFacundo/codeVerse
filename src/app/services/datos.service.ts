@@ -61,7 +61,9 @@ export class DatosService {
   }
 
   getStudents(): Observable<any> {
-    return this.http.get(this.urlUsers);
+    return this.http
+    .get<User[]>(this.urlUsers)
+    .pipe(map((users) => users.filter((user) => user.role == "student")));
   }
   getUsers(): Observable<any> {
     return this.http.get(this.urlUsers);

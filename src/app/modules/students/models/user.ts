@@ -1,4 +1,4 @@
-export interface User {    
+export interface User {
     id: number;
     dni: number;
     name: string;
@@ -7,5 +7,6 @@ export interface User {
     password: string;
     isAdmin: boolean;
     courses: number[];
-    
+    role: string;
+
 }

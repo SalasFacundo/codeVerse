@@ -122,6 +122,9 @@ export class GrillaComponent implements OnInit {
           });
       }
     } else {
+      if(this.filter == "allStudents"){
+        this.datosService.getStudents().subscribe(data=> this.dataSource=data)
+      }
       this.datosService.getStudents().subscribe((data) => {
         this.dataSource = data;
       });

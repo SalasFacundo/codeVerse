@@ -8,6 +8,7 @@ import { DatosService } from 'src/app/services/datos.service';
 import { UserLoggedService } from 'src/app/services/user-logged.service';
 import { User } from '../../models/user';
 import { ActivatedRoute } from '@angular/router';
+import { StudentDetailsModalComponent } from '../modales/student-details/student-details-modal/student-details-modal.component';
 
 @Component({
   selector: 'app-grilla',
@@ -15,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./grilla.component.scss']
 })
 export class GrillaComponent implements OnInit {
-  
+
   @Input()
   filter: string = ""
   displayedColumns: string[] = ['fullName', 'email'];
@@ -32,7 +33,7 @@ export class GrillaComponent implements OnInit {
               private activatedRoute: ActivatedRoute
     ) { }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {
     this.fillColumns();
     this.user = this.userLogged.getUser();
     this.isAdmin = this.user.isAdmin;
@@ -67,6 +68,14 @@ export class GrillaComponent implements OnInit {
     })
   }
 
+  openStudentDetails(value: number){
+    const dialog = this.matDialog.open(StudentDetailsModalComponent, {data: value});
+    dialog.afterClosed().subscribe((valor) => {
+      if (valor) {
+      }
+    })
+  }
+
   replaceObjectById(array: User[], newObject: any): void {
     const index = array.findIndex((obj: User) => obj.id === newObject.originalId);
     if (index !== -1) {
@@ -83,7 +92,7 @@ export class GrillaComponent implements OnInit {
   }
 
   addColumns() {
-    if (this.isAdmin) {     
+    if (this.isAdmin) {
       this.displayedColumns.push('dni')
       this.displayedColumns.push('action')
     } else if (this.displayedColumns.indexOf('action') != -1 && this.displayedColumns.indexOf('dni') != -1 && this.displayedColumns.indexOf('course') != -1 ) {
@@ -111,12 +120,13 @@ export class GrillaComponent implements OnInit {
           .subscribe((value) => {
             this.datosService.getUsersById(value[0].teachers).subscribe(valor => {this.dataSource = valor})
           });
-      } 
+      }
     } else {
+      console.log("entra")
       this.datosService.getStudents().subscribe((data) => {
         this.dataSource = data;
       });
-    } 
+    }
   }
 
 }

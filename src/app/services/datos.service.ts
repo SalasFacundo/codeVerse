@@ -31,14 +31,35 @@ export class DatosService {
     this.coursesSubject.next(this.courses);
   }
 
+  deleteCourse(courseId: number) {
+    this.courses = this.courses.filter((curso) => curso.id !== courseId);
+    this.coursesSubject.next(this.courses);
+  }
+
+  removeStudentFromCourse(courseId: number, studentId: number) {
+    const courseIndex = this.courses.findIndex((course) => course.id === courseId);
+    if (courseIndex !== -1) {
+      const studentIndex = this.courses[courseIndex].students.findIndex(
+        (student) => student === studentId
+      );
+      if (studentIndex !== -1) {
+        this.courses[courseIndex].students.splice(studentIndex, 1);
+      }
+    }
+  }
+
   getCoursesByStudentId(id: number): Observable<Course[]> {
     return this.coursesSubject.pipe(
-      map(courses => courses.filter((course: Course) => course.students.some(student => student == id)))
+      map((courses) =>
+        courses.filter((course: Course) =>
+          course.students.some((student) => student == id)
+        )
+      )
     );
   }
 
   getStudents(): Observable<any> {
-    return this.http.get(this.urlStudents);
+    return this.http.get(this.urlUsers);
   }
   getUsers(): Observable<any> {
     return this.http.get(this.urlUsers);
@@ -61,8 +82,8 @@ export class DatosService {
   }
 
   getCoursesByUser(user: User): Course[] {
-    return this.courses.filter(course =>
-      course.students.some(student => student === user.id)
+    return this.courses.filter((course) =>
+      course.students.some((student) => student === user.id)
     );
   }
 
@@ -91,22 +112,25 @@ export class DatosService {
   }
 
   addNewCourseToStudent(studentId: number, courseId: number) {
-    this.courses[this.courses.findIndex(objeto => objeto.id === courseId)].students.push(studentId);
+    this.courses[
+      this.courses.findIndex((objeto) => objeto.id === courseId)
+    ].students.push(studentId);
     this.coursesSubject.next(this.courses);
   }
 
   defaultCourse() {
-    return [{
-      id: 0,
-      name: "",
-      capacity: 0,
-      teachers: [],
-      students: [],
-      classes: [],
-      price: 0,
-      startDate: new Date(),
-      endDate: new Date()
-
-    }]
+    return [
+      {
+        id: 0,
+        name: '',
+        capacity: 0,
+        teachers: [],
+        students: [],
+        classes: [],
+        price: 0,
+        startDate: new Date(),
+        endDate: new Date(),
+      },
+    ];
   }
 }

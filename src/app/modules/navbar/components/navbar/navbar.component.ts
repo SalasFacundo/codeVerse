@@ -14,8 +14,9 @@ export class NavbarComponent implements OnInit {
   replace : boolean = true;
   onHome: boolean = false;
   currentUrl = window.location.pathname;
+  userLogged = this.loginService.getUser();
 
-  constructor(private loginService: UserLoggedService, 
+  constructor(private loginService: UserLoggedService,
               private router: Router,
               private route: ActivatedRoute,
               private updateRoute: UpdateRouteService) { }

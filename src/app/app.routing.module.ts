@@ -10,6 +10,7 @@ import { AllCoursesComponent } from './modules/navbar/pages/all-courses/all-cour
 import { PurchasedCourseComponent } from './modules/courses/pages/purchased-course/purchased-course.component';
 import { BuyCourseComponent } from './modules/courses/components/buy-course/buy-course.component';
 import { CourseGuard } from './guards/course-guard';
+import { AllStudentsPageComponent } from './modules/students/pages/all-students-page/all-students-page.component';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent, canActivate: [LoginGuard] },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {
     path: 'home', component: NavbarComponent, canActivate: [AuthGuard],
     children: [
+      { path: 'students', component: AllStudentsPageComponent},
       { path: 'courses', component: AllCoursesComponent},
       { path: 'courseDetail/:id', component: PurchasedCourseComponent, canActivate: [CourseGuard]},
     ]

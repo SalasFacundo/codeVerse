@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="grid-action">        
+    <div class="grid-action">
         <button *ngIf="isAdmin"
-            mat-raised-button class="primaryCustom" 
+            mat-raised-button class="primaryCustom"
             (click)="openFormCreateStudent()">
             Agregar alumno
         </button>
@@ -17,7 +17,7 @@
             <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Nombre y Apellido </th>
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.name | fullName:element.lastName}} </td>
         </ng-container>
-        
+
         <ng-container matColumnDef="email">
             <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Email </th>
             <td class="list-body" mat-cell *matCellDef="let element"> {{element.email}} </td>
@@ -32,6 +32,9 @@
                         </button>
                         <button mat-mini-fab color="accent" (click)="openModifyStudent(element)">
                             <mat-icon class="icon-display" >edit</mat-icon>
+                        </button>
+                        <button mat-mini-fab color="primary" (click)="openStudentDetails(element)">
+                            <mat-icon class="icon-display" >details</mat-icon>
                         </button>
                     </div>
             </td>

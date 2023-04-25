@@ -31,11 +31,18 @@ mat-slide-toggle{
     color: white;
 }
 
-.mat-table{    
+.mat-table{
     border-radius: 8px;
     overflow:hidden !important;
 }
 
 table{
     background-color: rgb(39, 40, 45) !important;
+}
+
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }

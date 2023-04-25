@@ -23,6 +23,11 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { DirectivesModule } from 'src/app/directives/directives.module';
 import { RouterModule } from '@angular/router';
+import { AllStudentsPageComponent } from './pages/all-students-page/all-students-page.component';
+import { StudentDetailsModalComponent } from './components/modales/student-details/student-details-modal/student-details-modal.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 @NgModule({
@@ -31,7 +36,9 @@ import { RouterModule } from '@angular/router';
     GrillaComponent,
     ModalCrearAlumnoComponent,
     DeleteStudentComponent,
-    ModifyStudentComponent],
+    ModifyStudentComponent,
+    AllStudentsPageComponent,
+    StudentDetailsModalComponent],
   imports: [
     CommonModule,
     NgbModule,
@@ -51,8 +58,10 @@ import { RouterModule } from '@angular/router';
     MatSlideToggleModule,
     PipesModule,
     DirectivesModule,
-    RouterModule
-    
+    RouterModule,
+    MatGridListModule,
+    MatCheckboxModule
+
   ],
   exports: [
     GrillaComponent,

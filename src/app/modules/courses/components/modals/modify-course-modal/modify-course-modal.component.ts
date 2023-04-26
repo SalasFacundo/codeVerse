@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Course } from 'src/app/modules/students/models/course';
 import { customValidator } from 'src/app/Validators/customValidators';
 
 @Component({
@@ -32,8 +33,10 @@ export class ModifyCourseModalComponent implements OnInit {
             @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
-    this.loadDate();
-    console.log(this.data)
+
+    if(this.data != 'add'){
+      this.loadDate();
+    }
   }
 
   closeModal(){
@@ -43,7 +46,17 @@ export class ModifyCourseModalComponent implements OnInit {
     this.dialogRef.close();
   }
   save(){
-    this.dialogRef.close(this.alumnosForm.value);
+
+    if(this.data != 'add'){
+      this.dialogRef.close({action: "modify", value:this.alumnosForm.value});
+    } else if((this.data == 'add')){
+      let course : Course = this.alumnosForm.value;
+      course.students = [];
+      course.teachers = [];
+      course.classes = [];
+      this.dialogRef.close({action: "add", value:this.alumnosForm.value});
+
+    }
   }
 
   loadDate(){

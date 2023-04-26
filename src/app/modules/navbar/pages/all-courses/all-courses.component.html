@@ -3,6 +3,11 @@
     <div class="container">
         <h2>Cursos disponibles para comprar</h2>
         <mat-divider></mat-divider>
+        <button *ngIf="userLogged.isAdmin"
+                mat-raised-button class="primaryCustom"
+                (click)="openAddCourseModal()">
+                Agregar Curso
+            </button>
     </div>
     <app-courses [filter]="'all'"></app-courses>
 </div>

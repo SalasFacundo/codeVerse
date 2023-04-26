@@ -1,26 +1,47 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd } from '@angular/router';
+import { asapScheduler } from 'rxjs';
+import { ModifyCourseModalComponent } from 'src/app/modules/courses/components/modals/modify-course-modal/modify-course-modal.component';
 import { Course } from 'src/app/modules/students/models/course';
 import { DatosService } from 'src/app/services/datos.service';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
+import { UserLoggedService } from 'src/app/services/user-logged.service';
 
 @Component({
   selector: 'app-all-courses',
   templateUrl: './all-courses.component.html',
-  styleUrls: ['./all-courses.component.scss']
+  styleUrls: ['./all-courses.component.scss'],
 })
 export class AllCoursesComponent implements OnInit {
-
   currentUrl = window.location.pathname;
+  userLogged = this.userLoggedService.getUser();
 
-  constructor(private updateRoute: UpdateRouteService, private dataService: DatosService) { }
+  constructor(
+    private updateRoute: UpdateRouteService,
+    private datosService: DatosService,
+    private userLoggedService: UserLoggedService,
+    private matDialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
-    this.updateRoute.subscribeToUrlChanges().subscribe(event => {
+    this.updateRoute.subscribeToUrlChanges().subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
       }
     });
+  }
+
+
+  openAddCourseModal(){
+    const dialog = this.matDialog.open(ModifyCourseModalComponent, {data: "add"});
+    dialog.afterClosed().subscribe((valor) => {
+      console.log("valor add course")
+      console.log(valor)
+      if (valor.action == "add") {
+      this.datosService.addCourse(valor.value)
+      }
+    })
   }
 
   /* agregarCurso(){
@@ -63,5 +84,4 @@ export class AllCoursesComponent implements OnInit {
 
     this.dataService.addCourse(course);
   } */
-
 }

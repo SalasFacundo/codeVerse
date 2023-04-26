@@ -10,10 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from 'src/app/app.routing.module';
 import { RouterModule } from '@angular/router';
 import { DefaultNavbarComponent } from './components/default-navbar/default-navbar.component';
-import { CoursesModule } from '../courses/courses.module';
 import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { CoursesModule } from '../courses/courses.module';
 
 
 
@@ -33,12 +33,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatListModule,
     MatIconModule,
     StudentsModule,
-    MatButtonModule,    
+    MatButtonModule,
     AppRoutingModule,
     RouterModule.forChild([]),
     CoursesModule,
     MatMenuModule,
-    MatButtonToggleModule    
+    MatButtonToggleModule
   ],
   exports: [
     NavbarComponent

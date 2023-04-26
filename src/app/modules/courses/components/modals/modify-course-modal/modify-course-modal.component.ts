@@ -11,6 +11,9 @@ import { customValidator } from 'src/app/Validators/customValidators';
 })
 export class ModifyCourseModalComponent implements OnInit {
 
+
+  isModifyModal: boolean = false;
+
   nameControl = new FormControl('', [Validators.required]);
   capacityControl = new FormControl('', [Validators.required, customValidator.justNumbers()]);
   priceControl = new FormControl('', [Validators.required, customValidator.justNumbers()]);
@@ -36,6 +39,7 @@ export class ModifyCourseModalComponent implements OnInit {
 
     if(this.data != 'add'){
       this.loadDate();
+      this.isModifyModal = true;
     }
   }
 

@@ -1,4 +1,5 @@
-<h1 mat-dialog-title>Modificar Curso</h1>
+<h1 *ngIf="isModifyModal" mat-dialog-title>Modificar Curso</h1>
+<h1 *ngIf="!isModifyModal" mat-dialog-title>Agregar Curso</h1>
 
 <mat-divider></mat-divider>
 <div mat-dialog-content>

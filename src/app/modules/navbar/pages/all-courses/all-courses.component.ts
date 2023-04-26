@@ -23,7 +23,7 @@ export class AllCoursesComponent implements OnInit {
     });
   }
 
-  agregarCurso(){
+  /* agregarCurso(){
     let course: Course = {
       "id": 1,
         "name": "Introducción a Pythonssssssssssssssss",
@@ -62,6 +62,6 @@ export class AllCoursesComponent implements OnInit {
     }
 
     this.dataService.addCourse(course);
-  }
+  } */
 
 }

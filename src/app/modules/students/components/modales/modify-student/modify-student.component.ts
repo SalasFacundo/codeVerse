@@ -11,9 +11,8 @@ import { customValidator } from '../../../../../Validators/customValidators';
 })
 export class ModifyStudentComponent implements OnInit {
 
-  readonly studentsUrl: string = '/assets/data/json/students.json';
   student: any = {};
-  
+
   nameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   lastNameControl = new FormControl('', [Validators.required, customValidator.justLetters()]);
   dniControl = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8), customValidator.dniDuplicated( this.data.students, this.data.idSelected.id), customValidator.justNumbers()]);

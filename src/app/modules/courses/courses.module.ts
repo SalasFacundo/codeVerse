@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { PipesModule } from "../../pipes/pipes.module";
+import { ModifyCourseModalComponent } from './components/modals/buy-course-modal/modify-course-modal/modify-course-modal/modify-course-modal.component';
 
 
 
@@ -30,7 +31,8 @@ import { PipesModule } from "../../pipes/pipes.module";
         PurchasedCourseComponent,
         ClassCardComponent,
         BuyCourseComponent,
-        BuyCourseModalComponent
+        BuyCourseModalComponent,
+        ModifyCourseModalComponent
     ],
     exports: [
         CoursesComponent,

@@ -9,16 +9,21 @@
           {{ course.startDate | date : "dd/MM/yy" }} -
           {{ course.endDate | date : "dd/MM/yy" }}
         </div>
-        <div class="hour">20:30 - 22:30</div>
+        <div class="hour">{{course.startHour}} - {{course.endHour}}</div>
         <div class="price" *ngIf="url == '/home/courses'">
           $ {{ course.price }}
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <div *ngIf="url == '/home/courses'">
-          <button *ngIf="isBuyed(course.id)" mat-raised-button class="primaryCustom" disabled="true">Ya adquirido</button>
-          <button *ngIf="!isBuyed(course.id)" mat-raised-button class="primaryCustom" (click)="openFormBuyCourse(course.id)">Comprar</button>
+        <div *ngIf="!userLogged.isAdmin">
+          <div *ngIf="url == '/home/courses'">
+            <button *ngIf="isBuyed(course.id)" mat-raised-button class="primaryCustom" disabled="true">Ya
+              adquirido</button>
+            <button *ngIf="!isBuyed(course.id)" mat-raised-button class="primaryCustom"
+              (click)="openFormBuyCourse(course.id)">Comprar</button>
+          </div>
         </div>
+        <button *ngIf="userLogged.isAdmin" mat-raised-button class="primaryCustom" (click)="openModifyCourse(course)">Modificar</button>
         <div *ngIf="url == '/home'">
           <button mat-raised-button class="primaryCustom" [routerLink]="['/home/courseDetail', course.id]"
             routerLinkActive="active">

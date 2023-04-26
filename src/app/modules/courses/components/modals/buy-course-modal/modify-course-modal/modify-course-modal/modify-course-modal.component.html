@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Modificar Curso</h1>
+
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <form [formGroup]="alumnosForm">
+    <div class="row">
+      <mat-form-field class="my-form-field">
+        <mat-label>Nombre</mat-label>
+        <input [formControl]="nameControl" type="text" matInput>
+        <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="my-form-field">
+        <mat-label>Capacidad</mat-label>
+        <input [formControl]="capacityControl" type="text" matInput>
+        <mat-error *ngFor="let error of capacityControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="my-form-field">
+        <mat-label>Precio</mat-label>
+        <input [formControl]="priceControl" type="text" matInput>
+        <mat-error *ngFor="let error of priceControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class=" mat-datepicker-toggle my-form-field edit" appearance="fill">
+        <mat-label>Ingrese fecha de inicio y de fin</mat-label>
+        <mat-date-range-input [formGroup]="alumnosForm" [rangePicker]="picker">
+          <input matStartDate [formControl]="startDateControl" placeholder="Inicio">
+          <input matEndDate [formControl]="endDateControl" placeholder="Fin">
+        </mat-date-range-input>
+        <mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class=" my-form-field hour">
+      <input matInput type="time" [formControl]="startHourControl" placeholder="Hora de inicio" >
+    </mat-form-field>
+    <mat-form-field class=" my-form-field hour">
+      <input matInput type="time" [formControl]="endHourControl" placeholder="Hora de fin">
+    </mat-form-field>
+
+    <div class="grid-action">
+      <button mat-raised-button class="primaryCustom" (click)="cancel()">Cancelar</button>
+      <button mat-raised-button class="primaryCustom" (click)="save()"
+        [disabled]="false">Modificar</button>
+    </div>
+  </form>
+</div>

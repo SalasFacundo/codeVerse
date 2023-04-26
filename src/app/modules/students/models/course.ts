@@ -1,3 +1,4 @@
+import { Time } from "@angular/common";
 import { Class } from "./class";
 import { User } from "./user";
 
@@ -11,4 +12,6 @@ export interface Course{
     price: number;
     startDate: Date;
     endDate: Date;
+    startHour: string;
+    endHour: string;
 }

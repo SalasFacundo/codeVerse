@@ -31,6 +31,21 @@ export class DatosService {
     this.coursesSubject.next(this.courses);
   }
 
+   modifyCourse(id: number, valor: Course) {
+    let index = this.courses.findIndex(course => course.id == id);
+    let oldCourse = this.courses[index];
+    oldCourse.name = valor.name;
+    oldCourse.capacity = valor.capacity;
+    oldCourse.price = valor.price;
+    oldCourse.startDate = valor.startDate;
+    oldCourse.endDate = valor.endDate;
+    oldCourse.startHour = valor.startHour;
+    oldCourse.endHour = valor.endHour;
+
+    this.coursesSubject.next(this.courses)
+  }
+
+
   deleteCourse(courseId: number) {
     this.courses = this.courses.filter((curso) => curso.id !== courseId);
     this.coursesSubject.next(this.courses);
@@ -134,6 +149,8 @@ export class DatosService {
         price: 0,
         startDate: new Date(),
         endDate: new Date(),
+        startHour: "",
+        endHour: "",
       },
     ];
   }

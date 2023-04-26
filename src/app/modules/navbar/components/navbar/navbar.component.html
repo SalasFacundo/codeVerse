@@ -1,11 +1,12 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over" opened="false">
-        <mat-toolbar class="toolbar primaryCustom toggleSidebar" (click)="sidenav.toggle()">
-            <h1>Cursos de programación</h1>
+        <mat-toolbar class="toolbar primaryCustom toggleSidebar justify-content-center" (click)="sidenav.toggle()">
+            <h1><mat-icon>close</mat-icon></h1>
         </mat-toolbar>
         <mat-nav-list>
             <mat-list-item routerLink="/home" (click)="sidenav.toggle()">
-                Inscripciones
+               <span *ngIf="userLogged.isAdmin">Inicio</span>
+               <span *ngIf="!userLogged.isAdmin">Inscripciones</span>
             </mat-list-item>
             <mat-list-item routerLink="/home/courses" (click)="sidenav.toggle()">
                 Cursos

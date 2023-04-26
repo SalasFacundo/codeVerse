@@ -1,6 +1,6 @@
 <div class="container">
   <div class="user-details-container">
-    <h1 class="user-details-header">Detalles del Usuario</h1>
+    <h1 class="user-details-header">Detalles del curso</h1>
     <mat-divider></mat-divider>
 
     <div class="row">
@@ -46,12 +46,16 @@
       <h2>Estudiantes</h2>
       <mat-divider></mat-divider>
 
-        <div *ngFor="let student of (courses | async)?.[0]?.students" class="course col-12">
-          <button mat-mini-fab color="warn" (click)="onClickButton(student)">
-            <mat-icon class="icon-display">delete</mat-icon>
-          </button>
-          {{getStudentById(student)?.id}}  {{getStudentById(student)?.lastName }} {{getStudentById(student)?.dni }}
-        </div>
+      <div *ngIf="(courses | async)?.[0]?.students?.length === 0">
+        No hay Alumnos disponibles.
+      </div>
+
+      <div *ngFor="let student of (courses | async)?.[0]?.students" class="course col-12">
+        <button mat-mini-fab color="warn" (click)="onClickButton(student)">
+          <mat-icon class="icon-display">delete</mat-icon>
+        </button>
+        {{getStudentById(student)?.name}} {{getStudentById(student)?.lastName }} {{getStudentById(student)?.dni }}
+      </div>
     </div>
 
     <div class="button-container">

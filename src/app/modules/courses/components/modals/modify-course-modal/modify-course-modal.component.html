@@ -2,7 +2,7 @@
 
 <mat-divider></mat-divider>
 <div mat-dialog-content>
-  <form [formGroup]="alumnosForm">
+  <form [formGroup]="courseForm">
     <div class="row">
       <mat-form-field class="my-form-field">
         <mat-label>Nombre</mat-label>
@@ -26,26 +26,31 @@
     <div class="row">
       <mat-form-field class=" mat-datepicker-toggle my-form-field edit" appearance="fill">
         <mat-label>Ingrese fecha de inicio y de fin</mat-label>
-        <mat-date-range-input [formGroup]="alumnosForm" [rangePicker]="picker">
-          <input matStartDate [formControl]="startDateControl" placeholder="Inicio">
-          <input matEndDate [formControl]="endDateControl" placeholder="Fin">
+        <mat-date-range-input [formGroup]="courseForm" [rangePicker]="picker">
+          <input matStartDate [formControl]="startDateControl" placeholder="Inicio" readonly>
+          <input matEndDate [formControl]="endDateControl" placeholder="Fin" readonly>
         </mat-date-range-input>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-date-range-picker #picker></mat-date-range-picker>
+        <mat-error *ngFor="let error of startDateControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+        <mat-error *ngFor="let error of endDateControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+
       </mat-form-field>
     </div>
 
     <mat-form-field class=" my-form-field hour">
       <input matInput type="time" [formControl]="startHourControl" placeholder="Hora de inicio" >
+      <mat-error *ngFor="let error of startHourControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
     </mat-form-field>
     <mat-form-field class=" my-form-field hour">
       <input matInput type="time" [formControl]="endHourControl" placeholder="Hora de fin">
+      <mat-error *ngFor="let error of endHourControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
     </mat-form-field>
 
     <div class="grid-action">
       <button mat-raised-button class="primaryCustom" (click)="cancel()">Cancelar</button>
       <button mat-raised-button class="primaryCustom" (click)="save()"
-        [disabled]="false">Modificar</button>
+        [disabled]="courseForm.invalid">Modificar</button>
     </div>
   </form>
 </div>

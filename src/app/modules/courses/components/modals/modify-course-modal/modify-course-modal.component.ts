@@ -12,14 +12,14 @@ import { customValidator } from 'src/app/Validators/customValidators';
 export class ModifyCourseModalComponent implements OnInit {
 
   nameControl = new FormControl('', [Validators.required]);
-  capacityControl = new FormControl('', [Validators.required]);
-  priceControl = new FormControl('', [Validators.required]);
+  capacityControl = new FormControl('', [Validators.required, customValidator.justNumbers()]);
+  priceControl = new FormControl('', [Validators.required, customValidator.justNumbers()]);
   startDateControl = new FormControl('', [Validators.required]);
   endDateControl = new FormControl('', [Validators.required]);
   startHourControl = new FormControl('', [Validators.required]);
   endHourControl = new FormControl('', [Validators.required]);
 
-  alumnosForm = new FormGroup({
+  courseForm = new FormGroup({
     name: this.nameControl,
     capacity: this.capacityControl,
     price: this.priceControl,
@@ -48,24 +48,24 @@ export class ModifyCourseModalComponent implements OnInit {
   save(){
 
     if(this.data != 'add'){
-      this.dialogRef.close({action: "modify", value:this.alumnosForm.value});
+      this.dialogRef.close({action: "modify", value:this.courseForm.value});
     } else if((this.data == 'add')){
-      let course : Course = this.alumnosForm.value;
+      let course : Course = this.courseForm.value;
       course.students = [];
       course.teachers = [];
       course.classes = [];
-      this.dialogRef.close({action: "add", value:this.alumnosForm.value});
+      this.dialogRef.close({action: "add", value:this.courseForm.value});
     }
   }
 
   loadDate(){
-    this.alumnosForm.controls['name'].setValue(this.data.name);
-    this.alumnosForm.controls['capacity'].setValue(this.data.capacity);
-    this.alumnosForm.controls['price'].setValue(this.data.price);
-    this.alumnosForm.controls['startDate'].setValue(this.data.startDate);
-    this.alumnosForm.controls['endDate'].setValue(this.data.endDate);
-    this.alumnosForm.controls['startHour'].setValue(this.data.startHour);
-    this.alumnosForm.controls['endHour'].setValue(this.data.endHour);
+    this.courseForm.controls['name'].setValue(this.data.name);
+    this.courseForm.controls['capacity'].setValue(this.data.capacity);
+    this.courseForm.controls['price'].setValue(this.data.price);
+    this.courseForm.controls['startDate'].setValue(this.data.startDate);
+    this.courseForm.controls['endDate'].setValue(this.data.endDate);
+    this.courseForm.controls['startHour'].setValue(this.data.startHour);
+    this.courseForm.controls['endHour'].setValue(this.data.endHour);
   }
 
 }

@@ -36,8 +36,6 @@ export class AllCoursesComponent implements OnInit {
   openAddCourseModal(){
     const dialog = this.matDialog.open(ModifyCourseModalComponent, {data: "add"});
     dialog.afterClosed().subscribe((valor) => {
-      console.log("valor add course")
-      console.log(valor)
       if (valor.action == "add") {
       this.datosService.addCourse(valor.value)
       }

@@ -188,5 +188,18 @@
         "endDate": "2023-10-01",
         "startHour": "11:15",
         "endHour": "13:15"
+    },
+    {
+        "id": 6,
+        "name": "python2",
+        "capacity": 40,
+        "teachers": [],
+        "students": [1],
+        "classes": [],
+        "price": 74124,
+        "startDate": "2023-09-01",
+        "endDate": "2023-10-01",
+        "startHour": "11:15",
+        "endHour": "13:15"
     }
 ]

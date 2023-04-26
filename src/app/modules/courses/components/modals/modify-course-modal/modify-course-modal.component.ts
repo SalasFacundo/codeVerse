@@ -55,7 +55,6 @@ export class ModifyCourseModalComponent implements OnInit {
       course.teachers = [];
       course.classes = [];
       this.dialogRef.close({action: "add", value:this.alumnosForm.value});
-
     }
   }
 

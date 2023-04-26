@@ -1,0 +1,56 @@
+.container {
+  width: 600px;
+  height: 650px;
+  color: white;
+  margin: 0 !important;
+  text-align: center;
+}
+
+.data-section {
+  width: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+mat-divider {
+  background-color: rgb(241, 241, 148);
+  margin-bottom: 60px;
+}
+
+p {
+  text-align: left;
+}
+
+.courses{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+.courses > button {
+  height: 30px;
+  width: 30px;
+}
+
+.icon-display {
+  font-size: 18px;
+}
+
+#delete{
+  margin: auto;
+  bottom: 0;
+}
+
+.button-container{
+  height: 100%;
+  margin-top: 35px;
+}
+
+.course{
+  margin-bottom: 15px;
+}

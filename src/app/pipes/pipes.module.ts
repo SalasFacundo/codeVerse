@@ -4,7 +4,6 @@ import { ControlErrorMessagesPipe } from './control-error-messages.pipe';
 import { FullNamePipe } from './full-name.pipe';
 
 
-
 @NgModule({
   declarations: [
     ControlErrorMessagesPipe,

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="user-details-container">
+    <h1 class="user-details-header">Detalles del Usuario</h1>
+    <mat-divider></mat-divider>
+
+    <div class="row">
+      <div class="data-section">
+        <h2>Nombre</h2>
+        <h3>{{ data.name }}</h3>
+      </div>
+
+      <div class="data-section">
+        <h2>Capacidad</h2>
+        <h3>{{ data.capacity }}</h3>
+      </div>
+
+      <div class="data-section">
+        <h2>Precio</h2>
+        <h3>{{ data.price }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="data-section">
+        <h2>Fecha de inicio</h2>
+        <h3>{{ data.startDate }}</h3>
+      </div>
+
+      <div class="data-section">
+        <h2>Fecha de finalizacion</h2>
+        <h3>{{ data.endDate }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="data-section">
+        <h2>Hora de inicio</h2>
+        <h3>{{ data.startHour }}</h3>
+      </div>
+
+      <div class="data-section">
+        <h2>Hora de finalizacion</h2>
+        <h3>{{ data.endHour }}</h3>
+      </div>
+    </div>
+
+    <div class="courses">
+      <h2>Estudiantes</h2>
+      <mat-divider></mat-divider>
+
+        <div *ngFor="let student of (courses | async)?.[0]?.students" class="course col-12">
+          <button mat-mini-fab color="warn" (click)="onClickButton(student)">
+            <mat-icon class="icon-display">delete</mat-icon>
+          </button>
+          {{getStudentById(student)?.id}}  {{getStudentById(student)?.lastName }} {{getStudentById(student)?.dni }}
+        </div>
+    </div>
+
+    <div class="button-container">
+      <button id="delete" (click)="closeModal()" mat-raised-button color="warn" class="delete-button">
+        Salir
+      </button>
+    </div>
+  </div>
+</div>

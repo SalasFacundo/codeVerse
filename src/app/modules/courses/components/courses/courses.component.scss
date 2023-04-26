@@ -18,7 +18,7 @@
     mat-card {
         background-color: rgb(39, 40, 45) !important;
         color: white;
-        height: 240px;
+        height: 250px;
 
         mat-card-header{
             display: flex;
@@ -39,10 +39,10 @@
             }
         }
 
-        button{
+        .adminButtons{
             width: 100% !important;
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             left: 0;
         }
     }

@@ -8,6 +8,7 @@ import { DatosService } from 'src/app/services/datos.service';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
 import { UserLoggedService } from 'src/app/services/user-logged.service';
 import { BuyCourseModalComponent } from '../modals/buy-course-modal/buy-course-modal.component';
+import { DetailsCourseModalComponent } from '../modals/details-course-modal/details-course-modal/details-course-modal.component';
 import { ModifyCourseModalComponent } from '../modals/modify-course-modal/modify-course-modal.component';
 
 
@@ -81,6 +82,15 @@ export class CoursesComponent implements OnInit {
     dialog.afterClosed().subscribe((valor) => {
       if (valor.action == "modify") {
       this.datosService.modifyCourse(course.id, valor.value)
+      }
+    })
+  }
+
+  openDeltailsCourseModal(course: Course){
+    const dialog = this.matDialog.open(DetailsCourseModalComponent, {data:course});
+    dialog.afterClosed().subscribe((valor) => {
+      if (valor) {
+
       }
     })
   }

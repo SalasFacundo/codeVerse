@@ -14,7 +14,7 @@ export class StudentDetailsModalComponent implements OnInit {
 
   constructor(private dataUser: DatosService,
               private dialogRef: MatDialogRef<StudentDetailsModalComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any,){}
+              @Inject(MAT_DIALOG_DATA) public data: any){}
 
   ngOnInit(): void {
   }

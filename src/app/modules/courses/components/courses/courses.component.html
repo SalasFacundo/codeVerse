@@ -23,7 +23,12 @@
               (click)="openFormBuyCourse(course.id)">Comprar</button>
           </div>
         </div>
-        <button *ngIf="userLogged.isAdmin" mat-raised-button class="primaryCustom" (click)="openModifyCourse(course)">Modificar</button>
+        <div class="adminButtons">
+          <button *ngIf="userLogged.isAdmin" mat-raised-button class="primaryCustom"
+          (click)="openModifyCourse(course)">Modificar</button>
+          <button *ngIf="userLogged.isAdmin" mat-raised-button class="primaryCustom"
+          (click)="openDeltailsCourseModal(course)">Ver detalles</button>
+        </div>
         <div *ngIf="url == '/home'">
           <button mat-raised-button class="primaryCustom" [routerLink]="['/home/courseDetail', course.id]"
             routerLinkActive="active">

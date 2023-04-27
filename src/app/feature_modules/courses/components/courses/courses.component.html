@@ -6,8 +6,8 @@
       </mat-card-header>
       <mat-card-content>
         <div class="date">
-          {{ course.startDate | date : "dd/MM/yy" }} -
-          {{ course.endDate | date : "dd/MM/yy" }}
+          {{ course.startDate | date: 'M/d/yy' }} -
+          {{ course.endDate | date: 'M/d/yy' }}
         </div>
         <div class="hour">{{course.startHour}} - {{course.endHour}}</div>
         <div class="price" *ngIf="url == '/home/courses'">

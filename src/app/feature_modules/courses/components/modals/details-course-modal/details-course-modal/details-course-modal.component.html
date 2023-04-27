@@ -22,12 +22,12 @@
     <div class="row">
       <div class="data-section">
         <h2>Fecha de inicio</h2>
-        <h3>{{ data.startDate }}</h3>
+        <h3>{{ data.startDate | date: 'M/d/yy' }}</h3>
       </div>
 
       <div class="data-section">
         <h2>Fecha de finalizacion</h2>
-        <h3>{{ data.endDate }}</h3>
+        <h3>{{ data.endDate | date: 'M/d/yy'}}</h3>
       </div>
     </div>
     <div class="row">

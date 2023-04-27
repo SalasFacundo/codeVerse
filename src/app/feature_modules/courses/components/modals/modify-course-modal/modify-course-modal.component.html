@@ -51,7 +51,10 @@
     <div class="grid-action">
       <button mat-raised-button class="primaryCustom" (click)="cancel()">Cancelar</button>
       <button mat-raised-button class="primaryCustom" (click)="save()"
-        [disabled]="courseForm.invalid">Modificar</button>
+        [disabled]="courseForm.invalid">
+        <span *ngIf="isModifyModal">Modificar</span>
+        <span *ngIf="!isModifyModal">Agregar</span>
+      </button>
     </div>
   </form>
 </div>

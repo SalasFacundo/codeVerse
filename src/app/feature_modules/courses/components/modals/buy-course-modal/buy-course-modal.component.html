@@ -1,0 +1,55 @@
+<h1>Comprar curso</h1>
+<mat-divider></mat-divider>
+
+<form [formGroup]="creditCardForm" (ngSubmit)="submitForm()">
+  <mat-form-field appearance="fill" class="my-form-field">
+    <mat-label>Nombre</mat-label>
+    <input matInput [formControl]="cardNameControl" />
+    <mat-error *ngFor="let error of cardNameControl.errors | keyvalue"
+      >{{ error | controlErrorMessages }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="my-form-field">
+    <mat-label>Numero</mat-label>
+    <input matInput [formControl]="cardNumberControl" maxlength="16" />
+    <mat-error *ngFor="let error of cardNumberControl.errors | keyvalue"
+      >{{ error | controlErrorMessages }}
+    </mat-error>
+  </mat-form-field>
+
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="cvv-field my-form-field col-6" appearance="fill">
+        <mat-label>Mes</mat-label>
+        <input matInput [formControl]="cardMonthControl" maxlength="2" />
+        <mat-error *ngFor="let error of cardMonthControl.errors | keyvalue"
+          >{{ error | controlErrorMessages }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="cvv-field my-form-field col-6" appearance="fill">
+        <mat-label>Año</mat-label>
+        <input matInput [formControl]="cardYearControl" maxlength="2" />
+        <mat-error *ngFor="let error of cardYearControl.errors | keyvalue"
+          >{{ error | controlErrorMessages }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="cvv-field my-form-field col-6" appearance="fill">
+      <mat-label>Codigo de seguridad</mat-label>
+      <input matInput [formControl]="cvvControl" maxlength="3" />
+      <mat-error *ngFor="let error of cvvControl.errors | keyvalue"
+        >{{ error | controlErrorMessages }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button
+    mat-raised-button
+    class="primaryCustom"
+    type="submit"
+    [disabled]="creditCardForm.invalid"
+  >
+    Confirmar compra
+  </button>
+</form>

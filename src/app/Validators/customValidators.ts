@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { map, Observable } from 'rxjs';
-import { User } from '../modules/students/models/user';
+import { User } from '..//feature_modules//students/models/user';
 import { DatosService } from '../services/datos.service';
 
 export class customValidator {

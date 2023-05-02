@@ -15,14 +15,7 @@ import { AllStudentsPageComponent } from './/feature_modules//students/pages/all
 const routes: Routes = [
   { path: '', component: LoginPageComponent, canActivate: [LoginGuard] },
   { path: 'login', component: LoginPageComponent, canActivate: [LoginGuard] },
-  {
-    path: 'home', component: NavbarComponent, canActivate: [AuthGuard],
-    children: [
-      { path: 'students', component: AllStudentsPageComponent},
-      { path: 'courses', component: AllCoursesComponent},
-      { path: 'courseDetail/:id', component: PurchasedCourseComponent, canActivate: [CourseGuard]},
-    ]
-  },
+  { path: 'home', loadChildren: () => import('.//feature_modules//navbar/navbar.module').then(m => m.NavbarModule)}
 ];
 
 @NgModule({

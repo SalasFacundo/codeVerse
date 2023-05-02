@@ -7,18 +7,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { StudentsModule } from '../students/students.module';
 import { MatButtonModule } from '@angular/material/button';
-import { AppRoutingModule } from 'src/app/app.routing.module';
 import { RouterModule } from '@angular/router';
 import { DefaultNavbarComponent } from './components/default-navbar/default-navbar.component';
 import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CoursesModule } from '../courses/courses.module';
-
-
-
-
-
+import { NavbarRoutingModule } from './navbar-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,11 +30,12 @@ import { CoursesModule } from '../courses/courses.module';
     MatIconModule,
     StudentsModule,
     MatButtonModule,
-    AppRoutingModule,
     RouterModule.forChild([]),
+    BrowserAnimationsModule,
     CoursesModule,
     MatMenuModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    NavbarRoutingModule
   ],
   exports: [
     NavbarComponent

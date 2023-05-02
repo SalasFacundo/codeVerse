@@ -10,9 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { NavbarModule } from './/feature_modules//navbar/navbar.module';
-import { AppRoutingModule } from './app.routing.module';
-import { RouterModule, Routes } from '@angular/router';
 import { CoursesModule } from './/feature_modules//courses/courses.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { CoursesModule } from './/feature_modules//courses/courses.module';
     MatListModule,
     LoginModule,
     NavbarModule,
-    RouterModule.forRoot([]),
-    AppRoutingModule,
+    RouterModule,
     CoursesModule
 
   ],

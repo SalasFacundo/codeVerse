@@ -12,8 +12,6 @@ import { ClassCardComponent } from './components/class-card/class-card.component
 import { BuyCourseComponent } from './components/buy-course/buy-course.component';
 import { BuyCourseModalComponent } from './components/modals/buy-course-modal/buy-course-modal.component';
 import { MatIconModule } from '@angular/material/icon';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -48,8 +46,6 @@ import { DetailsCourseModalComponent } from './components/modals/details-course-
         StudentsModule,
         MatExpansionModule,
         MatDividerModule,
-        BrowserModule,
-        BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         MatStepperModule,

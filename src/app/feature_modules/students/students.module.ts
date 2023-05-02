@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
@@ -42,7 +41,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   imports: [
     CommonModule,
     NgbModule,
-    BrowserAnimationsModule,
     MatTableModule,
     MatProgressBarModule,
     MatButtonModule,

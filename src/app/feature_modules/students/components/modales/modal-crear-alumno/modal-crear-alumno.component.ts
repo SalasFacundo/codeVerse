@@ -24,12 +24,12 @@ export class ModalCrearAlumnoComponent implements OnInit {
     name: this.nameControl,
     lastName: this.lastNameControl,
     dni: this.dniControl,
-    course: this.emailControl
+    email: this.emailControl
   })
   constructor(private dialogRef: MatDialogRef<ModalCrearAlumnoComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  
+
   ngOnInit(): void {
   }
 

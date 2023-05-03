@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { NavbarModule } from './/feature_modules//navbar/navbar.module';
 import { CoursesModule } from './/feature_modules//courses/courses.module';
 import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RouterModule } from '@angular/router';
     LoginModule,
     NavbarModule,
     RouterModule,
-    CoursesModule
+    CoursesModule,
+    HttpClientModule
 
   ],
   providers: [],

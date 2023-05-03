@@ -1,0 +1,814 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "dni": 10000001,
+      "name": "Pedro",
+      "lastName": "Martínez",
+      "email": "pedro.martinez@example.com",
+      "password": "password1",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 2,
+      "dni": 10000002,
+      "name": "Ana",
+      "lastName": "López",
+      "email": "ana.lopez@example.com",
+      "password": "password2",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 3,
+      "dni": 10000003,
+      "name": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@example.com",
+      "password": "password3",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 4,
+      "dni": 10000004,
+      "name": "Laura",
+      "lastName": "González",
+      "email": "laura.gonzalez@example.com",
+      "password": "password4",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 5,
+      "dni": 10000005,
+      "name": "Carlos",
+      "lastName": "Sánchez",
+      "email": "carlos.sanchez@example.com",
+      "password": "password5",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 6,
+      "dni": 10000006,
+      "name": "Paola",
+      "lastName": "Hernández",
+      "email": "paola.hernandez@example.com",
+      "password": "password6",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 7,
+      "dni": 10000007,
+      "name": "Diego",
+      "lastName": "Gómez",
+      "email": "diego.gomez@example.com",
+      "password": "password7",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 8,
+      "dni": 10000008,
+      "name": "Isabel",
+      "lastName": "Fernández",
+      "email": "isabel.fernandez@example.com",
+      "password": "password8",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 9,
+      "dni": 10000009,
+      "name": "Jorge",
+      "lastName": "Rodríguez",
+      "email": "jorge.rodriguez@example.com",
+      "password": "password9",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 10,
+      "dni": 10000010,
+      "name": "María",
+      "lastName": "Jiménez",
+      "email": "maria.jimenez@example.com",
+      "password": "password10",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 11,
+      "dni": 10000011,
+      "name": "Alberto",
+      "lastName": "González",
+      "email": "alberto.gonzalez@example.com",
+      "password": "password11",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 12,
+      "dni": 10000012,
+      "name": "Lucía",
+      "lastName": "Santos",
+      "email": "lucia.santos@example.com",
+      "password": "password12",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 13,
+      "dni": 10000013,
+      "name": "Sergio",
+      "lastName": "Martínez",
+      "email": "sergio.martinez@example.com",
+      "password": "password13",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 14,
+      "dni": 10000014,
+      "name": "Carla",
+      "lastName": "Ramírez",
+      "email": "carla.ramirez@example.com",
+      "password": "password14",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 15,
+      "dni": 10000015,
+      "name": "Pablo",
+      "lastName": "Cruz",
+      "email": "pablo.cruz@example.com",
+      "password": "password15",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 16,
+      "dni": 10000016,
+      "name": "Mariana",
+      "lastName": "Vargas",
+      "email": "mariana.vargas@example.com",
+      "password": "password16",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 17,
+      "dni": 10000017,
+      "name": "Héctor",
+      "lastName": "Guzmán",
+      "email": "hector.guzman@example.com",
+      "password": "password17",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 18,
+      "dni": 10000018,
+      "name": "Valeria",
+      "lastName": "Torres",
+      "email": "valeria.torres@example.com",
+      "password": "password18",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 19,
+      "dni": 10000019,
+      "name": "Mario",
+      "lastName": "Santiago",
+      "email": "mario.santiago@example.com",
+      "password": "password19",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 20,
+      "dni": 10000020,
+      "name": "Karla",
+      "lastName": "Fernández",
+      "email": "karla.fernandez@example.com",
+      "password": "password20",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 21,
+      "dni": 10000021,
+      "name": "Daniel",
+      "lastName": "Álvarez",
+      "email": "daniel.alvarez@example.com",
+      "password": "password21",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 22,
+      "dni": 10000022,
+      "name": "Silvia",
+      "lastName": "González",
+      "email": "silvia.gonzalez@example.com",
+      "password": "password22",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 23,
+      "dni": 10000023,
+      "name": "César",
+      "lastName": "Hernández",
+      "email": "cesar.hernandez@example.com",
+      "password": "password23",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 24,
+      "dni": 10000024,
+      "name": "Luis",
+      "lastName": "Rivas",
+      "email": "luis.rivas@example.com",
+      "password": "password24",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 25,
+      "dni": 10000025,
+      "name": "Verónica",
+      "lastName": "López",
+      "email": "veronica.lopez@example.com",
+      "password": "password25",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 26,
+      "dni": 10000026,
+      "name": "Francisco",
+      "lastName": "García",
+      "email": "francisco.garcia@example.com",
+      "password": "password26",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 27,
+      "dni": 10000027,
+      "name": "Laura",
+      "lastName": "Sánchez",
+      "email": "laura.sanchez@example.com",
+      "password": "password27",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 28,
+      "dni": 10000028,
+      "name": "Jorge",
+      "lastName": "Herrera",
+      "email": "jorge.herrera@example.com",
+      "password": "password28",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 29,
+      "dni": 10000029,
+      "name": "Marcela",
+      "lastName": "Jiménez",
+      "email": "marcela.jimenez@example.com",
+      "password": "password29",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 30,
+      "dni": 10000030,
+      "name": "José",
+      "lastName": "Vega",
+      "email": "jose.vega@example.com",
+      "password": "password30",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 31,
+      "dni": 10000031,
+      "name": "Ana",
+      "lastName": "Ramos",
+      "email": "ana.ramos@example.com",
+      "password": "password31",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 32,
+      "dni": 10000032,
+      "name": "Cristina",
+      "lastName": "González",
+      "email": "cristina.gonzalez@example.com",
+      "password": "password32",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 33,
+      "dni": 10000033,
+      "name": "Diego",
+      "lastName": "Martínez",
+      "email": "diego.martinez@example.com",
+      "password": "password33",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 34,
+      "dni": 10000034,
+      "name": "Sofía",
+      "lastName": "Mendoza",
+      "email": "sofia.mendoza@example.com",
+      "password": "password34",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 35,
+      "dni": 10000035,
+      "name": "Fernando",
+      "lastName": "Gómez",
+      "email": "fernando.gomez@example.com",
+      "password": "password35",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 36,
+      "dni": 10000036,
+      "name": "Carla",
+      "lastName": "Hernández",
+      "email": "carla.hernandez@example.com",
+      "password": "password36",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 37,
+      "dni": 10000037,
+      "name": "David",
+      "lastName": "Guerrero",
+      "email": "david.guerrero@example.com",
+      "password": "password37",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 38,
+      "dni": 10000038,
+      "name": "Laura",
+      "lastName": "Torres",
+      "email": "laura.torres@example.com",
+      "password": "password38",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 39,
+      "dni": 10000039,
+      "name": "Andrés",
+      "lastName": "Reyes",
+      "email": "andres.reyes@example.com",
+      "password": "password39",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 40,
+      "dni": 10000040,
+      "name": "Carolina",
+      "lastName": "Castillo",
+      "email": "carolina.castillo@example.com",
+      "password": "password40",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 41,
+      "dni": 10000041,
+      "name": "Luis",
+      "lastName": "Santana",
+      "email": "luis.santana@example.com",
+      "password": "password41",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 42,
+      "dni": 10000042,
+      "name": "Gabriela",
+      "lastName": "Flores",
+      "email": "gabriela.flores@example.com",
+      "password": "password42",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 43,
+      "dni": 10000043,
+      "name": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@example.com",
+      "password": "password43",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 44,
+      "dni": 10000044,
+      "name": "María",
+      "lastName": "Chávez",
+      "email": "maria.chavez@example.com",
+      "password": "password44",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 45,
+      "dni": 10000045,
+      "name": "Daniel",
+      "lastName": "Castro",
+      "email": "daniel.castro@example.com",
+      "password": "password45",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 46,
+      "dni": 10000046,
+      "name": "Alejandra",
+      "lastName": "Valencia",
+      "email": "alejandra.valencia@example.com",
+      "password": "password46",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 47,
+      "dni": 10000047,
+      "name": "Jorge",
+      "lastName": "Navarro",
+      "email": "jorge.navarro@example.com",
+      "password": "password47",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 48,
+      "dni": 10000048,
+      "name": "Ana",
+      "lastName": "García",
+      "email": "ana.garcia@example.com",
+      "password": "password48",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 49,
+      "dni": 10000049,
+      "name": "Miguel",
+      "lastName": "Herrera",
+      "email": "miguel.herrera@example.com",
+      "password": "password49",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 50,
+      "dni": 10000050,
+      "name": "Lucía",
+      "lastName": "Rojas",
+      "email": "lucia.rojas@example.com",
+      "password": "password50",
+      "isAdmin": false,
+      "role": "student"
+    },
+    {
+      "id": 51,
+      "dni": 10000051,
+      "name": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@example.com",
+      "password": "password1",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 52,
+      "dni": 10000052,
+      "name": "María",
+      "lastName": "González",
+      "email": "maria.gonzalez@example.com",
+      "password": "password2",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 53,
+      "dni": 10000053,
+      "name": "Carlos",
+      "lastName": "Sánchez",
+      "email": "carlos.sanchez@example.com",
+      "password": "password3",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 54,
+      "dni": 10000054,
+      "name": "Laura",
+      "lastName": "Hernández",
+      "email": "laura.hernandez@example.com",
+      "password": "password4",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 55,
+      "dni": 10000055,
+      "name": "Alejandro",
+      "lastName": "Martínez",
+      "email": "alejandro.martinez@example.com",
+      "password": "password5",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 56,
+      "dni": 10000056,
+      "name": "Mónica",
+      "lastName": "Rodríguez",
+      "email": "monica.rodriguez@example.com",
+      "password": "password6",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 57,
+      "dni": 10000057,
+      "name": "Pedro",
+      "lastName": "Ruiz",
+      "email": "pedro.ruiz@example.com",
+      "password": "password7",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 58,
+      "dni": 10000058,
+      "name": "Ana",
+      "lastName": "López",
+      "email": "ana.lopez@example.com",
+      "password": "password8",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 59,
+      "dni": 10000059,
+      "name": "Jorge",
+      "lastName": "García",
+      "email": "jorge.garcia@example.com",
+      "password": "password9",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 60,
+      "dni": 10000060,
+      "name": "Fernando",
+      "lastName": "Sánchez",
+      "email": "fernando.sanchez@example.com",
+      "password": "password10",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 61,
+      "dni": 10000061,
+      "name": "Marcela",
+      "lastName": "González",
+      "email": "marcela.gonzalez@example.com",
+      "password": "password11",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 62,
+      "dni": 10000062,
+      "name": "Roberto",
+      "lastName": "Mendoza",
+      "email": "roberto.mendoza@example.com",
+      "password": "password12",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 63,
+      "dni": 10000063,
+      "name": "Silvia",
+      "lastName": "Castro",
+      "email": "silvia.castro@example.com",
+      "password": "password13",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 64,
+      "dni": 10000064,
+      "name": "Luis",
+      "lastName": "Gutiérrez",
+      "email": "luis.gutierrez@example.com",
+      "password": "password14",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 65,
+      "dni": 10000065,
+      "name": "Carla",
+      "lastName": "Méndez",
+      "email": "carla.mendez@example.com",
+      "password": "password15",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 66,
+      "dni": 10000066,
+      "name": "Andrés",
+      "lastName": "Fernández",
+      "email": "andres.fernandez@example.com",
+      "password": "password16",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 67,
+      "dni": 10000067,
+      "name": "Cristina",
+      "lastName": "Santos",
+      "email": "cristina.santos@example.com",
+      "password": "password17",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 68,
+      "dni": 10000068,
+      "name": "Ricardo",
+      "lastName": "Molina",
+      "email": "ricardo.molina@example.com",
+      "password": "password18",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 69,
+      "dni": 10000069,
+      "name": "Lucía",
+      "lastName": "Morales",
+      "email": "lucia.morales@example.com",
+      "password": "password19",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 70,
+      "dni": 10000070,
+      "name": "José",
+      "lastName": "González",
+      "email": "jose.gonzalez@example.com",
+      "password": "password20",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 71,
+      "dni": 10000071,
+      "name": "Ana",
+      "lastName": "Pérez",
+      "email": "ana.perez@example.com",
+      "password": "password21",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 72,
+      "dni": 10000072,
+      "name": "Pedro",
+      "lastName": "Hernández",
+      "email": "pedro.hernandez@example.com",
+      "password": "password22",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 73,
+      "dni": 10000073,
+      "name": "Sara",
+      "lastName": "García",
+      "email": "sara.garcia@example.com",
+      "password": "password23",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 74,
+      "dni": 10000074,
+      "name": "Javier",
+      "lastName": "Vargas",
+      "email": "javier.vargas@example.com",
+      "password": "password24",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 75,
+      "dni": 10000075,
+      "name": "Mónica",
+      "lastName": "Ruiz",
+      "email": "monica.ruiz@example.com",
+      "password": "password25",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 76,
+      "dni": 10000076,
+      "name": "Roberto",
+      "lastName": "García",
+      "email": "roberto.garcia@example.com",
+      "password": "password26",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 77,
+      "dni": 10000077,
+      "name": "María",
+      "lastName": "Sánchez",
+      "email": "maria.sanchez@example.com",
+      "password": "password27",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 78,
+      "dni": 10000078,
+      "name": "Jorge",
+      "lastName": "Martínez",
+      "email": "jorge.martinez@example.com",
+      "password": "password28",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 79,
+      "dni": 10000079,
+      "name": "Fernanda",
+      "lastName": "González",
+      "email": "fernanda.gonzalez@example.com",
+      "password": "password29",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 80,
+      "dni": 10000080,
+      "name": "Diego",
+      "lastName": "Pérez",
+      "email": "diego.perez@example.com",
+      "password": "password30",
+      "isAdmin": true,
+      "role": "teacher"
+    },
+    {
+      "id": 81,
+      "dni": 10000081,
+      "name": "admin",
+      "lastName": "admin",
+      "email": "admin@admin",
+      "password": "admin",
+      "isAdmin": true,
+      "role": "admin"
+    }
+  ]
+}

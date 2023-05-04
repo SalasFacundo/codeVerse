@@ -8,8 +8,6 @@ import { Course } from '..//feature_modules//students/models/course';
   providedIn: 'root',
 })
 export class DatosService {
-  private urlStudents = './assets/data/json/students.json';
-  private urlCourses = './assets/data/json/courses.json';
 
   private courses: Course[] = [];
   private coursesSubject = new BehaviorSubject<Course[]>(this.defaultCourse());
@@ -21,14 +19,13 @@ export class DatosService {
   }
 
   loadCourses() {
-    this.http.get<Course[]>(this.urlCourses).subscribe((courses) => {
+    this.http.get<Course[]>('http://localhost:3000/courses').subscribe((courses: any[]) => {
       this.courses = courses;
       this.coursesSubject.next(this.courses);
     });
   }
 
   loadStudents(){
-
     this.http
       .get<User[]>(
         'http://localhost:3000/users'

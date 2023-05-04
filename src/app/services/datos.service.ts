@@ -9,7 +9,6 @@ import { Course } from '..//feature_modules//students/models/course';
 })
 export class DatosService {
   private urlStudents = './assets/data/json/students.json';
-  private urlUsers = './assets/data/json/users.json';
   private urlCourses = './assets/data/json/courses.json';
 
   private courses: Course[] = [];
@@ -29,9 +28,13 @@ export class DatosService {
   }
 
   loadStudents(){
-    this.http.get<User[]>(this.urlUsers).subscribe((students) => {
-      this.students = students;
-    });
+
+    this.http
+      .get<User[]>(
+        'http://localhost:3000/users'
+      ).subscribe((students) => {
+        this.students = students;
+      });
   }
 
   addCourse(course: Course) {
@@ -79,18 +82,25 @@ export class DatosService {
   }
 
   getStudents(): Observable<any> {
+
     return this.http
-    .get<User[]>(this.urlUsers)
-    .pipe(map((users) => users.filter((user) => user.role == "student")));
+      .get<any[]>(
+        `http://localhost:3000/users?role=student`
+      );
   }
 
   getStudentsById(id: number): Observable<any> {
     return this.http
-    .get<User[]>(this.urlUsers)
-    .pipe(map((users) => users.filter((user) => user.role == "student" && user.id == id)));
+    .get<any[]>(
+      `http://localhost:3000/users?id=${id}`
+    );
   }
+
   getUsers(): Observable<any> {
-    return this.http.get(this.urlUsers);
+   return this.http
+      .get<User[]>(
+        'http://localhost:3000/users'
+      );
   }
 
   getCourseById(id: number): Observable<Course[]> {
@@ -145,7 +155,7 @@ export class DatosService {
   }
 
   getUsersById(ids: number[]): Observable<User[]> {
-    return this.http.get<User[]>(this.urlUsers).pipe(
+    return this.http.get<User[]>(`http://localhost:3000/users`).pipe(
       map((users) => {
         return users.filter((user) => ids.includes(user.id));
       })
@@ -153,11 +163,15 @@ export class DatosService {
   }
 
   getUserById(id: number): Observable<User | undefined> {
-    return this.http.get<User[]>(this.urlUsers).pipe(
-      map((users) => {
-        return users.find((user) => user.id == id);
-      })
-    );
+    return this.http
+  .get<User[]>(
+    `http://localhost:3000/users?id=${id}`
+  )
+  .pipe(
+    map((users) => {
+      return users.length > 0 ? users[0] : undefined;
+    })
+  );
   }
 
 

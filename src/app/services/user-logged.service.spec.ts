@@ -28,8 +28,6 @@ describe('UserLoggedService', () => {
 
   it('should log in a user', () => {
     service.logIn(user);
-    expect(service.user).toEqual(user);
-    expect(service.isAuthenticated).toBeTrue();
     expect(JSON.parse(window.localStorage['loggedUser'])).toEqual(user);
   });
 

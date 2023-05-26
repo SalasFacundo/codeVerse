@@ -9,6 +9,8 @@ import { UserLoggedService } from 'src/app/services/user-logged.service';
 import { User } from '../../models/user';
 import { ActivatedRoute } from '@angular/router';
 import { StudentDetailsModalComponent } from '../modales/student-details/student-details-modal/student-details-modal.component';
+import { ModificarAction, AgregarAction, EliminarAction  } from '../../student.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-grilla',
@@ -30,7 +32,8 @@ export class GrillaComponent implements OnInit {
               private http: HttpClient,
               private datosService: DatosService,
               private userLogged: UserLoggedService,
-              private activatedRoute: ActivatedRoute
+              private activatedRoute: ActivatedRoute,
+              private store: Store<User>
     ) { }
 
   ngOnInit(): void {
@@ -38,6 +41,12 @@ export class GrillaComponent implements OnInit {
     this.user = this.userLogged.getUser();
     this.isAdmin = this.user.isAdmin;
     this.addColumns();
+
+    this.store.subscribe( state => {
+      console.log(state);
+    })
+
+    this.store.dispatch(new ModificarAction())
   }
 
   openFormCreateStudent(): void {
@@ -63,7 +72,7 @@ export class GrillaComponent implements OnInit {
     const dialog = this.matDialog.open(ModifyStudentComponent, { data: {idSelected: value, students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        this.replaceObjectById(this.dataSource, valor)
+        this.replaceObjectById(this.dataSource, valor);
       }
     })
   }

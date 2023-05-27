@@ -9,7 +9,6 @@ import { UserLoggedService } from 'src/app/services/user-logged.service';
 import { User } from '../../models/user';
 import { ActivatedRoute } from '@angular/router';
 import { StudentDetailsModalComponent } from '../modales/student-details/student-details-modal/student-details-modal.component';
-import { ModificarAction, AgregarAction, EliminarAction  } from '../../student.actions';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -29,7 +28,6 @@ export class GrillaComponent implements OnInit {
   user!: User;
 
   constructor(private matDialog: MatDialog,
-              private http: HttpClient,
               private datosService: DatosService,
               private userLogged: UserLoggedService,
               private activatedRoute: ActivatedRoute,
@@ -45,8 +43,6 @@ export class GrillaComponent implements OnInit {
     this.store.subscribe( state => {
       console.log(state);
     })
-
-    this.store.dispatch(new ModificarAction())
   }
 
   openFormCreateStudent(): void {

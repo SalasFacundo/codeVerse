@@ -16,7 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { studentReducer } from './feature_modules/students/student.reducer';
+import { loginReducer } from './feature_modules/login/login.reducer';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { studentReducer } from './feature_modules/students/student.reducer';
     RouterModule,
     CoursesModule,
     HttpClientModule,
-    StoreModule.forRoot({student: studentReducer}),
+    StoreModule.forRoot({login: loginReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

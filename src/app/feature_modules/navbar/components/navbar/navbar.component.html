@@ -5,13 +5,13 @@
         </mat-toolbar>
         <mat-nav-list>
             <mat-list-item routerLink="/home" (click)="sidenav.toggle()">
-               <span *ngIf="userLogged.isAdmin">Inicio</span>
-               <span *ngIf="!userLogged.isAdmin">Inscripciones</span>
+               <span *ngIf="userIsAdmin">Inicio</span>
+               <span *ngIf="!userIsAdmin">Inscripciones</span>
             </mat-list-item>
             <mat-list-item routerLink="/home/courses" (click)="sidenav.toggle()">
                 Cursos
             </mat-list-item>
-            <mat-list-item *ngIf="userLogged.isAdmin"  routerLink="/home/students" (click)="sidenav.toggle()">
+            <mat-list-item *ngIf="userIsAdmin"  routerLink="/home/students" (click)="sidenav.toggle()">
               Alumnos
           </mat-list-item>
         </mat-nav-list>

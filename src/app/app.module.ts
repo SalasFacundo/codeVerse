@@ -13,10 +13,6 @@ import { NavbarModule } from './/feature_modules//navbar/navbar.module';
 import { CoursesModule } from './/feature_modules//courses/courses.module';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from 'src/environments/environment';
-import { loginReducer } from './feature_modules/login/login.reducer';
 
 @NgModule({
   declarations: [
@@ -34,12 +30,7 @@ import { loginReducer } from './feature_modules/login/login.reducer';
     NavbarModule,
     RouterModule,
     CoursesModule,
-    HttpClientModule,
-    StoreModule.forRoot({login: loginReducer}),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
+    HttpClientModule
 
   ],
   providers: [],

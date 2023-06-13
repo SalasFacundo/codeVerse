@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { UserLoggedService } from './user-logged.service';
+import { UserLoggedService } from './loginService';
 import { User } from '../feature_modules/students/models/user';
 
 describe('UserLoggedService', () => {

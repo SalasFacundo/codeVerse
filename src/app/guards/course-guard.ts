@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { Course } from '..//feature_modules//students/models/course';
 import { DatosService } from '../services/datos.service';
-import { UserLoggedService } from '../services/user-logged.service';
+import { LoginService } from '../services/loginService';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +17,7 @@ import { UserLoggedService } from '../services/user-logged.service';
 export class CourseGuard implements CanActivate {
   constructor(
     private datos: DatosService,
-    private userLogged: UserLoggedService,
+    private loginService: LoginService,
     private router: Router
   ) {}
 
@@ -25,7 +25,7 @@ export class CourseGuard implements CanActivate {
 
     const courseId = next.params['id'];
     let url = window.location.pathname;
-    if (this.datos.getCoursesByUser(this.userLogged.getUser()).some((course: Course) => course.id == courseId)) {
+    if (this.datos.getCoursesByUser(this.loginService.getUser()).some((course: Course) => course.id == courseId)) {
         return true;
     } else {
         this.router.navigate(["home"]);

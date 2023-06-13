@@ -5,11 +5,11 @@ import { ModalCrearAlumnoComponent } from '../modales/modal-crear-alumno/modal-c
 import { HttpClient } from '@angular/common/http';
 import { ModifyStudentComponent } from '../modales/modify-student/modify-student.component';
 import { DatosService } from 'src/app/services/datos.service';
-import { UserLoggedService } from 'src/app/services/user-logged.service';
+import { LoginService } from 'src/app/services/loginService';
 import { User } from '../../models/user';
 import { ActivatedRoute } from '@angular/router';
 import { StudentDetailsModalComponent } from '../modales/student-details/student-details-modal/student-details-modal.component';
-import { Store } from '@ngrx/store';
+import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 
 @Component({
   selector: 'app-grilla',
@@ -28,21 +28,17 @@ export class GrillaComponent implements OnInit {
   user!: User;
 
   constructor(private matDialog: MatDialog,
+              private http: HttpClient,
               private datosService: DatosService,
-              private userLogged: UserLoggedService,
-              private activatedRoute: ActivatedRoute,
-              private store: Store<User>
+              private loginService: LoginService,
+              private activatedRoute: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
     this.fillColumns();
-    this.user = this.userLogged.getUser();
-    this.isAdmin = this.user.isAdmin;
+    this.user = this.loginService.getUser();
+    this.isAdmin = this.user.role == UserRoleEnum.ADMIN;
     this.addColumns();
-
-    this.store.subscribe( state => {
-      console.log(state);
-    })
   }
 
   openFormCreateStudent(): void {
@@ -68,7 +64,7 @@ export class GrillaComponent implements OnInit {
     const dialog = this.matDialog.open(ModifyStudentComponent, { data: {idSelected: value, students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        this.replaceObjectById(this.dataSource, valor);
+        this.replaceObjectById(this.dataSource, valor)
       }
     })
   }

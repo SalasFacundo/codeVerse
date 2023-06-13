@@ -1,14 +1,13 @@
+import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { User } from 'src/app//feature_modules//students/models/user';
 import { DatosService } from 'src/app/services/datos.service';
-import { UserLoggedService } from 'src/app/services/user-logged.service';
+import { LoginService} from 'src/app/services/loginService';
 import { customValidator } from 'src/app/Validators/customValidators';
-import { login } from '../../login.actions';
 
 @Component({
   selector: 'app-card-login',
@@ -27,10 +26,9 @@ export class CardLoginComponent implements OnInit {
   constructor(
     private router: Router,
     private datosService: DatosService,
-    private userLogged: UserLoggedService,
-    private _snackBar: MatSnackBar,
-    private httpClient: HttpClient,
-    private store: Store
+    private loginService: LoginService,
+    private snackBar: MatSnackBar,
+    private httpClient: HttpClient
   ) {}
 
   emailControl = new FormControl('', [Validators.required, Validators.email]);
@@ -48,22 +46,26 @@ export class CardLoginComponent implements OnInit {
   }
 
   loginValidator() {
-    this.httpClient
-      .get<any[]>(
-        `http://localhost:3000/users?email=${this.emailControl.value}&password=${this.passwordControl.value}`
-      )
-      .subscribe((users) => {
-        if (users.length != 0) {
-          this.userLogged.logIn(users[0]);
-          this.store.dispatch(login({  user: users[0] }));
-          this.router.navigate(['/home']);
-          this._snackBar.dismiss();
-        } else {
-          this._snackBar.open('Email o contraseña incorrectos', 'Cerrar', {
-            horizontalPosition: 'center',
-            verticalPosition: 'top',
-          });
-        }
-      });
+    this.loginService.validateLogin(this.emailControl.value, this.passwordControl.value).subscribe(
+      response => {
+        this.loginValidatorOK(response);
+      },
+      error => {
+        this.loginValidatorERROR(error);
+      }
+    );
+  }
+
+  loginValidatorOK(user: any){
+    this.loginService.logIn(user);
+    this.router.navigate(['/home']);
+    this.snackBar.dismiss();
+  }
+
+  loginValidatorERROR(error: any){
+    this.snackBar.open('Email o contraseña incorrectos', 'Cerrar', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
   }
 }

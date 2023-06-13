@@ -4,9 +4,10 @@ import { NavigationEnd } from '@angular/router';
 import { asapScheduler } from 'rxjs';
 import { ModifyCourseModalComponent } from 'src/app//feature_modules//courses/components/modals/modify-course-modal/modify-course-modal.component';
 import { Course } from 'src/app//feature_modules//students/models/course';
+import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { DatosService } from 'src/app/services/datos.service';
+import { LoginService } from 'src/app/services/loginService';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
-import { UserLoggedService } from 'src/app/services/user-logged.service';
 
 @Component({
   selector: 'app-all-courses',
@@ -15,12 +16,13 @@ import { UserLoggedService } from 'src/app/services/user-logged.service';
 })
 export class AllCoursesComponent implements OnInit {
   currentUrl = window.location.pathname;
-  userLogged = this.userLoggedService.getUser();
+  userLogged = this.loginService.getUser();
+  userIsAdmin!: boolean;
 
   constructor(
     private updateRoute: UpdateRouteService,
     private datosService: DatosService,
-    private userLoggedService: UserLoggedService,
+    private loginService: LoginService,
     private matDialog: MatDialog
   ) {}
 
@@ -30,6 +32,7 @@ export class AllCoursesComponent implements OnInit {
         this.currentUrl = event.url;
       }
     });
+    this.userIsAdmin = this.userLogged.role != UserRoleEnum.ADMIN;
   }
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatosService } from 'src/app/services/datos.service';
-import { UserLoggedService } from 'src/app/services/user-logged.service';
+import { LoginService } from 'src/app/services/loginService';
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +9,7 @@ import { UserLoggedService } from 'src/app/services/user-logged.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private datos: DatosService, private loginService: UserLoggedService) { }
+  constructor(private datos: DatosService, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.loginService.logOut()

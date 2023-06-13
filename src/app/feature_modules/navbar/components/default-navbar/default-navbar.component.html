@@ -2,12 +2,12 @@
 
 
 <div class="container">
-    <h1>¡Hola, {{loggedUser.name}}!</h1>
+    <h1>¡Hola, {{userLogged.name}}!</h1>
     <mat-divider></mat-divider>
     <h2>{{welcomeMessage}}</h2>
 
 
-    <span *ngIf="grillaSize == 0 && !loggedUser.isAdmin"> No hay cursos disponibles</span>
+    <span *ngIf="grillaSize == 0 && !userIsAdmin"> No hay cursos disponibles</span>
 </div>
 
 <app-courses [filter]="'related'" (grillaSize)="onGrillaSize($event)"></app-courses>

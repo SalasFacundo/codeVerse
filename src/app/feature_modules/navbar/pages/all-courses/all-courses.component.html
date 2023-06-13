@@ -3,7 +3,7 @@
     <div class="container">
         <h2>Cursos disponibles para comprar</h2>
         <mat-divider></mat-divider>
-        <button *ngIf="userLogged.isAdmin"
+        <button *ngIf="userIsAdmin"
                 mat-raised-button class="primaryCustom"
                 (click)="openAddCourseModal()">
                 Agregar Curso

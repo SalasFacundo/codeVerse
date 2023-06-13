@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app//feature_modules//students/models/user';
 import { DatosService } from 'src/app/services/datos.service';
-import { UserLoggedService } from 'src/app/services/user-logged.service';
+import { LoginService } from 'src/app/services/loginService';
+import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 
 @Component({
   selector: 'app-default-navbar',
@@ -9,20 +10,22 @@ import { UserLoggedService } from 'src/app/services/user-logged.service';
   styleUrls: ['./default-navbar.component.scss'],
 })
 export class DefaultNavbarComponent implements OnInit {
-  loggedUser!: User;
+  userLogged!: User;
   grillaSize: number = 0;
   welcomeMessage!: string;
+  userIsAdmin!: boolean;
 
   constructor(
     private datosService: DatosService,
-    private user: UserLoggedService
+    private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
-    this.loggedUser = this.user.getUser();
-    this.welcomeMessage = this.loggedUser.isAdmin
+    this.userLogged = this.loginService.getUser();
+    this.welcomeMessage = this.userLogged.role == UserRoleEnum.ADMIN
       ? 'Bienvenido al área administrador, aqui podrás agregar, modificar, o eliminar tanto cursos, como alumnos, y visualizar sus datos!'
       : '¡Aqui podrás visualizar tus cursos!';
+    this.userIsAdmin = this.userLogged.role != UserRoleEnum.ADMIN;
   }
 
   onGrillaSize(event: any) {

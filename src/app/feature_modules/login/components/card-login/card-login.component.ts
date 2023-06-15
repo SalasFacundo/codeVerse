@@ -57,7 +57,7 @@ export class CardLoginComponent implements OnInit {
   }
 
   loginValidatorOK(user: any){
-    this.loginService.logIn(user);
+    this.loginService.logIn(user.usuario[0]);
     this.router.navigate(['/home']);
     this.snackBar.dismiss();
   }

@@ -25,7 +25,7 @@ export class DefaultNavbarComponent implements OnInit {
     this.welcomeMessage = this.userLogged.role == UserRoleEnum.ADMIN
       ? 'Bienvenido al área administrador, aqui podrás agregar, modificar, o eliminar tanto cursos, como alumnos, y visualizar sus datos!'
       : '¡Aqui podrás visualizar tus cursos!';
-    this.userIsAdmin = this.userLogged.role != UserRoleEnum.ADMIN;
+    this.userIsAdmin = this.userLogged.role == UserRoleEnum.ADMIN;
   }
 
   onGrillaSize(event: any) {

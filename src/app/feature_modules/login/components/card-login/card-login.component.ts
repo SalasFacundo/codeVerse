@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { User } from 'src/app//feature_modules//students/models/user';
+import { User } from 'src/app/models/user';
 import { DatosService } from 'src/app/services/datos.service';
 import { LoginService} from 'src/app/services/loginService';
 import { customValidator } from 'src/app/Validators/customValidators';

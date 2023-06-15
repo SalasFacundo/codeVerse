@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ModifyStudentComponent } from '../modales/modify-student/modify-student.component';
 import { DatosService } from 'src/app/services/datos.service';
 import { LoginService } from 'src/app/services/loginService';
-import { User } from '../../models/user';
+import { User } from 'src/app/models/user';
 import { ActivatedRoute } from '@angular/router';
 import { StudentDetailsModalComponent } from '../modales/student-details/student-details-modal/student-details-modal.component';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';

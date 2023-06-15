@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User } from 'src/app//feature_modules//students/models/user';
+import { User } from 'src/app/models/user';
 import { DatosService } from 'src/app/services/datos.service';
 
 @Component({

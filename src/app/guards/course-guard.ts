@@ -7,7 +7,7 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Course } from '..//feature_modules//students/models/course';
+import { Course } from 'src/app/models/course';
 import { DatosService } from '../services/datos.service';
 import { LoginService } from '../services/loginService';
 

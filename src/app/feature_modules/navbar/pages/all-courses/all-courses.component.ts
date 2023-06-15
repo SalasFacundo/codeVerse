@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd } from '@angular/router';
 import { asapScheduler } from 'rxjs';
 import { ModifyCourseModalComponent } from 'src/app//feature_modules//courses/components/modals/modify-course-modal/modify-course-modal.component';
-import { Course } from 'src/app//feature_modules//students/models/course';
+import { Course } from 'src/app/models/course';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { DatosService } from 'src/app/services/datos.service';
 import { LoginService } from 'src/app/services/loginService';

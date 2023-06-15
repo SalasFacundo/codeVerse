@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
-import { Course } from 'src/app//feature_modules//students/models/course';
+import { Course } from 'src/app/models/course';
 import { DatosService } from 'src/app/services/datos.service';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
 

@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Course } from 'src/app//feature_modules//students/models/course';
+import { Course } from 'src/app/models/course';
 import { customValidator } from 'src/app/Validators/customValidators';
 
 @Component({

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DeleteStudentComponent } from 'src/app//feature_modules//students/components/modales/delete-student/delete-student.component';
 import { ModalCrearAlumnoComponent } from 'src/app//feature_modules//students/components/modales/modal-crear-alumno/modal-crear-alumno.component';
-import { Course } from 'src/app//feature_modules//students/models/course';
+import { Course } from 'src/app/models/course';
 import { DatosService } from 'src/app/services/datos.service';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
 import { LoginService } from 'src/app/services/loginService';

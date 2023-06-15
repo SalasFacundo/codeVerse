@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Class } from 'src/app//feature_modules//students/models/class';
+import { Class } from 'src/app/models/class';
 
 @Component({
   selector: 'app-class-card',

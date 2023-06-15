@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app//feature_modules//students/models/user';
+import { User } from 'src/app/models/user';
 import { DatosService } from 'src/app/services/datos.service';
 import { LoginService } from 'src/app/services/loginService';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';

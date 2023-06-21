@@ -72,4 +72,12 @@ export class ModifyCourseModalComponent implements OnInit {
     this.courseForm.controls['endHour'].setValue(this.data.endHour);
   }
 
+
+
+  errors(){
+    console.log("ERRORS")
+    console.log(this.courseForm)
+
+  }
+
 }

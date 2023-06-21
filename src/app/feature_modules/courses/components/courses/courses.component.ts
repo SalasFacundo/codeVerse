@@ -11,6 +11,7 @@ import { BuyCourseModalComponent } from '../modals/buy-course-modal/buy-course-m
 import { DetailsCourseModalComponent } from '../modals/details-course-modal/details-course-modal/details-course-modal.component';
 import { ModifyCourseModalComponent } from '../modals/modify-course-modal/modify-course-modal.component';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
+import { CourseService } from 'src/app/services/course.service';
 
 
 @Component({
@@ -39,14 +40,15 @@ export class CoursesComponent implements OnInit {
   constructor(private datosService: DatosService,
     private loginService: LoginService,
     private matDialog: MatDialog,
-    private updateRoute: UpdateRouteService) { }
+    private updateRoute: UpdateRouteService,
+    private courseService: CourseService) { }
 
   ngOnInit(): void {
     this.loadCourses();
     this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
       data => data.forEach((e: Course) => this.coursesBuyed.push(e.id))
     )
-    this.userIsAdmin = this.userLogged.role != UserRoleEnum.ADMIN;
+    this.userIsAdmin = this.userLogged.role == UserRoleEnum.ADMIN;
   }
 
 
@@ -63,12 +65,12 @@ export class CoursesComponent implements OnInit {
   loadCourses() {
     this.url = window.location.pathname;
     if (this.filter == "all") {
-      this.datosService.getAllCourses().subscribe(data => {
-        this.courses = data;
-        this.datosService.setCourses(data);
-        this.grillaSize.emit(this.courses.length);
-
-      });
+      this.courseService.getAllCourses().subscribe(
+        response => {
+          this.courses = response;
+          this.grillaSize.emit(this.courses.length);
+        }
+      )
     }
     if (this.filter == "related") {
       this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
@@ -89,7 +91,7 @@ export class CoursesComponent implements OnInit {
     const dialog = this.matDialog.open(ModifyCourseModalComponent, { data: course });
     dialog.afterClosed().subscribe((valor) => {
       if (valor.action == "modify") {
-      this.datosService.modifyCourse(course.id, valor.value)
+      this.courseService.modifyCourse(course.id, valor.value)
       }
     })
   }

@@ -10,6 +10,7 @@ import { User } from 'src/app/models/user';
 import { ActivatedRoute } from '@angular/router';
 import { StudentDetailsModalComponent } from '../modales/student-details/student-details-modal/student-details-modal.component';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-grilla',
@@ -31,7 +32,8 @@ export class GrillaComponent implements OnInit {
               private http: HttpClient,
               private datosService: DatosService,
               private loginService: LoginService,
-              private activatedRoute: ActivatedRoute
+              private activatedRoute: ActivatedRoute,
+              private userService: UserService
     ) { }
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class GrillaComponent implements OnInit {
     this.user = this.loginService.getUser();
     this.isAdmin = this.user.role == UserRoleEnum.ADMIN;
     this.addColumns();
+    this.userService.loadUsers();
   }
 
   openFormCreateStudent(): void {
@@ -124,7 +127,8 @@ export class GrillaComponent implements OnInit {
       }
     } else {
       if(this.filter == "allStudents"){
-        this.datosService.getStudents().subscribe(data=> this.dataSource=data)
+        this.userService.getAllUsers().subscribe(data=> console.log(data));
+
       }
       this.datosService.getStudents().subscribe((data) => {
         this.dataSource = data;

@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
         this.currentUrl = event.url;
       }
     });
-    this.userIsAdmin = this.userLogged.role != UserRoleEnum.ADMIN;
+    this.userIsAdmin = this.userLogged.role == UserRoleEnum.ADMIN;
   }
 
   logOut(){

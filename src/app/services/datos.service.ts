@@ -14,25 +14,25 @@ export class DatosService {
   private students: User[] = [];
 
   constructor(private http: HttpClient) {
-    this.loadCourses();
-    this.loadStudents();
+    /* this.loadCourses();
+    this.loadStudents(); */
   }
 
-  loadCourses() {
+ /*  loadCourses() {
     this.http.get<Course[]>('http://localhost:3000/courses').subscribe((courses: any[]) => {
       this.courses = courses;
       this.coursesSubject.next(this.courses);
     });
-  }
+  } */
 
-  loadStudents(){
+  /* loadStudents(){
     this.http
       .get<User[]>(
         'http://localhost:3000/users'
       ).subscribe((students) => {
         this.students = students;
       });
-  }
+  } */
 
   addCourse(course: Course) {
     course.id = this.courses[this.courses.length-1].id + 1;

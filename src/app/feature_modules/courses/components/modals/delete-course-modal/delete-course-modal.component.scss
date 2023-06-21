@@ -1,0 +1,29 @@
+.container {
+  width: 450px;
+  height: auto;
+  color: white;
+  margin: 0 !important;
+  text-align: center;
+}
+
+.data-section {
+  width: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+mat-divider {
+  background-color: rgb(241, 241, 148);
+  margin-bottom: 60px;
+}
+
+.button-container{
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}

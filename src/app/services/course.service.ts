@@ -53,4 +53,10 @@ export class CourseService {
       this.loadCourses();
     });
   }
+
+  deleteCourse(id: number){
+    this.httpClient.delete<any>(this.urlEndpoint+'/delete/'+id).subscribe(response => {
+      this.loadCourses();
+    });
+  }
 }

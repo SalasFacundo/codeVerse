@@ -21,6 +21,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { PipesModule } from "../../pipes/pipes.module";
 import { ModifyCourseModalComponent } from './components/modals/modify-course-modal/modify-course-modal.component';
 import { DetailsCourseModalComponent } from './components/modals/details-course-modal/details-course-modal/details-course-modal.component';
+import { DeleteCourseModalComponent } from './components/modals/delete-course-modal/delete-course-modal.component';
 
 
 
@@ -32,7 +33,8 @@ import { DetailsCourseModalComponent } from './components/modals/details-course-
         BuyCourseComponent,
         BuyCourseModalComponent,
         ModifyCourseModalComponent,
-        DetailsCourseModalComponent
+        DetailsCourseModalComponent,
+        DeleteCourseModalComponent
     ],
     exports: [
         CoursesComponent,

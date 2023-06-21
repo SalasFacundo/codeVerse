@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/services/loginService';
 import { BuyCourseModalComponent } from '../modals/buy-course-modal/buy-course-modal.component';
 import { DetailsCourseModalComponent } from '../modals/details-course-modal/details-course-modal/details-course-modal.component';
 import { ModifyCourseModalComponent } from '../modals/modify-course-modal/modify-course-modal.component';
+import { DeleteCourseModalComponent } from '../modals/delete-course-modal/delete-course-modal.component';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { CourseService } from 'src/app/services/course.service';
 
@@ -98,6 +99,15 @@ export class CoursesComponent implements OnInit {
 
   openDeltailsCourseModal(course: Course){
     const dialog = this.matDialog.open(DetailsCourseModalComponent, {data:course});
+    dialog.afterClosed().subscribe((valor) => {
+      if (valor) {
+
+      }
+    })
+  }
+
+  openDeleteCourseModal(course: Course){
+    const dialog = this.matDialog.open(DeleteCourseModalComponent, {data:course});
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
 

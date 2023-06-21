@@ -5,10 +5,10 @@ import { User } from "./user";
 export interface Course{
     id: number;
     name: string;
+    description: string;
     capacity: number;
-    teachers: number[];
-    students: number[];
-    classes: Class[];
+    teacherId: number;
+    classesId: number[];
     price: number;
     startDate: Date;
     endDate: Date;

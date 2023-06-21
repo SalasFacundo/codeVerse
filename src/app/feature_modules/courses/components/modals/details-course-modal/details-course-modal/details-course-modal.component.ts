@@ -31,7 +31,7 @@ export class DetailsCourseModalComponent implements OnInit {
   }
 
   onClickButton(studentId: number){
-    this.dataUser.removeStudentFromCourse(this.data.id, studentId);
+   // this.dataUser.removeStudentFromCourse(this.data.id, studentId);
   }
 
   getStudentById(id: number) {

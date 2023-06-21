@@ -8,6 +8,7 @@ import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { DatosService } from 'src/app/services/datos.service';
 import { LoginService } from 'src/app/services/loginService';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
+import { CourseService } from 'src/app/services/course.service';
 
 @Component({
   selector: 'app-all-courses',
@@ -21,7 +22,7 @@ export class AllCoursesComponent implements OnInit {
 
   constructor(
     private updateRoute: UpdateRouteService,
-    private datosService: DatosService,
+    private courseService: CourseService,
     private loginService: LoginService,
     private matDialog: MatDialog
   ) {}
@@ -40,7 +41,7 @@ export class AllCoursesComponent implements OnInit {
     const dialog = this.matDialog.open(ModifyCourseModalComponent, {data: "add"});
     dialog.afterClosed().subscribe((valor) => {
       if (valor.action == "add") {
-      this.datosService.addCourse(valor.value)
+      this.courseService.addCourse(valor.value)
       }
     })
   }

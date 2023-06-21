@@ -25,11 +25,12 @@ export class CourseGuard implements CanActivate {
 
     const courseId = next.params['id'];
     let url = window.location.pathname;
-    if (this.datos.getCoursesByUser(this.loginService.getUser()).some((course: Course) => course.id == courseId)) {
+    /* if (this.datos.getCoursesByUser(this.loginService.getUser()).some((course: Course) => course.id == courseId)) {
         return true;
     } else {
         this.router.navigate(["home"]);
         return false;
-    }
+    } */
+    return true;
   }
 }

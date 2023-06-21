@@ -10,7 +10,7 @@ import { Course } from 'src/app/models/course';
 export class DatosService {
 
   private courses: Course[] = [];
-  private coursesSubject = new BehaviorSubject<Course[]>(this.defaultCourse());
+  private coursesSubject = new BehaviorSubject<Course[]>([]);
   private students: User[] = [];
 
   constructor(private http: HttpClient) {
@@ -34,11 +34,11 @@ export class DatosService {
       });
   } */
 
-  addCourse(course: Course) {
+ /*  addCourse(course: Course) {
     course.id = this.courses[this.courses.length-1].id + 1;
     this.courses.push(course);
     this.coursesSubject.next(this.courses);
-  }
+  } */
 
   getStudentById(id: number): User | undefined {
     return this.students.find((student) => student.id === id);
@@ -65,7 +65,7 @@ export class DatosService {
     this.coursesSubject.next(this.courses);
   }
 
-  removeStudentFromCourse(courseId: number, studentId: number) {
+  /* removeStudentFromCourse(courseId: number, studentId: number) {
     const courseIndex = this.courses.findIndex((course) => course.id === courseId);
     if (courseIndex !== -1) {
       const studentIndex = this.courses[courseIndex].students.findIndex(
@@ -76,7 +76,7 @@ export class DatosService {
       }
     }
     this.coursesSubject.next(this.courses)
-  }
+  } */
 
   getStudents(): Observable<any> {
 
@@ -107,7 +107,7 @@ export class DatosService {
 
 
 
-  getCoursesByStudentId(id: number): Observable<Course[]> {
+  /* getCoursesByStudentId(id: number): Observable<Course[]> {
     return this.coursesSubject.pipe(
       map((courses) =>
         courses.filter((course: Course) =>
@@ -115,7 +115,7 @@ export class DatosService {
         )
       )
     );
-  }
+  } */
 
 
   getAllCourses(): Observable<any> {
@@ -129,13 +129,13 @@ export class DatosService {
     return this.courses;
   }
 
-  getCoursesByUser(user: User): Course[] {
+  /* getCoursesByUser(user: User): Course[] {
     return this.courses.filter((course) =>
       course.students.some((student) => student === user.id)
     );
-  }
+  } */
 
-  getCoursesLessByUser(user: User): Observable<Course[]> {
+  /* getCoursesLessByUser(user: User): Observable<Course[]> {
     return this.coursesSubject.pipe(
       map((courses) =>
         courses.filter(
@@ -149,7 +149,7 @@ export class DatosService {
         )
       )
     );
-  }
+  } */
 
   getUsersById(ids: number[]): Observable<User[]> {
     return this.http.get<User[]>(`http://localhost:3000/users`).pipe(
@@ -174,12 +174,12 @@ export class DatosService {
 
 
 
-  addNewCourseToStudent(studentId: number, courseId: number) {
+  /* addNewCourseToStudent(studentId: number, courseId: number) {
     this.courses[
       this.courses.findIndex((objeto) => objeto.id === courseId)
     ].students.push(studentId);
     this.coursesSubject.next(this.courses);
-  }
+  } */
 
   defaultCourse() {
     return [

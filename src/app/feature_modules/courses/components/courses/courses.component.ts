@@ -45,9 +45,9 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCourses();
-    this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
+    /* this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
       data => data.forEach((e: Course) => this.coursesBuyed.push(e.id))
-    )
+    ) */
     this.userIsAdmin = this.userLogged.role == UserRoleEnum.ADMIN;
   }
 
@@ -56,7 +56,7 @@ export class CoursesComponent implements OnInit {
     const dialog = this.matDialog.open(BuyCourseModalComponent, { data: { students: this.dataSource } });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        this.datosService.addNewCourseToStudent(this.loginService.getUser().id, courseId)
+       // this.datosService.addNewCourseToStudent(this.loginService.getUser().id, courseId)
       }
     })
   }
@@ -73,13 +73,13 @@ export class CoursesComponent implements OnInit {
       )
     }
     if (this.filter == "related") {
-      this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
+      /* this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
         data => {
           this.courses = data;
           this.datosService.setCourses(data);
           this.grillaSize.emit(this.courses.length);
         }
-      )
+      ) */
     }
   }
 

@@ -10,7 +10,7 @@ import { DatosService } from 'src/app/services/datos.service';
 export class StudentDetailsModalComponent implements OnInit {
 
   user = this.data;
-  courses = this.dataUser.getCoursesByStudentId(this.data.id);
+  //courses = this.dataUser.getCoursesByStudentId(this.data.id);
 
   constructor(private dataUser: DatosService,
               private dialogRef: MatDialogRef<StudentDetailsModalComponent>,
@@ -20,7 +20,7 @@ export class StudentDetailsModalComponent implements OnInit {
   }
 
   onClickButton(value: any){
-    this.dataUser.removeStudentFromCourse(value.id, this.data.id)
+   // this.dataUser.removeStudentFromCourse(value.id, this.data.id)
   }
 
   closeModal(){

@@ -40,10 +40,16 @@ export class CourseService {
     return this.coursesSubject.asObservable();
   }
 
-  modifyCourse(id: number, course: Course){
+  addCourse(course: Course){
+    console.log("COURSE")
+    console.log(course)
+    this.httpClient.post<any>(this.urlEndpoint+'/new', course, {headers: this.headers}).subscribe( response => {
+      this.loadCourses();
+    })
+  }
 
+  modifyCourse(id: number, course: Course){
     this.httpClient.put<any>(this.urlEndpoint+'/update/'+id, course, {headers: this.headers}).subscribe(response => {
-      console.log("RESPONSE");console.log(response);
       this.loadCourses();
     });
   }

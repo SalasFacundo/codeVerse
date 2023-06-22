@@ -41,8 +41,6 @@ export class CourseService {
   }
 
   addCourse(course: Course){
-    console.log("COURSE")
-    console.log(course)
     this.httpClient.post<any>(this.urlEndpoint+'/new', course, {headers: this.headers}).subscribe( response => {
       this.loadCourses();
     })

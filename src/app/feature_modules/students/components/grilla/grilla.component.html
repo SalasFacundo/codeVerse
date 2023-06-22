@@ -27,7 +27,7 @@
             <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Accion </th>
             <td class="list-body" mat-cell *matCellDef="let element">
                     <div class="actions">
-                        <button mat-mini-fab color="warn" (click)="openDeleteStudent(element.dni)">
+                        <button mat-mini-fab color="warn" (click)="openDeleteStudent(element.id)">
                             <mat-icon class="icon-display" >delete</mat-icon>
                         </button>
                         <button mat-mini-fab color="accent" (click)="openModifyStudent(element)">

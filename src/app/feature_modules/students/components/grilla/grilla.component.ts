@@ -48,8 +48,11 @@ export class GrillaComponent implements OnInit {
     const dialog = this.matDialog.open(ModalCrearAlumnoComponent, { data: {students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        valor.id = (this.getLastId() + 1)
-        this.dataSource = [...this.dataSource, valor]
+        let user: User = valor;
+        user.password = "password";
+        user.role = "student"
+       this.userService.addUser(valor);
+       this.dataSource = [...this.dataSource, user]
       }
     })
   }
@@ -58,16 +61,22 @@ export class GrillaComponent implements OnInit {
     const dialog = this.matDialog.open(DeleteStudentComponent);
     dialog.afterClosed().subscribe((valor) => {
       if(valor == 'delete'){
-        this.dataSource = this.dataSource.filter((item: User) => item.dni !== value);
+        this.userService.deleteUser(value);
+        this.dataSource = this.dataSource.filter(user => user.id != value)
       }
     })
   }
 
-  openModifyStudent(value: number): void {
+  openModifyStudent(value: User): void {
     const dialog = this.matDialog.open(ModifyStudentComponent, { data: {idSelected: value, students: this.dataSource} });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        this.replaceObjectById(this.dataSource, valor)
+        let user: User = value;
+        user.name = valor.formValue.name;
+        user.lastName = valor.formValue.lastName;
+        user.dni = valor.formValue.dni;
+
+        this.userService.updateUser(valor.originalId, user);
       }
     })
   }
@@ -78,21 +87,6 @@ export class GrillaComponent implements OnInit {
       if (valor) {
       }
     })
-  }
-
-  replaceObjectById(array: User[], newObject: any): void {
-    const index = array.findIndex((obj: User) => obj.id === newObject.originalId);
-    if (index !== -1) {
-      array[index] = newObject.formValue;
-      array[index].id = newObject.originalId;
-    } else {
-      throw new Error(`Object with ID ${newObject.id} not found in array`);
-    }
-    this.dataSource = [...array];
-  }
-
-  getLastId() {
-    return this.dataSource[this.dataSource.length - 1].id;
   }
 
   addColumns() {
@@ -127,7 +121,9 @@ export class GrillaComponent implements OnInit {
       }
     } else {
       if(this.filter == "allStudents"){
-        this.userService.getAllUsers().subscribe(data=> console.log(data));
+        this.userService.getUsers(UserRoleEnum.STUDENT).subscribe(data=> {
+          this.dataSource = data.usuarios;
+        });
 
       }
       this.datosService.getStudents().subscribe((data) => {

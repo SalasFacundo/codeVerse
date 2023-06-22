@@ -46,9 +46,6 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCourses();
-    /* this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
-      data => data.forEach((e: Course) => this.coursesBuyed.push(e.id))
-    ) */
     this.userIsAdmin = this.userLogged.role == UserRoleEnum.ADMIN;
   }
 

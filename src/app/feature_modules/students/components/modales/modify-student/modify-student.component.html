@@ -3,36 +3,36 @@
     <form  [formGroup]="alumnosForm">
         <mat-form-field class="my-form-field">
             <mat-label>Nombre</mat-label>
-            <input 
+            <input
                 [formControl]="nameControl"
-                type="text" 
+                type="text"
                 matInput>
-                <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>               
+                <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <mat-form-field class="my-form-field">
             <mat-label>Apellido</mat-label>
-            <input 
+            <input
                 [formControl]="lastNameControl"
-                type="text" 
+                type="text"
                 matInput>
                 <mat-error *ngFor="let error of lastNameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <mat-form-field class="my-form-field">
             <mat-label>Dni</mat-label>
-            <input 
+            <input
                 [formControl]="dniControl"
-                type="text" 
+                type="text"
                 matInput>
                 <mat-error *ngFor="let error of dniControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
         <mat-form-field class="my-form-field">
-            <mat-label>Curso</mat-label>
-            <input 
+            <mat-label>Email</mat-label>
+            <input
                 [formControl]="emailControl"
-                type="text" 
+                type="text"
                 matInput>
                 <mat-error *ngFor="let error of emailControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>

@@ -27,7 +27,7 @@ export class DeleteCourseModalComponent implements OnInit {
   }
 
   deleteCourse() {
-    this.courseService.deleteCourse(this.data);
+    this.courseService.deleteCourse(this.data.id);
     this.dialogRef.close();
   }
 }

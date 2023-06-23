@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { DatosService } from 'src/app/services/datos.service';
+import { InscriptionService } from 'src/app/services/inscription.service';
 
 @Component({
   selector: 'app-details-course-modal',
@@ -15,15 +16,17 @@ export class DetailsCourseModalComponent implements OnInit {
 
   user = this.data;
   courses = this.dataUser.getCourseById(this.data.id);
-  user$:any;
+  users!: User[];
   students!: Observable<any> ;
 
   constructor(private dataUser: DatosService,
     private dialogRef: MatDialogRef<DetailsCourseModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private router: Router) { }
+    private router: Router,
+    private inscriptionService: InscriptionService) { }
 
   ngOnInit(): void {
+    this.getStudentByCourseId(this.data.id);
   }
 
   closeModal(){
@@ -31,11 +34,20 @@ export class DetailsCourseModalComponent implements OnInit {
   }
 
   onClickButton(studentId: number){
-   // this.dataUser.removeStudentFromCourse(this.data.id, studentId);
+   this.inscriptionService.deleteUserFromInscription(studentId, this.data.id).subscribe( response => {
+    this.users = this.users.filter(user => user.id !== studentId);
+
+   });
   }
 
   getStudentById(id: number) {
     return this.dataUser.getStudentById(id)
+  }
+
+  getStudentByCourseId(courseId: number){
+    this.inscriptionService.getStudentsByCourseId(courseId).subscribe( (users: any) => {
+      this.users = users.usuarios;
+    });
   }
 
 

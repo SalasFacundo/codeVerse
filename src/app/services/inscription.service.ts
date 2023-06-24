@@ -16,12 +16,22 @@ export class InscriptionService {
               private httpClient: HttpClient
   ) { }
 
+  create(inscription: Inscription){
+    console.log("inscription")
+    console.log(inscription)
+    return this.httpClient.post<any>(`${this.urlEndpoint}/new`, inscription, {headers: this.header});
+  }
+
   getStudentsByCourseId(courseId: number){
     return this.httpClient.get(`${this.urlEndpoint}/studentsByCourseId/` + courseId);
   }
 
   deleteUserFromInscription(studentId: number, courseId: number){
     return this.httpClient.delete(`${this.urlEndpoint}/deleteUserFromInscription/` + studentId + "/" + courseId)
+  }
+
+  getCoursesByStudentId(studentId: number){
+    return this.httpClient.get(`${this.urlEndpoint}/coursesByStudentId/` + studentId );
   }
 
 }

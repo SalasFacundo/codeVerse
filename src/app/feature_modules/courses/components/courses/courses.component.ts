@@ -13,6 +13,8 @@ import { ModifyCourseModalComponent } from '../modals/modify-course-modal/modify
 import { DeleteCourseModalComponent } from '../modals/delete-course-modal/delete-course-modal.component';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { CourseService } from 'src/app/services/course.service';
+import { InscriptionService } from 'src/app/services/inscription.service';
+import { Inscription } from 'src/app/models/inscription';
 
 
 @Component({
@@ -42,23 +44,25 @@ export class CoursesComponent implements OnInit {
     private loginService: LoginService,
     private matDialog: MatDialog,
     private updateRoute: UpdateRouteService,
-    private courseService: CourseService) { }
+    private courseService: CourseService,
+    private inscriptionService: InscriptionService) { }
 
   ngOnInit(): void {
     this.loadCourses();
     this.userIsAdmin = this.userLogged.role == UserRoleEnum.ADMIN;
   }
 
-
   openFormBuyCourse(courseId: number) {
+    console.log("console.log()")
+    console.log(courseId)
     const dialog = this.matDialog.open(BuyCourseModalComponent, { data: { students: this.dataSource } });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-       // this.datosService.addNewCourseToStudent(this.loginService.getUser().id, courseId)
+        let inscription: Inscription = {courseId: courseId, studentId: this.userLogged.id, id:0};
+        this.inscriptionService.create(inscription).subscribe();
       }
     })
   }
-
 
   loadCourses() {
     this.url = window.location.pathname;
@@ -71,13 +75,10 @@ export class CoursesComponent implements OnInit {
       )
     }
     if (this.filter == "related") {
-      /* this.datosService.getCoursesByStudentId(this.loginService.getUser().id).subscribe(
-        data => {
-          this.courses = data;
-          this.datosService.setCourses(data);
-          this.grillaSize.emit(this.courses.length);
-        }
-      ) */
+      this.inscriptionService.getCoursesByStudentId(this.userLogged.id).subscribe( (response: any) => {
+        this.courses = response.courses;
+        this.grillaSize.emit(this.courses.length);
+      })
     }
   }
 

@@ -7,7 +7,7 @@
     <h2>{{welcomeMessage}}</h2>
 
 
-    <span *ngIf="grillaSize == 0 && !userIsAdmin"> No hay cursos disponibles</span>
+    <span *ngIf="grillaSize == 0 && !userIsAdmin"> No hasy cursos disponibles</span>
 </div>
 
 <app-courses [filter]="'related'" (grillaSize)="onGrillaSize($event)"></app-courses>

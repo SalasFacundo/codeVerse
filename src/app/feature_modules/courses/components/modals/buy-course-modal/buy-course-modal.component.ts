@@ -49,9 +49,11 @@ export class BuyCourseModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
+    console.log("DATA")
+    console.log(this.data)
   }
 
   submitForm() {
-    this.dialogRef.close(true)
+    this.dialogRef.close(this.creditCardForm.value)
   }
 }

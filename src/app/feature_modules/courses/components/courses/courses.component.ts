@@ -53,8 +53,6 @@ export class CoursesComponent implements OnInit {
   }
 
   openFormBuyCourse(courseId: number) {
-    console.log("console.log()")
-    console.log(courseId)
     const dialog = this.matDialog.open(BuyCourseModalComponent, { data: { students: this.dataSource } });
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
@@ -67,12 +65,10 @@ export class CoursesComponent implements OnInit {
   loadCourses() {
     this.url = window.location.pathname;
     if (this.filter == "all") {
-      this.courseService.getAllCourses().subscribe(
-        response => {
-          this.courses = response;
-          this.grillaSize.emit(this.courses.length);
-        }
-      )
+      this.inscriptionService.getCoursesNotBuyed(this.userLogged.id).subscribe((response: any) => {
+        this.courses = response.courses;
+        this.grillaSize.emit(this.courses.length);
+      })
     }
     if (this.filter == "related") {
       this.inscriptionService.getCoursesByStudentId(this.userLogged.id).subscribe( (response: any) => {

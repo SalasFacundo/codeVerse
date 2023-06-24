@@ -34,4 +34,7 @@ export class InscriptionService {
     return this.httpClient.get(`${this.urlEndpoint}/coursesByStudentId/` + studentId );
   }
 
+  getCoursesNotBuyed(studentId: number){
+    return this.httpClient.get(`${this.urlEndpoint}/coursesNotBuyedByStudentId/` + studentId);
+  }
 }

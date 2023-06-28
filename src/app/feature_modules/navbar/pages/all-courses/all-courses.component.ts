@@ -36,54 +36,13 @@ export class AllCoursesComponent implements OnInit {
     this.userIsAdmin = this.userLogged.role == UserRoleEnum.ADMIN;
   }
 
-
   openAddCourseModal(){
     const dialog = this.matDialog.open(ModifyCourseModalComponent, {data: "add"});
     dialog.afterClosed().subscribe((valor) => {
       if (valor.action == "add") {
       this.courseService.addCourse(valor.value)
       }
+      window.location.reload(); //TEMPORAL HASTA ENCONTRAR OTRA FORMA
     })
   }
-
-  /* agregarCurso(){
-    let course: Course = {
-      "id": 1,
-        "name": "Introducción a Pythonssssssssssssssss",
-        "capacity": 50,
-        "teachers": [51,52,53],
-        "students": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        "classes": [
-            {
-                "name": "Clase 1: Introducción a Python",
-                "description": "En esta clase se presentará el lenguaje de programación Python, sus características y beneficios. También se mostrará cómo instalar Python y configurar el entorno de trabajo."
-            },
-            {
-                "name": "Clase 2: Variables y tipos de datos",
-                "description": "En esta clase se enseñará cómo crear y manipular variables en Python, y se presentarán los diferentes tipos de datos básicos como números, cadenas de texto y booleanos."
-            },
-            {
-                "name": "Clase 6: Estructuras de control de flujo",
-                "description": " En esta clase se explicará cómo controlar el flujo de ejecución de un programa en Python utilizando estructuras como if-else, while, for y try-except."
-            },
-            {
-                "name": "Clase 4: Funciones",
-                "description": "En esta clase se presentarán las funciones en Python, cómo crearlas, llamarlas y pasar argumentos a ellas. También se discutirá sobre la importancia de las funciones y cómo se utilizan en la programación."
-            },
-            {
-                "name": "Clase 5: Listas y diccionarios",
-                "description": "En esta clase se mostrará cómo utilizar listas y diccionarios en Python para almacenar y manipular datos. También se discutirán las operaciones básicas en estas estructuras de datos y se darán ejemplos de su uso en programas simples."
-            },
-            {
-                "name": "Clase 6: Archivos y excepciones",
-                "description": "En esta clase se enseñará cómo trabajar con archivos en Python, cómo leer y escribir en ellos, y cómo cerrarlos adecuadamente. También se explicará cómo manejar excepciones en Python, incluyendo cómo lanzar excepciones, cómo manejarlas y cómo crear excepciones personalizadas."
-            }
-        ],
-        "price": 34326,
-        "startDate": new Date(),
-        "endDate": new Date()
-    }
-
-    this.dataService.addCourse(course);
-  } */
 }

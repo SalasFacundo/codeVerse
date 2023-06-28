@@ -58,6 +58,7 @@ export class CoursesComponent implements OnInit {
       if (valor) {
         let inscription: Inscription = {courseId: courseId, studentId: this.userLogged.id, id:0};
         this.inscriptionService.create(inscription).subscribe();
+        this.courses = this.courses.filter(course => course.id !== courseId);
       }
     })
   }
@@ -86,18 +87,15 @@ export class CoursesComponent implements OnInit {
     const dialog = this.matDialog.open(ModifyCourseModalComponent, { data: course });
     dialog.afterClosed().subscribe((valor) => {
       if (valor.action == "modify") {
-      this.courseService.modifyCourse(course.id, valor.value)
+      this.courseService.modifyCourse(course.id, valor.value);
+      window.location.reload(); //TEMPORAL HASTA ENCONTRAR OTRA FORMA
       }
     })
   }
 
   openDeltailsCourseModal(course: Course){
     const dialog = this.matDialog.open(DetailsCourseModalComponent, {data:course});
-    dialog.afterClosed().subscribe((valor) => {
-      if (valor) {
-
-      }
-    })
+    dialog.afterClosed().subscribe();
   }
 
   openDeleteCourseModal(course: Course){

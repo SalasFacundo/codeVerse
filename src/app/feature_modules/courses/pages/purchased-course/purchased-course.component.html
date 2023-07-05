@@ -1,6 +1,6 @@
 <div class="container">
     <div class="title">
-        <h1>¡ Aqui encontraras detalles del curso de {{course.name}} !</h1>
+        <h1 *ngIf="course">¡ Aqui encontraras detalles del curso de {{course.name}} !</h1>
         <mat-divider></mat-divider>
     </div>
     <mat-accordion>

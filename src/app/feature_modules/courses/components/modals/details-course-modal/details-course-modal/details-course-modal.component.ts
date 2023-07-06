@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { User } from 'src/app/models/user';
 import { DatosService } from 'src/app/services/datos.service';
 import { InscriptionService } from 'src/app/services/inscription.service';
@@ -45,7 +46,7 @@ export class DetailsCourseModalComponent implements OnInit {
   }
 
   getStudentByCourseId(courseId: number){
-    this.inscriptionService.getStudentsByCourseId(courseId).subscribe( (users: any) => {
+    this.inscriptionService.getUsersByCourseIdAndRole(courseId, UserRoleEnum.STUDENT).subscribe( (users: any) => {
       this.users = users.usuarios;
     });
   }

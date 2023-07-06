@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 import { StudentDetailsModalComponent } from '../modales/student-details/student-details-modal/student-details-modal.component';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { UserService } from 'src/app/services/user.service';
+import { CourseService } from 'src/app/services/course.service';
+import { InscriptionService } from 'src/app/services/inscription.service';
 
 @Component({
   selector: 'app-grilla',
@@ -33,7 +35,8 @@ export class GrillaComponent implements OnInit {
               private datosService: DatosService,
               private loginService: LoginService,
               private activatedRoute: ActivatedRoute,
-              private userService: UserService
+              private userService: UserService,
+              private inscriptionService: InscriptionService
     ) { }
 
   ngOnInit(): void {
@@ -83,10 +86,7 @@ export class GrillaComponent implements OnInit {
 
   openStudentDetails(value: number){
     const dialog = this.matDialog.open(StudentDetailsModalComponent, {data: value});
-    dialog.afterClosed().subscribe((valor) => {
-      if (valor) {
-      }
-    })
+    dialog.afterClosed().subscribe();
   }
 
   addColumns() {
@@ -103,28 +103,21 @@ export class GrillaComponent implements OnInit {
   fillColumns(){
     if (this.activatedRoute.snapshot.paramMap.get('id')) {
       if (this.filter == 'students') {
-        this.datosService
-          .getCourseById(
-            Number(this.activatedRoute.snapshot.paramMap.get('id'))
-          )
-          .subscribe((value) => {
-            //this.datosService.getUsersById(value[0].students).subscribe(valor => {this.dataSource = valor})
+        this.inscriptionService.getUsersByCourseIdAndRole(Number(this.activatedRoute.snapshot.paramMap.get('id')),UserRoleEnum.STUDENT)
+          .subscribe((value: any) => {
+            this.dataSource = value.usuarios;
           });
-      }  else if (this.filter == 'teachers') {
-        this.datosService
-          .getCourseById(
-            Number(this.activatedRoute.snapshot.paramMap.get('id'))
-          )
-          .subscribe((value) => {
-            //this.datosService.getUsersById(value[0].teachers).subscribe(valor => {this.dataSource = valor})
+      } else if (this.filter == 'teachers') {
+        this.inscriptionService.getUsersByCourseIdAndRole(Number(this.activatedRoute.snapshot.paramMap.get('id')),UserRoleEnum.TEACHER)
+          .subscribe((value: any) => {
+            this.dataSource = value.usuarios;
           });
       }
     } else {
-      if(this.filter == "allStudents"){
-        this.userService.getUsers(UserRoleEnum.STUDENT).subscribe(data=> {
+      if (this.filter == 'allStudents') {
+        this.userService.getUsers(UserRoleEnum.STUDENT).subscribe((data) => {
           this.dataSource = data.usuarios;
         });
-
       }
       this.datosService.getStudents().subscribe((data) => {
         this.dataSource = data;

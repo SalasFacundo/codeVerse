@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { UserRoleEnum } from '../enums/UserRoleEnum';
 import { Inscription } from '../models/inscription';
 
 @Injectable({
@@ -22,8 +23,8 @@ export class InscriptionService {
     return this.httpClient.post<any>(`${this.urlEndpoint}/new`, inscription, {headers: this.header});
   }
 
-  getStudentsByCourseId(courseId: number){
-    return this.httpClient.get(`${this.urlEndpoint}/studentsByCourseId/` + courseId);
+  getUsersByCourseIdAndRole(courseId: number, role: UserRoleEnum){
+    return this.httpClient.get(`${this.urlEndpoint}/studentsByCourseId/${courseId}/${role}`);
   }
 
   deleteUserFromInscription(studentId: number, courseId: number){

@@ -10,18 +10,10 @@ import { User } from '../models/user';
 export class UserService {
 
   users: User[] = [];
-  private usersSubject = new BehaviorSubject<User[]>([]);
   urlEndpoint: string = 'http://localhost:8080/api/users';
   header = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor( private httpClient: HttpClient) {
-    this.loadUsers();
-  }
-
-  loadUsers(){
-    this.httpClient.get<any>(this.urlEndpoint+'/all').subscribe(response => {
-      this.usersSubject.next(response.users);
-    });
   }
 
   getUsers(role?: UserRoleEnum){
@@ -33,21 +25,15 @@ export class UserService {
   }
 
   addUser(user: User){
-    this.httpClient.post<any>(this.urlEndpoint+'/new', user, {headers: this.header}).subscribe(response => {
-      this.loadUsers();
-    });
+    return this.httpClient.post<any>(this.urlEndpoint+'/new', user, {headers: this.header})
   }
 
   updateUser(id: number, user: User){
-    this.httpClient.put<any>(this.urlEndpoint+'/update/'+id, user, {headers: this.header}).subscribe(response => {
-      this.loadUsers();
-    });
+    return this.httpClient.put<any>(this.urlEndpoint+'/update/'+id, user, {headers: this.header})
   }
 
   deleteUser(id: number){
-    this.httpClient.delete<any>(this.urlEndpoint+'/delete/'+id).subscribe(response => {
-      this.loadUsers();
-    });
+    return this.httpClient.delete<any>(this.urlEndpoint+'/delete/'+id)
   }
 
 }

@@ -13,6 +13,7 @@ import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { UserService } from 'src/app/services/user.service';
 import { CourseService } from 'src/app/services/course.service';
 import { InscriptionService } from 'src/app/services/inscription.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-grilla',
@@ -36,7 +37,8 @@ export class GrillaComponent implements OnInit {
               private loginService: LoginService,
               private activatedRoute: ActivatedRoute,
               private userService: UserService,
-              private inscriptionService: InscriptionService
+              private inscriptionService: InscriptionService,
+              private snackBar: MatSnackBar,
     ) { }
 
   ngOnInit(): void {
@@ -44,7 +46,6 @@ export class GrillaComponent implements OnInit {
     this.user = this.loginService.getUser();
     this.isAdmin = this.user.role == UserRoleEnum.ADMIN;
     this.addColumns();
-    this.userService.loadUsers();
   }
 
   openFormCreateStudent(): void {
@@ -54,10 +55,32 @@ export class GrillaComponent implements OnInit {
         let user: User = valor;
         user.password = "password";
         user.role = "student"
-       this.userService.addUser(valor);
+
+
+       this.userService.addUser(valor).subscribe(
+       this.createStudentOK,
+       this.createStudentERROR);
+
+
+
+
        this.dataSource = [...this.dataSource, user]
       }
     })
+  }
+
+  createStudentOK(response: any){
+    this.snackBar.open('Usuario creado con exito!', 'Cerrar', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
+  }
+
+  createStudentERROR(error: any){
+    this.snackBar.open('Error al crear el usuario', 'Cerrar', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
   }
 
   openDeleteStudent(value: number): void {

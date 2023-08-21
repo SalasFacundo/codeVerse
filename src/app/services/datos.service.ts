@@ -105,8 +105,6 @@ export class DatosService {
       .pipe(map((courses) => courses.filter((course) => course.id === id)));
   }
 
-
-
   /* getCoursesByStudentId(id: number): Observable<Course[]> {
     return this.coursesSubject.pipe(
       map((courses) =>

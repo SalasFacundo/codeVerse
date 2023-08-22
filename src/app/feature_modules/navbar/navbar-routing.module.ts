@@ -6,6 +6,7 @@ import { AllStudentsPageComponent } from '../students/pages/all-students-page/al
 import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 import { PurchasedCourseComponent } from '../courses/pages/purchased-course/purchased-course.component';
 import { CourseGuard } from 'src/app/guards/course-guard';
+import { ModifyUserComponent } from '../user/pages/modify-user/modify-user.component';
 
 const routes: Routes =[
 
@@ -15,6 +16,7 @@ const routes: Routes =[
       { path: 'students', component: AllStudentsPageComponent},
       { path: 'courses', component: AllCoursesComponent},
       { path: 'courseDetail/:id', component: PurchasedCourseComponent, canActivate: [CourseGuard]},
+      { path: 'modifyProfile', component: ModifyUserComponent},
     ]
   },
 

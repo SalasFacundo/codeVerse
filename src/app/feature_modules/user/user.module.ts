@@ -17,12 +17,14 @@ import { AppRoutingModule } from 'src/app/app.routing.module';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ModifyUserComponent } from './pages/modify-user/modify-user.component';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 
 
 @NgModule({
   declarations: [
-    ModifyUserComponent
+    ModifyUserComponent,
+    UserDataComponent
   ],
   imports: [
     CommonModule,

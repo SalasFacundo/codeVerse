@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.title {
+  margin-top: 80px;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  grid-area: 1 / 1 / 2 / 6;
+}
+
+app-user-data {
+  margin-top: 40px;
+  grid-area: 2 / 2 / 6 / 5;
+}

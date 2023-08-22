@@ -13,6 +13,8 @@ import { NavbarModule } from './/feature_modules//navbar/navbar.module';
 import { CoursesModule } from './/feature_modules//courses/courses.module';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatDividerModule } from '@angular/material/divider';
+import { UserModule } from './feature_modules/user/user.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NavbarModule,
     RouterModule,
     CoursesModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDividerModule,
+    UserModule
+
 
   ],
   providers: [],

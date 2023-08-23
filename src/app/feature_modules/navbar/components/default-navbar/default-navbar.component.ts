@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { DatosService } from 'src/app/services/datos.service';
-import { LoginService } from 'src/app/services/loginService';
+import { LoginService } from 'src/app/services/login.service';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { CourseService } from 'src/app/services/course.service';
 

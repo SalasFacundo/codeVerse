@@ -6,7 +6,7 @@ import { ModalCrearAlumnoComponent } from 'src/app//feature_modules//students/co
 import { Course } from 'src/app/models/course';
 import { DatosService } from 'src/app/services/datos.service';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
-import { LoginService } from 'src/app/services/loginService';
+import { LoginService } from 'src/app/services/login.service';
 import { BuyCourseModalComponent } from '../modals/buy-course-modal/buy-course-modal.component';
 import { DetailsCourseModalComponent } from '../modals/details-course-modal/details-course-modal/details-course-modal.component';
 import { ModifyCourseModalComponent } from '../modals/modify-course-modal/modify-course-modal.component';

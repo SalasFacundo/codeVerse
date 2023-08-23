@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Course } from 'src/app/models/course';
 import { DatosService } from 'src/app/services/datos.service';
 import { InscriptionService } from 'src/app/services/inscription.service';
-import { LoginService } from 'src/app/services/loginService';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-student-details-modal',

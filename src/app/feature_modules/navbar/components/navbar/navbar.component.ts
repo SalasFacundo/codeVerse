@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
-import { LoginService } from 'src/app/services/loginService';
+import { LoginService } from 'src/app/services/login.service';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 
 @Component({

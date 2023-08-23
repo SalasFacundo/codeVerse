@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { Course } from 'src/app/models/course';
 import { DatosService } from '../services/datos.service';
-import { LoginService } from '../services/loginService';
+import { LoginService } from '../services/login.service';
 
 @Injectable({
   providedIn: 'root',

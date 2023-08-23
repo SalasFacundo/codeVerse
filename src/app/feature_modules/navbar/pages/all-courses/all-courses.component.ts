@@ -6,7 +6,7 @@ import { ModifyCourseModalComponent } from 'src/app//feature_modules//courses/co
 import { Course } from 'src/app/models/course';
 import { UserRoleEnum } from 'src/app/enums/UserRoleEnum';
 import { DatosService } from 'src/app/services/datos.service';
-import { LoginService } from 'src/app/services/loginService';
+import { LoginService } from 'src/app/services/login.service';
 import { UpdateRouteService } from 'src/app/services/update-route.service';
 import { CourseService } from 'src/app/services/course.service';
 

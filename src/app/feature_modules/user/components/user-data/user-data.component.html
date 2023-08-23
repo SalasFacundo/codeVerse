@@ -1,7 +1,7 @@
 <div class="fluid-container card-user">
   <mat-divider></mat-divider>
   <div mat-dialog-content>
-    <form>
+    <form [formGroup]="userForm">
       <div class="avatar">
         <img src="assets\img\avatar.png" alt="" >
         <a href="#">Cambiar imagen</a>
@@ -9,32 +9,38 @@
 
       <div class="row data">
 
-        <mat-form-field class="my-form-field">
+        <mat-form-field class="input-row">
           <mat-label>Nombre</mat-label>
-          <input type="text" matInput>
-          <!--  <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error> -->
+          <input type="text" matInput [formControl]="nameControl">
+           <mat-error *ngFor="let error of nameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
-        <mat-form-field class="my-form-field">
+        <mat-form-field class="input-row">
           <mat-label>Apellido</mat-label>
-          <input type="text" matInput>
-          <!-- <mat-error *ngFor="let error of capacityControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error> -->
+          <input type="text" matInput [formControl]="lastNameControl">
+          <mat-error *ngFor="let error of lastNameControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
-        <mat-form-field class="my-form-field">
+        <mat-form-field class="input-row">
           <mat-label>Dni</mat-label>
-          <input type="text" matInput>
-          <!-- <mat-error *ngFor="let error of priceControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error> -->
+          <input type="text" matInput [formControl]="dniControl">
+          <mat-error *ngFor="let error of dniControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
 
-        <mat-form-field class="my-form-field">
+        <mat-form-field class="input-row">
           <mat-label>Email</mat-label>
-          <input type="text" matInput>
-          <!-- <mat-error *ngFor="let error of priceControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error> -->
+          <input type="text" matInput [formControl]="emailControl">
+          <mat-error *ngFor="let error of emailControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-row">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput [formControl]="passwordControl">
+          <mat-error *ngFor="let error of passwordControl.errors | keyvalue">{{error | controlErrorMessages}} </mat-error>
         </mat-form-field>
       </div>
       <div class="grid-action">
-        <button mat-raised-button class="primaryCustom confirm-button">
+        <button mat-raised-button class="primaryCustom confirm-button" (click)="confirmForm()" [disabled]="userForm.invalid">
           <span>Confirmar</span>
         </button>
       </div>

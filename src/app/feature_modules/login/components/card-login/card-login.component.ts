@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { DatosService } from 'src/app/services/datos.service';
-import { LoginService} from 'src/app/services/loginService';
+import { LoginService} from 'src/app/services/login.service';
 import { customValidator } from 'src/app/Validators/customValidators';
 
 @Component({

@@ -19,7 +19,7 @@ export class ControlErrorMessagesPipe implements PipeTransform {
       range: `Campo Invalido`,
       emailDuplicated: `El email ya se encuentra`,
     }
-        
+
     return opciones[error.key];
   }
 

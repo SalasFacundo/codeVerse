@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/models/user';
@@ -20,6 +20,7 @@ export class UserDataComponent implements OnInit {
   dniControl = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8), customValidator.justNumbers()]);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   passwordControl = new FormControl('', [Validators.required]);
+  fotoSeleccionada!: File;
 
   userForm = new FormGroup({
     name: this.nameControl,
@@ -60,11 +61,18 @@ export class UserDataComponent implements OnInit {
 
         this.snackBar.dismiss;
         this.userService.updateUser(this.userLogged.id, this.userLogged).subscribe( response => {
-          this.snackBar.open('Contraseña incorrecta', 'Cerrar', {
+          this.snackBar.open('Datos actualizados con exito', 'Cerrar', {
             horizontalPosition: 'center',
             verticalPosition: 'top',
             duration: 3000
           });
+        });
+        this.userService.uploadPicture(this.fotoSeleccionada, this.loginService.getUser().id).subscribe( (response: any) => {
+          if(response.type != 0){
+            this.userLogged = response.body.usuario;
+            this.loginService.logIn(this.userLogged);
+
+          }
         });
       } else {
         this.snackBar.open('Contraseña incorrecta', 'Cerrar', {
@@ -74,6 +82,13 @@ export class UserDataComponent implements OnInit {
         });
       }
     }
+  }
+
+  uploadPicture(event: any){
+    this.fotoSeleccionada = event.target.files[0];
+    let imagen = document.querySelector("#vista") as HTMLImageElement;
+    let objectURL = URL.createObjectURL(this.fotoSeleccionada);
+    imagen.src = objectURL;
   }
 
 }

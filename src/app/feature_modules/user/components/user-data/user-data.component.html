@@ -3,12 +3,12 @@
   <div mat-dialog-content>
     <form [formGroup]="userForm">
       <div class="avatar">
-        <img src="assets\img\avatar.png" alt="" >
-        <a href="#">Cambiar imagen</a>
+        <img src="http://localhost:8080/api/users/foto/ver/{{this.userLogged.foto}}" alt="" id="vista">
+        <input type="file" name="" id="loadPicture" (change)="uploadPicture($event)">
+        <label for="loadPicture">Cambiar imagen</label>
       </div>
 
       <div class="row data">
-
         <mat-form-field class="input-row">
           <mat-label>Nombre</mat-label>
           <input type="text" matInput [formControl]="nameControl">

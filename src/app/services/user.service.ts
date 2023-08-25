@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserRoleEnum } from '../enums/UserRoleEnum';
@@ -36,4 +36,12 @@ export class UserService {
     return this.httpClient.delete<any>(this.urlEndpoint+'/delete/'+id)
   }
 
+  uploadPicture(archivo: File, id: number){
+    let formData = new FormData();
+    formData.append("archivo", archivo);
+    formData.append("id",String(id));
+
+    const req = new HttpRequest('POST', `${this.urlEndpoint}/foto/upload`, formData)
+    return this.httpClient.request(req)
+  }
 }

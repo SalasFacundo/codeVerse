@@ -7,11 +7,17 @@
 }
 
 .title {
-  margin-top: 80px;
+  margin: 70px 0 30px;
   text-align: center;
   color: white;
   font-size: 32px;
   grid-area: 1 / 1 / 2 / 6;
+}
+
+mat-divider {
+  grid-area: 2 / 1 / 2 / 6;
+  height: 1px;
+  background-color: rgb(243, 243, 148);
 }
 
 app-user-data {

@@ -1,18 +1,18 @@
 .mat-sidenav-container {
     height: 100vh;
   }
-  
+
   .mat-toolbar {
     position: sticky;
     top: 0;
     z-index: 1;
   }
-  
+
   .mat-sidenav {
     width: 250px;
     background-color: rgb(39, 40, 45) !important;
   }
-  
+
   mat-list-item{
 
     color: white !important;
@@ -32,7 +32,7 @@
   mat-toolbar{
     background-color: rgb(20, 20, 20) !important;
   }
-  
+
   .mat-toolbar {
     display: flex;
     justify-content: space-between;
@@ -61,4 +61,10 @@
     .subtitle2::second {
         color: rgb(243, 243, 130);
     }
+}
+
+img{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
 }

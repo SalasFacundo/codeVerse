@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
   currentUrl = window.location.pathname;
   userLogged = this.loginService.getUser();
   userIsAdmin!: boolean;
+  backgroundImageUrl: string = 'D:/Equipo/Escritorio/curso carrera frontend/angular/codeVerse/codeVerse back/uploads/holi.png';
 
   constructor(private loginService: LoginService,
               private router: Router,

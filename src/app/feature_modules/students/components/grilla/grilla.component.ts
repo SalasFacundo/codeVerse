@@ -24,7 +24,7 @@ export class GrillaComponent implements OnInit {
 
   @Input()
   filter: string = ""
-  displayedColumns: string[] = ['fullName', 'email'];
+  displayedColumns: string[] = ['avatar', 'fullName', 'email'];
   dataSource: User[] = [];
   isAdmin: boolean = false;
   value: number = 0;
@@ -38,7 +38,7 @@ export class GrillaComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private userService: UserService,
               private inscriptionService: InscriptionService,
-              private snackBar: MatSnackBar,
+              private snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {

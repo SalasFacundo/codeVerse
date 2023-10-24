@@ -1,46 +1,57 @@
 <div class="container">
-    <div class="grid-action">
-        <button *ngIf="isAdmin"
-            mat-raised-button class="primaryCustom"
-            (click)="openFormCreateStudent()">
-            Agregar alumno
-        </button>
-    </div>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
+  <div class="grid-action">
+    <button *ngIf="isAdmin" mat-raised-button class="primaryCustom" (click)="openFormCreateStudent()">
+      Agregar alumno
+    </button>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
 
-        <ng-container *ngIf="isAdmin" matColumnDef="dni">
-            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Dni </th>
-            <td class="list-body" mat-cell *matCellDef="let element"> {{element.dni}} </td>
+    <ng-container matColumnDef="avatar" class="avatar">
+      <th class="list-head" mat-header-cell *matHeaderCellDef> Avatar </th>
+      <td class="list-body" mat-cell *matCellDef="let element">
+        <ng-container *ngIf="element.foto; else defaultImage">
+          <img [src]="'http://localhost:8080/api/users/foto/ver/' + element.foto" alt="Avatar">
         </ng-container>
+        <ng-template #defaultImage>
+          <img src="http://localhost:8080/api/users/foto/ver/avatarDefault.png" alt="Default Avatar">
+        </ng-template>
+      </td>
+    </ng-container>
 
-        <ng-container matColumnDef="fullName">
-            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Nombre y Apellido </th>
-            <td class="list-body" mat-cell *matCellDef="let element"> {{element.name | fullName:element.lastName}} </td>
-        </ng-container>
 
-        <ng-container matColumnDef="email">
-            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Email </th>
-            <td class="list-body" mat-cell *matCellDef="let element"> {{element.email}} </td>
-        </ng-container>
+    <ng-container *ngIf="isAdmin" matColumnDef="dni">
+      <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Dni </th>
+      <td class="list-body" mat-cell *matCellDef="let element"> {{element.dni}} </td>
+    </ng-container>
 
-        <ng-container *ngIf="isAdmin" matColumnDef="action">
-            <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Accion </th>
-            <td class="list-body" mat-cell *matCellDef="let element">
-                    <div class="actions">
-                        <button mat-mini-fab color="warn" (click)="openDeleteStudent(element.id)">
-                            <mat-icon class="icon-display" >delete</mat-icon>
-                        </button>
-                        <button mat-mini-fab color="accent" (click)="openModifyStudent(element)">
-                            <mat-icon class="icon-display" >edit</mat-icon>
-                        </button>
-                        <button mat-mini-fab color="primary" (click)="openStudentDetails(element)">
-                            <mat-icon class="icon-display" >details</mat-icon>
-                        </button>
-                    </div>
-            </td>
-        </ng-container>
+    <ng-container matColumnDef="fullName">
+      <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Nombre y Apellido </th>
+      <td class="list-body" mat-cell *matCellDef="let element"> {{element.name | fullName:element.lastName}} </td>
+    </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    <ng-container matColumnDef="email">
+      <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Email </th>
+      <td class="list-body" mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container *ngIf="isAdmin" matColumnDef="action">
+      <th class="list-head" mat-header-cell *matHeaderCellDef [fontSize]="'20px'"> Accion </th>
+      <td class="list-body" mat-cell *matCellDef="let element">
+        <div class="actions">
+          <button mat-mini-fab color="warn" (click)="openDeleteStudent(element.id)">
+            <mat-icon class="icon-display">delete</mat-icon>
+          </button>
+          <button mat-mini-fab color="accent" (click)="openModifyStudent(element)">
+            <mat-icon class="icon-display">edit</mat-icon>
+          </button>
+          <button mat-mini-fab color="primary" (click)="openStudentDetails(element)">
+            <mat-icon class="icon-display">details</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>

@@ -52,6 +52,3 @@ En breve el sitio se abrira en su navegador predeterminado.
 - Validaciones al ingresar mal datos en un modal<br>
 
 	![validations](https://user-images.githubusercontent.com/66442210/231355876-e43a2bf1-3714-427f-988d-f52712b0b209.png)<br><br><br>
-
-
-
